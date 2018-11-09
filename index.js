@@ -11,10 +11,17 @@ app.engine('.hbs', exphbs({
 }))
 app.set('view engine', '.hbs')
 app.set('views', path.join(__dirname, 'views'))
+app.use(express.static('static'))
 app.listen(3000)
 
 app.get('/', (request, response) => {
+    /*
     response.render('home', {
         name: 'John'
     })
+    */
+    response.render('changeme', {
+        program: 'Trello'
+    })
+
 })
