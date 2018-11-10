@@ -2,7 +2,7 @@
 init();
 
 function init() {
-    document.onmousemove = mousemove;
+    //document.onmousemove = mousemove;
 }
 
 function mousemove(event) {

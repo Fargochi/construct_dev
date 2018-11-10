@@ -15,13 +15,19 @@ app.use(express.static('static'))
 app.listen(3000)
 
 app.get('/', (request, response) => {
-    /*
-    response.render('home', {
-        name: 'John'
-    })
-    */
-    response.render('changeme', {
-        program: 'Trello'
-    })
+    if (request.query.app === 'test') {
+        response.render('test', {
+            key: 'you could put any variables here'
+        })
+    } else if (request.query.app === 'memory') {
+        response.render('memory', {
+            a: '1',
+            b: '2'
+        })
+    } else {
+        response.render('home', {
+            program: 'Trello'
+        })
+    }
 
 })
