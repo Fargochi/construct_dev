@@ -1,5 +1,20 @@
 <center>
-<div class="fixme">
-  <h2>Не забываем работать в {{program}}</h2>
-</div>
+	<div class="fixme">
+        <div>
+		<input type = "text" class = "field" id = "category_1"  onkeyup  ='(function(e){if(e.key=="Enter"){e.preventDefault();this.blur(); getElementById("classnum").focus();}})(event)'>
+        </div>
+		<div>
+		<input type = "text" class = "field" id = "classnum_2" onkeyup  ='(function(e){if(e.key=="Enter"){e.preventDefault();this.blur(); getElementById("difficult").focus();}})(event)'>
+        </div>
+		<div>
+		<input type = "text" class = "field" id = "difficult_3" onkeyup  ='(function(e){if(e.key=="Enter"){e.preventDefault();this.blur();/*использовать split*/ getElementById("submitter").focus();}})(event)'>
+        </div>
+		<div>
+		<input type = "button" id = "submitter_4" onfocus = "(()=>(alert('lol')))()">
+        </div>
+		<h2>Не забываем работать в {{program}}</h2>
+    </div>
 </center>
+
+<div id="smile1"></div>
+<div id="smile2"></div>
