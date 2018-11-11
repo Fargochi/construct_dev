@@ -1,16 +1,27 @@
 <center>
 	<div class="fixme">
+	<script>
+	var fieldCount = 0;
+	function reFocus(e,t){
+	var fieldIterator = t.id.split("_");
+	if(e.key=="Enter"){
+	e.preventDefault();
+	t.blur();
+	fieldIterator[0]= fieldIterator[0]+"_"+((+fieldIterator[1])+1); 
+	document.getElementById(fieldIterator[0]).focus();
+}}
+	</script>
         <div>
-		<input type = "text" class = "field" id = "category_1"  onkeyup  ='(function(e){if(e.key=="Enter"){e.preventDefault();this.blur(); getElementById("classnum").focus();}})(event)'>
+		<input type = "text" class = "field category" id = "field_1" onkeyup  ='reFocus(event,this)'>
         </div>
 		<div>
-		<input type = "text" class = "field" id = "classnum_2" onkeyup  ='(function(e){if(e.key=="Enter"){e.preventDefault();this.blur(); getElementById("difficult").focus();}})(event)'>
+		<input type = "text" class = "field classnum" id = "field_2" onkeyup  = 'reFocus(event,this)'>
         </div>
 		<div>
-		<input type = "text" class = "field" id = "difficult_3" onkeyup  ='(function(e){if(e.key=="Enter"){e.preventDefault();this.blur();/*использовать split*/ getElementById("submitter").focus();}})(event)'>
+		<input type = "text" class = "field difficult" id = "field_3" onkeyup  ='reFocus(event,this)'>
         </div>
 		<div>
-		<input type = "button" id = "submitter_4" onfocus = "(()=>(alert('lol')))()">
+		<input type = "button" class = "submitter" id = "field_4" onfocus = "alert('lol')">
         </div>
 		<h2>Не забываем работать в {{program}}</h2>
     </div>
@@ -18,3 +29,4 @@
 
 <div id="smile1"></div>
 <div id="smile2"></div>
+ 
