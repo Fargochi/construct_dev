@@ -1,7 +1,8 @@
-
+var category,classnum,difficult;
 init();
 
 function init() {
+	
     //document.onmousemove = mousemove;
 }
 
