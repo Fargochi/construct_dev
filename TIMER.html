@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>таймер</title>
+</head>
+<body>
+<div id='pole'>
+<input type='text' value='' id='hours' size="5"> ч<br>
+<input type='text' value='' id='mins' size="5"> мин<br>
+<input type='text' value='' id='secs' size="5"> сек<br>
+<input type="button" value="Ввод данных" id='but' onclick="timer();">
+<input type="button" value="Отправка данных" id='but' onclick="go();">
+</div><br>
+<div id='timeleft' style="border-radius: 10px; background-color: #FF8C00; width: 150px; text-align: center" >
+	что-то тут
+</div>
+</body>
+<script type="text/javascript">
+		var h =-1;
+		var m =-1;
+		var s =-1;
+		var i=1;
+		function timer(){
+		h =document.getElementById('hours').value;
+		m =document.getElementById('mins').value;
+		s =document.getElementById('secs').value;
+		i=0;
+		if(h=="") h=0;
+		if(m=="") m=0;
+		if(s=="") s=0;
+		}
+		var k= setInterval(function(){
+			if(h>-1){
+        	document.getElementById("timeleft").innerHTML=h+" ч "+m+"  мин. "+s+" сек.";
+        	s--;
+        	if(s<0) {s=59; m--;}
+        	if(m<0) {m=59;h--;}
+        }
+		},1000);
+		function go(){
+			clearInterval(k); //мб надо, мб нет???? - выключение обратного отсчета
+			if(s==59&&h==-1&&m==59) alert('не нормас, не успел')
+				else alert('нормас, успел')
+		}
+</script>
+</html>
