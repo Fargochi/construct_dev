@@ -5,6 +5,15 @@ function init() {
 	
     //document.onmousemove = mousemove;
 }
+function startPageSend(){
+	field_4.blur();
+	alert('lol');
+	document.getElementById('start_page').style='display:none';
+	category  = field_1.value;
+	classnum  = field_2.value;
+	difficult = field_3.value;
+	alert(category + ' ' + classnum + ' ' + difficult);
+}
 
 function mousemove(event) {
     var mouse_x = 0;
