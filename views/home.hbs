@@ -1,15 +1,16 @@
 <center>
 	<div class="fixme">
 	<script>
-	var fieldCount = 0;
-	function reFocus(e,t){
-	var fieldIterator = t.id.split("_");
-	if(e.key=="Enter"){
-	e.preventDefault();
-	t.blur();
-	fieldIterator[0]= fieldIterator[0]+"_"+((+fieldIterator[1])+1); 
-	document.getElementById(fieldIterator[0]).focus();
-}}
+		var fieldCount = 0;
+		function reFocus(e,t){
+			var fieldIterator = t.id.split("_");
+			if(e.key == "Enter"){
+				e.preventDefault();
+				t.blur();
+				fieldIterator[0]= fieldIterator[0] + "_" + (Number(fieldIterator[1]) + 1); 
+				document.getElementById(fieldIterator[0]).focus();
+			}
+		}
 	</script>
         <div>
 		<input type = "text" class = "field category" id = "field_1" onkeyup  ='reFocus(event,this)'>
@@ -21,10 +22,12 @@
 		<input type = "text" class = "field difficult" id = "field_3" onkeyup  ='reFocus(event,this)'>
         </div>
 		<div>
-		<input type = "button" class = "submitter" id = "field_4" onfocus = "alert('lol')">
+		<input type = "button" class = "submitter" id = "field_4" onfocus = "field_4.blur(); alert('lol'); ">
         </div>
 		<h2>Не забываем работать в {{program}}</h2>
     </div>
+	<div id = "1">
+	</div>
 </center>
 
 <div id="smile1"></div>
