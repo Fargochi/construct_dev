@@ -1,48 +1,35 @@
 <center>
 	<div class="fixme">
-	<script>
-		var fieldCount = 0;
-		function reFocus(e,t){
-			var fieldIterator = t.id.split("_");
-			if(e.key == "Enter"){
-				e.preventDefault();
-				t.blur();
-				fieldIterator[0]= fieldIterator[0] + "_" + (Number(fieldIterator[1]) + 1); 
-				document.getElementById(fieldIterator[0]).focus();
-			}
-		}
-	</script>
-	
-	<div id = "start_page" style = "display: block">
-		<div>
-			<a>Выберите категорию приложения:</a>
+		<div id = "start_page" style = "display: block">
+			<div>
+				<a>Выберите категорию приложения:</a>
+				<br>
+				<select class = "field category" id = "field_1">
+					<option>Пункт 1</option>
+					<option>Пункт 2</option>
+				</select>
+			</div>
 			<br>
-			<select class = "field category" id = "field_1">
-				<option>Пункт 1</option>
-				<option>Пункт 2</option>
-			</select>
-		</div>
-		<br>
-		<div>
-			<a>Укажите класс:</a>
+			<div>
+				<a>Укажите класс:</a>
+				<br>
+				<select class = "field classnum" id = "field_2">
+					<option>Пункт 1</option>
+					<option>Пункт 2</option>
+				</select>
+			</div>
 			<br>
-			<select class = "field classnum" id = "field_2">
-				<option>Пункт 1</option>
-				<option>Пункт 2</option>
-			</select>
-		</div>
-		<br>
-		<div>	
-			<a>Выберите уровень сложности:</a>
+			<div>	
+				<a>Выберите уровень сложности:</a>
+				<br>
+				<select class = "field difficult" id = "field_3">
+					<option>Пункт 1</option>
+					<option>Пункт 2</option>
+				</select>
+			</div>
 			<br>
-			<select class = "field difficult" id = "field_3">
-				<option>Пункт 1</option>
-				<option>Пункт 2</option>
-			</select>
-		</div>
-		<br>
-		<div>
-			<input type = "button" class = "submitter" id = "field_4" onfocus = "startPageSend();" value = "Отправить">
+			<div>
+				<input type = "button" class = "submitter" id = "field_4" onfocus = "startPageSend();" value = "Отправить">
 			</div>
 			<h2>Не забываем работать в {{program}}</h2>
 		</div>

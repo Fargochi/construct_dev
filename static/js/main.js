@@ -1,13 +1,22 @@
-var category,classnum,difficult;
-init();
+var category, classnum, difficult;
 
 function init() {
 	
     //document.onmousemove = mousemove;
 }
+
+function reFocus(e,t){
+	var fieldIterator = t.id.split("_");
+	if(e.key == "Enter"){
+		e.preventDefault();
+		t.blur();
+		fieldIterator[0]= fieldIterator[0] + "_" + (Number(fieldIterator[1]) + 1); 
+		document.getElementById(fieldIterator[0]).focus();
+	}
+}
+
 function startPageSend(){
 	field_4.blur();
-	alert('lol');
 	document.getElementById('start_page').style='display:none';
 	category  = field_1.value;
 	classnum  = field_2.value;
