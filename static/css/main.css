@@ -78,8 +78,8 @@
 #button_next {
     position: absolute;
     cursor: pointer;
-    width: 250px;
-    height: 3,7%;
+    width: 12,6%;
+    height: 3,4%;
     background: #808080; 
     border: 3px solid #696969;
     left: 335px;
@@ -93,8 +93,8 @@
 #button_save {
     position: absolute;
     cursor: pointer;
-    width: 250px;
-    height: 3,7%;
+    width: 12,6%;
+    height: 3,4%;
     background: #808080; 
     border: 3px solid #696969;
     right: 250px;
