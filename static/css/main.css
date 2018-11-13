@@ -122,4 +122,5 @@ height:100px;
 }
 #start_page {
     top: 40%;
+    display: block;
 }
