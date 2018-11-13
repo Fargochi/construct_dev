@@ -1,7 +1,7 @@
 #field { 
      position: absolute; 
-     top: 4,63%; 
-     left: 16,15%;
+     top: 50px; 
+     left: 310px;
      width: 65%; 
      height: 80%;
      background: #f5f5f5; 
@@ -9,8 +9,8 @@
     }
 #scroll {
      position: absolute; 
-     top: 4,63%; 
-     left: 1,39%;
+     top: 50px; 
+     left: 15px;
      width: 18%; 
      overflow-y: scroll;
      height: 80%;
