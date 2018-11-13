@@ -38,7 +38,7 @@ function mousemove(event) {
 
     document.getElementById('smile1').innerHTML = "<img src='/img/smile.png' style='position:absolute;left:" + (mouse_x-25) + "px;top:" + (mouse_y-25) + "px;width:50px;height:50px;'/>";
 }
-function NewQuestion() {
+function newQuestion() {
    var newdiv = document.createElement('div');
    document.getElementById('field').appendChild(newdiv);
     newdiv.classList.add("questionclass");
