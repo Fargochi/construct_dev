@@ -48,4 +48,7 @@ function newQuestion() {
     newdiv.classList.add("ui-draggable");
     newdiv.innerText = "Перетащи меня";
     $(".questionclass").draggable();
+    $(".questionclass").dblclick(function(){
+      newdiv.innerText = prompt("Введите новый текст: ");
+    }); 
  }
