@@ -42,7 +42,7 @@
     margin:10% 50% 0% 10%;
     width: 50px;
     height: 50px;
-    background: url(https://image.flaticon.com/icons/svg/149/149150.svg);
+    background: url(../img/149150.svg);
     cursor: pointer;
     }
     .button_answer {
@@ -50,7 +50,7 @@
     margin:0% 50% 0% 10%;
     width: 50px;
     height: 50px;
-    background: url(https://image.flaticon.com/icons/svg/702/702814.svg);
+    background: url(../img/702814.svg);
     cursor: pointer;
     }
     .button_background {
@@ -58,14 +58,14 @@
     margin:0% 50% 0% 10%;
     width: 50px;
     height: 50px;
-    background: url(https://image.flaticon.com/icons/svg/136/136826.svg);
+    background: url(../img/136826.svg);
     cursor: pointer;
     }
     .button_template {
     margin:80% 50% 0% 10%;
     width: 50px;
     height: 50px;
-    background: url(https://image.flaticon.com/icons/svg/1070/1070277.svg);
+    background: url(../img/1070277.svg);
     cursor: pointer;
     }
 .name {
