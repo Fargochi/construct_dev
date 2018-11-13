@@ -39,7 +39,7 @@
      }
 .button_question {
     display: inline-block;
-    margin:10% 50% 0% 10%;
+    margin:0% 0% 0% 10%;
     width: 50px;
     height: 50px;
     background: url(../img/149150.svg);
@@ -47,7 +47,7 @@
     }
     .button_answer {
     display: inline-block;
-    margin:0% 50% 0% 10%;
+    margin:0% 0% 0% 10%;
     width: 50px;
     height: 50px;
     background: url(../img/702814.svg);
@@ -62,7 +62,7 @@
     cursor: pointer;
     }
     .button_template {
-    margin:80% 50% 0% 10%;
+    margin:0% 0% 0% 10%;
     width: 50px;
     height: 50px;
     background: url(../img/1070277.svg);
