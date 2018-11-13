@@ -73,7 +73,7 @@
     margin: 0% 0% 30% 10%;
     font-family: arial;
     font-weight: bold;
-    font-size: 4;
+    font-size: 20;
 }
 #button_next {
     position: absolute;
@@ -86,7 +86,7 @@
     top: 90%;
     font-family: arial;
     font-weight: bold;
-    font-size: 6;
+    font-size: 20;
     text-align: center;
     vertical-align: middle;
     border-radius: 5px;
@@ -102,7 +102,7 @@
     top: 90%;
     font-family: arial;
     font-weight: bold;
-    font-size: 6;
+    font-size: 20;
     text-align: center;
     vertical-align: middle;
     border-radius: 5px;
