@@ -29,12 +29,38 @@
 			</div>
 			<br>
 			<div>
-				<input type = "button" class = "submitter" id = "field_4" onfocus = "startPageSend();" value = "Отправить">
+				<input type = "button" class = "submitter" id = "field_4" onclick = "startPageSend();" value = "Отправить">
 			</div>
 			<h2>Не забываем работать в {{program}}</h2>
 		</div>
 	</div>
-	
+	<div id = "construct_test_page"  bgcolor="#c0c0c0" style = "display: none">
+		<div id="field"></div>
+		<div id="button_next" ><p>Следующий вопрос</p></div>
+		<div id="button_save" ><p>Сохранить изменения</p></div>
+		<div id="scroll"> 
+			<div class="slide"></div>
+			<div class="slide"></div>
+			<div class="slide"></div>
+			<div class="slide"></div>
+			<div class="slide"></div>
+			<div class="slide"></div>
+			<div class="slide"></div>
+			<div class="slide"></div>
+			<div class="slide"></div>
+			<div class="slide"></div>
+		</div>
+		<div id="buttons">
+			<div class="button_question" ></div>
+			<div class="name">Вопрос</div>
+			<div class="button_answer" ></div>
+			<div class="name">Ответ</div>
+			<div class="button_background" ></div>
+			<div class="name">Фон</div>
+			<div class="button_template" ></div>
+			<div class="name">Шаблон</div>
+		</div>
+	</div>
 </center>
 
 <div id="smile1"></div>
