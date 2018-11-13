@@ -22,7 +22,7 @@ function startPageSend(){
 	classnum  = field_2.value;
 	difficult = field_3.value;
 	alert(category + ' ' + classnum + ' ' + difficult);
-	document.getElementById('construct_test_page').style = 'dispay:block';
+	document.getElementById('construct_test_page').style = 'dispay:block; background:#c0c0c0;';
 }
 
 function mousemove(event) {
