@@ -50,6 +50,8 @@ var IDDIV;
     newdiv.classList.add("ui-draggable");
     newdiv.id=i;
     IDDIV="#"+i;
+    document.getElementById(i).style.left="0px";
+    document.getElementById(i).style.top="0px";
     newdiv.innerText = prompt("Введите новый текст: ");
     $(".questionclass").draggable();
     LLL="#"+prompt("Введите цвет:");
