@@ -56,4 +56,5 @@ function button_next() {
 	var slide = document.createElement('div');
    document.getElementById('scroll').appendChild(slide);
    slide.classList.add("slide");
+   field.innerHTML='';
 }
