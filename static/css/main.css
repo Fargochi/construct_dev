@@ -40,31 +40,31 @@
 .button_question {
     display: inline-block;
     margin:10% 10% 0% 10%;
-    width: 50px;
-    height: 50px;
+    width: 29%;
+    height: 9%;
     background: url(/img/149150.svg);
     cursor: pointer;
     }
     .button_answer {
     display: inline-block;
     margin:0% 10% 0% 10%;
-    width: 50px;
-    height: 50px;
+    width: 29%;
+    height: 9%;
     background: url(/img/702814.svg);
     cursor: pointer;
     }
     .button_background {
     display: inline-block;
     margin:0% 10% 0% 10%;
-    width: 50px;
-    height: 50px;
+    width: 29%;
+    height: 9%;
     background: url(/img/136826.svg);
     cursor: pointer;
     }
     .button_template {
     margin:80% 10% 0% 10%;
-    width: 50px;
-    height: 50px;
+    width: 29%;
+    height: 9%;
     background: url(/img/1070277.svg);
     cursor: pointer;
     }
@@ -73,7 +73,7 @@
     margin: 0% 10% 30% 10%;
     font-family: arial;
     font-weight: bold;
-    font-size: 60%;
+    font-size: 100%;
 }
 #button_next {
     position: absolute;
@@ -86,7 +86,7 @@
     top: 88%;
     font-family: arial;
     font-weight: bold;
-    font-size: 80%;
+    font-size: 100%;
     text-align: center;
     border-radius: 5px;
 }
@@ -101,7 +101,7 @@
     top: 88%;
     font-family: arial;
     font-weight: bold;
-    font-size: 80%;
+    font-size: 100%;
     border-radius: 5px;
 }
 .ui-draggable
