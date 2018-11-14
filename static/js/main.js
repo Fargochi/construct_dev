@@ -48,9 +48,6 @@ function newQuestion() {
     newdiv.classList.add("ui-widget-header");
     newdiv.classList.add("ui-draggable");
     newdiv.innerText = "Перетащи меня";
-    var field=document.getElementById("field");
-    var slide=document.getElementById("slide");
-    slide.innerHTML=field.innerHTML;
     $(".questionclass").draggable();
     $(".questionclass").dblclick(function(){
       newdiv.innerText = prompt("Введите новый текст: ");

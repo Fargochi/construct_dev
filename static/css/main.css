@@ -73,7 +73,7 @@
     margin: 0% 10% 30% 10%;
     font-family: arial;
     font-weight: bold;
-    font-size: 15;
+    font-size: 60%;
 }
 #button_next {
     position: absolute;
@@ -86,7 +86,7 @@
     top: 88%;
     font-family: arial;
     font-weight: bold;
-    font-size: 20;
+    font-size: 80%;
     text-align: center;
     border-radius: 5px;
 }
@@ -101,7 +101,7 @@
     top: 88%;
     font-family: arial;
     font-weight: bold;
-    font-size: 20;
+    font-size: 80%;
     border-radius: 5px;
 }
 .ui-draggable
