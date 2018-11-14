@@ -1,9 +1,6 @@
 var category, classnum, difficult;
 
-function init() {
-	
-    //document.onmousemove = mousemove;
-}
+
 
 function reFocus(e,t){
 	var fieldIterator = t.id.split("_");
@@ -29,7 +26,7 @@ function startPageSend(){
 
 }
 
-function mousemove(event) {
+/*function mousemove(event) {
     var mouse_x = 0;
     var mouse_y = 0;
     if (document.attachEvent != null) {
@@ -41,7 +38,7 @@ function mousemove(event) {
     }
 
     document.getElementById('smile1').innerHTML = "<img src='/img/smile.png' style='position:absolute;left:" + (mouse_x-25) + "px;top:" + (mouse_y-25) + "px;width:50px;height:50px;'/>";
-}
+}*/
 function newQuestion() {
    var newdiv = document.createElement('div');
    document.getElementById('field').appendChild(newdiv);
