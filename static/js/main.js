@@ -17,12 +17,16 @@ function reFocus(e,t){
 
 function startPageSend(){
 	field_4.blur();
-	document.getElementById('start_page').style='display:none';
+	document.getElementById('start_page').classList.remove("visible");
+	document.getElementById('start_page').classList.add("hidden");
 	category  = field_1.value;
 	classnum  = field_2.value;
 	difficult = field_3.value;
 	alert(category + ' ' + classnum + ' ' + difficult);
-	document.getElementById('construct_test_page').style = 'dispay:block; background:#c0c0c0;';
+	document.getElementById('construct_test_page').classList.remove("hidden"); 
+	document.getElementById('construct_test_page').classList.add("visible");
+	//background:#c0c0c0;
+
 }
 
 function mousemove(event) {
@@ -47,6 +51,9 @@ function newQuestion() {
     newdiv.classList.add("ui-widget-header");
     newdiv.classList.add("ui-draggable");
     newdiv.innerText = "Перетащи меня";
+    var field=document.getElementById("field");
+    var slide=document.getElementById("slide");
+    slide.innerHTML=field.innerHTML;
     $(".questionclass").draggable();
     $(".questionclass").dblclick(function(){
       newdiv.innerText = prompt("Введите новый текст: ");
