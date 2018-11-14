@@ -48,7 +48,6 @@ var IDDIV;
     newdiv.classList.add("ui-widget");
     newdiv.classList.add("ui-corner-all");
     newdiv.classList.add("ui-draggable");
-    newdiv.classList.add("i-widget-header");
     newdiv.id=i;
     IDDIV="#"+i;
     newdiv.innerText = prompt("Введите новый текст: ");
