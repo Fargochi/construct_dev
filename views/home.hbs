@@ -1,6 +1,5 @@
 <center>
 	<div class="fixme" style="background: rgb(192, 192, 192) none repeat scroll 0% 0%;">
-	<div class="fixme">
 		<div id = "start_page" style = "display: block">
 			<div>
 				<a>Выберите категорию приложения:</a>
@@ -34,23 +33,24 @@
 			</div>
 			<h2>Не забываем работать в {{program}}</h2>
 		</div>
-	</div>
-	<div id = "construct_test_page"  bgcolor="#c0c0c0" style = "display: none">
-		<div id="field"></div>
-		<div id="button_next" ><p>Следующий вопрос</p></div>
-		<div id="button_save" ><p>Сохранить изменения</p></div>
-		<div id="scroll"> 
-			<div class="slide"></div>
-		</div>
-		<div id="buttons">
-			<div class="button_question" onclick = "newQuestion()"></div>
-			<div class="name">Вопрос</div>
-			<div class="button_answer" ></div>
-			<div class="name">Ответ</div>
-			<div class="button_background" ></div>
-			<div class="name">Фон</div>
-			<div class="button_template" ></div>
-			<div class="name">Шаблон</div>
+		
+		<div id = "construct_test_page"  bgcolor="#c0c0c0" style = "display: none">
+			<div id="field"></div>
+			<div id="button_next" ><p>Следующий вопрос</p></div>
+			<div id="button_save" ><p>Сохранить изменения</p></div>
+			<div id="scroll"> 
+				<div class="slide"></div>
+			</div>
+			<div id="buttons">
+				<div class="button_question" onclick = "newQuestion()"></div>
+				<div class="name">Вопрос</div>
+				<div class="button_answer" onclick = "newAnswer()"></div>
+				<div class="name">Ответ</div>
+				<div class="button_background"onclick = "changeBackground()" ></div>
+				<div class="name">Фон</div>
+				<div class="button_template" onclick = "selectTemplate()"></div>
+				<div class="name">Шаблон</div>
+			</div>
 		</div>
 	</div>
 </center>
