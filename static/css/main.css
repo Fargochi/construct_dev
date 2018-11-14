@@ -123,3 +123,7 @@ height:100px;
 .hidden{
     display:none;
 }
+#start_page {
+    background: rgb(192, 192, 192) none repeat scroll 0% 0%;
+    vertical-align: middle;
+}
