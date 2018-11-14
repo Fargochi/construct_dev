@@ -41,7 +41,7 @@ function startPageSend(){
 }*/
 var i=0;
 var IDDIV;
-   function NewQuestion() {
+   function newQuestion() {
    var newdiv = document.createElement('div');
     document.getElementById('field').appendChild(newdiv);
     newdiv.classList.add("questionclass");
