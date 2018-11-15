@@ -45,8 +45,6 @@ function startPageSend(){
 function newAnswer() {
     document.getElementById('field').classList.remove("visible");
     document.getElementById('field').classList.add("hidden");
-    document.getElementById('deleteBox').classList.remove("visible");
-    document.getElementById('deleteBox').classList.add("hidden");
     document.getElementById('button_next').classList.remove("visible");
     document.getElementById('button_next').classList.add("hidden");
     document.getElementById('button_save').classList.remove("visible");
@@ -81,8 +79,6 @@ function setQuestionSettings() {
    function reModalBlock() {
     document.getElementById('field').classList.remove("hidden");
     document.getElementById('field').classList.add("visible");
-    document.getElementById('deleteBox').classList.remove("hidden");
-    document.getElementById('deleteBox').classList.add("visible");
     document.getElementById('button_next').classList.remove("hidden");
     document.getElementById('button_next').classList.add("visible");
     document.getElementById('button_save').classList.remove("hidden");
