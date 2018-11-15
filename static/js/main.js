@@ -60,8 +60,9 @@ function newAnswer() {
     i++;
 }
 function button_next() {
+	confirm("Сохранить изменения?");
 	var slide = document.createElement('div');
-   document.getElementById('scroll').appendChild(slide);
-   slide.classList.add("slide");
-   field.innerHTML='';
+	document.getElementById('scroll').appendChild(slide);
+	slide.classList.add("slide");
+	field.innerHTML='';
 }
