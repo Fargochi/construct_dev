@@ -19,7 +19,6 @@ function startPageSend(){
 	category  = field_1.value;
 	classnum  = field_2.value;
 	difficult = field_3.value;
-	alert(category + ' ' + classnum + ' ' + difficult);
 	document.getElementById('construct_test_page').classList.remove("hidden"); 
 	document.getElementById('construct_test_page').classList.add("visible");
 	//background:#c0c0c0;
@@ -54,15 +53,17 @@ function newAnswer() {
     document.getElementById(i).style.top="0px";
     newdiv.innerText = prompt("Введите новый текст: ");
     $(".questionclass").resizable();
-    $(".questionclass").draggable();
+    $(".questionclass").draggable({containment: "parent"});
     LLL="#"+prompt("Введите цвет:");
     $(IDDIV).css("background-color", LLL);
     i++;
 }
+var slide=1;
 function button_next() {
 	confirm("Сохранить изменения?");
 	var slide = document.createElement('div');
 	document.getElementById('scroll').appendChild(slide);
 	slide.classList.add("slide");
 	field.innerHTML='';
+	slide++;
 }
