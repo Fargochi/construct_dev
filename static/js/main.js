@@ -19,7 +19,6 @@ function startPageSend(){
 	category  = field_1.value;
 	classnum  = field_2.value;
 	difficult = field_3.value;
-	alert(category + ' ' + classnum + ' ' + difficult);
 	document.getElementById('construct_test_page').classList.remove("hidden"); 
 	document.getElementById('construct_test_page').classList.add("visible");
 	//background:#c0c0c0;
