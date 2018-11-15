@@ -71,7 +71,7 @@ function setQuestionSettings() {
     newdiv.innerText = document.getElementById('QuestionText').value;
     $(IDDIV).css("font", document.getElementById('QuestionFontSize').value+"pt "+document.getElementById('QuestionFontType').value);
     $(IDDIV).css("background-color", document.getElementById('QuestionColor').value);
-    $(".questionclass").resizable();
+    $(".questionclass").resizable({containment: "parent"});
     $(".questionclass").draggable({containment: "parent"});
     i++;
     reModalBlock();
