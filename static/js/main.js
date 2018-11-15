@@ -42,7 +42,7 @@ function startPageSend(){
 
   var IDDIV;
 
-function newAnswer() {
+function newQuestion() {
     document.getElementById('field').classList.remove("visible");
     document.getElementById('field').classList.add("hidden");
     document.getElementById('button_next').classList.remove("visible");
@@ -72,12 +72,12 @@ function setQuestionSettings() {
     $(IDDIV).css("font", document.getElementById('QuestionFontSize').value+"pt "+document.getElementById('QuestionFontType').value);
     $(IDDIV).css("color", document.getElementById('QuestionFontColor').value);
     $(IDDIV).css("background-color", document.getElementById('QuestionColor').value);
-    $(".questionclass").resizable();
+    $(".questionclass").resizable({containment: "parent"});
     $(".questionclass").draggable({containment: "parent"});
     i++;
     reModalBlock();
-   }
-   function reModalBlock() {
+}
+function reModalBlock() {
     document.getElementById('field').classList.remove("hidden");
     document.getElementById('field').classList.add("visible");
     document.getElementById('button_next').classList.remove("hidden");
@@ -90,7 +90,7 @@ function setQuestionSettings() {
     document.getElementById('buttons').classList.add("visible");
     document.getElementById('modalQuestion').classList.remove("visible");
     document.getElementById('modalQuestion').classList.add("hidden");
-   }
+}
 var slide=1;
 function button_next() {
 	confirm("Сохранить изменения?");
