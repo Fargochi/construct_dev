@@ -70,6 +70,7 @@ function setQuestionSettings() {
     document.getElementById("question"+i).style.top="0px";
     newdiv.innerText = document.getElementById('QuestionText').value;
     $(IDDIV).css("font", document.getElementById('QuestionFontSize').value+"pt "+document.getElementById('QuestionFontType').value);
+    $(IDDIV).css("color", document.getElementById('QuestionFontColor').value);
     $(IDDIV).css("background-color", document.getElementById('QuestionColor').value);
     $(".questionclass").resizable();
     $(".questionclass").draggable({containment: "parent"});
