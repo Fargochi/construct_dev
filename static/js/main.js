@@ -54,7 +54,7 @@ function newAnswer() {
     document.getElementById(i).style.top="0px";
     newdiv.innerText = prompt("Введите новый текст: ");
     $(".questionclass").resizable();
-    $(".questionclass").draggable();
+    $(".questionclass").draggable({containment: "parent"});
     LLL="#"+prompt("Введите цвет:");
     $(IDDIV).css("background-color", LLL);
     i++;
