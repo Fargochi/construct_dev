@@ -40,32 +40,32 @@
 .button_question {
     display: inline-block;
     margin:10% 10% 0% 10%;
-    width: 50px;
-    height: 50px;
-    background: url(../img/149150.svg);
+    width: 29%;
+    height: 9%;
+    background: url(/img/149150.svg);
     cursor: pointer;
     }
     .button_answer {
     display: inline-block;
     margin:0% 10% 0% 10%;
-    width: 50px;
-    height: 50px;
-    background: url(../img/702814.svg);
+    width: 29%;
+    height: 9%;
+    background: url(/img/702814.svg);
     cursor: pointer;
     }
     .button_background {
     display: inline-block;
     margin:0% 10% 0% 10%;
-    width: 50px;
-    height: 50px;
-    background: url(../img/136826.svg);
+    width: 29%;
+    height: 9%;
+    background: url(/img/136826.svg);
     cursor: pointer;
     }
     .button_template {
     margin:80% 10% 0% 10%;
-    width: 50px;
-    height: 50px;
-    background: url(../img/1070277.svg);
+    width: 29%;
+    height: 9%;
+    background: url(/img/1070277.svg);
     cursor: pointer;
     }
 .name {
@@ -73,7 +73,7 @@
     margin: 0% 10% 30% 10%;
     font-family: arial;
     font-weight: bold;
-    font-size: 15;
+    font-size: 100%;
 }
 #button_next {
     position: absolute;
@@ -86,7 +86,7 @@
     top: 88%;
     font-family: arial;
     font-weight: bold;
-    font-size: 20;
+    font-size: 100%;
     text-align: center;
     border-radius: 5px;
 }
@@ -101,7 +101,7 @@
     top: 88%;
     font-family: arial;
     font-weight: bold;
-    font-size: 20;
+    font-size: 100%;
     border-radius: 5px;
 }
 .ui-draggable
@@ -109,15 +109,22 @@
 padding:15px;
 border-style:solid;
 border-width:1px;
-width:130px;
-height:100px;
 }
 .questionclass{
   font-size: x-large;
   width: 150px;
   height: 150px;
+  padding:15px;
+  border-style:solid;
+  border-width:1px;
 }
-.save_and_next {
- vertical-align: middle;
+.visible{
+    display:block;
 }
-
+.hidden{
+    display:none;
+}
+#start_page {
+    background: rgb(192, 192, 192) none repeat scroll 0% 0%;
+    vertical-align: middle;
+}

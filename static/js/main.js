@@ -1,9 +1,6 @@
 var category, classnum, difficult;
 
-function init() {
-	
-    //document.onmousemove = mousemove;
-}
+
 
 function reFocus(e,t){
 	var fieldIterator = t.id.split("_");
@@ -17,15 +14,19 @@ function reFocus(e,t){
 
 function startPageSend(){
 	field_4.blur();
-	document.getElementById('start_page').style='display:none';
+	document.getElementById('start_page').classList.remove("visible");
+	document.getElementById('start_page').classList.add("hidden");
 	category  = field_1.value;
 	classnum  = field_2.value;
 	difficult = field_3.value;
 	alert(category + ' ' + classnum + ' ' + difficult);
-	document.getElementById('construct_test_page').style = 'dispay:block; background:#c0c0c0;';
+	document.getElementById('construct_test_page').classList.remove("hidden"); 
+	document.getElementById('construct_test_page').classList.add("visible");
+	//background:#c0c0c0;
+
 }
 
-function mousemove(event) {
+/*function mousemove(event) {
     var mouse_x = 0;
     var mouse_y = 0;
     if (document.attachEvent != null) {
@@ -37,18 +38,30 @@ function mousemove(event) {
     }
 
     document.getElementById('smile1').innerHTML = "<img src='/img/smile.png' style='position:absolute;left:" + (mouse_x-25) + "px;top:" + (mouse_y-25) + "px;width:50px;height:50px;'/>";
-}
-function newQuestion() {
+}*/
+var i=0;
+var IDDIV;
+   function newQuestion() {
    var newdiv = document.createElement('div');
-   document.getElementById('field').appendChild(newdiv);
+    document.getElementById('field').appendChild(newdiv);
     newdiv.classList.add("questionclass");
     newdiv.classList.add("ui-widget");
     newdiv.classList.add("ui-corner-all");
-    newdiv.classList.add("ui-widget-header");
     newdiv.classList.add("ui-draggable");
-    newdiv.innerText = "Перетащи меня";
+    newdiv.id=i;
+    IDDIV="#"+i;
+    document.getElementById(i).style.left="0px";
+    document.getElementById(i).style.top="0px";
+    newdiv.innerText = prompt("Введите новый текст: ");
+    $(".questionclass").resizable();
     $(".questionclass").draggable();
-    $(".questionclass").dblclick(function(){
-      newdiv.innerText = prompt("Введите новый текст: ");
-    }); 
- }
+    LLL="#"+prompt("Введите цвет:");
+    $(IDDIV).css("background-color", LLL);
+    i++;
+   }
+function button_next() {
+	var slide = document.createElement('div');
+   document.getElementById('scroll').appendChild(slide);
+   slide.classList.add("slide");
+   field.innerHTML='';
+}
