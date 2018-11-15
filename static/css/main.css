@@ -128,7 +128,7 @@ border-width:1px;
 #start_page {
     background: rgb(192, 192, 192) none repeat scroll 0% 0%;
     width: 30%;
-    height: 42%;
+    height: 44%;
     margin-top: 15%;
     border-radius: 3%;
     border-style:solid;
@@ -147,3 +147,10 @@ border-width:1px;
     font-family: arial;
     font-size: 90%;
      }
+#field_4{
+    width: 60%;
+    height: 10%;
+    background: #f5f5f5;
+    border-radius: 3%;
+    cursor: pointer;
+}
