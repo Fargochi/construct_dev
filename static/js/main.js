@@ -53,6 +53,7 @@ var IDDIV;
     document.getElementById(i).style.left="0px";
     document.getElementById(i).style.top="0px";
     newdiv.innerText = prompt("Введите новый текст: ");
+    $(".questionclass").resizable();
     $(".questionclass").draggable();
     LLL="#"+prompt("Введите цвет:");
     $(IDDIV).css("background-color", LLL);
