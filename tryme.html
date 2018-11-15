@@ -149,8 +149,8 @@ border-width:1px;
 </div>
 
   </div>
-  <div id="button_next" ><p>��������� ������</p></div>
-  <div id="button_save" ><p>��������� ���</p></div>
+  <div id="button_next" ><p>Следующий вопрос</p></div>
+  <div id="button_save" ><p>Сохранить все</p></div>
   <div id="scroll"> 
    <div class="slide"></div>
    <div class="slide"></div>
@@ -200,14 +200,13 @@ border-width:1px;
     IDDIV="#question"+i;
     document.getElementById("question"+i).style.left=document.getElementById('field').offsetLeft+"px";
     document.getElementById("question"+i).style.top=document.getElementById('field').offsetTop+"px";
-    newdiv.innerText = prompt("������� ����� �����: ");
+    newdiv.innerText = prompt("Введите новый текст: ");
     $(".questionclass").resizable();
     $(".questionclass").draggable();
-    LLL="#"+prompt("������� ����:");
+    LLL="#"+prompt("Введите цвет:");
     $(IDDIV).css("background-color", LLL);
     $(IDDIV).css("background-color", "#FFFF00");
     i++;
    }
-
 </script>
 </html>
