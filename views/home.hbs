@@ -54,36 +54,34 @@
 		</div>
 		
 		<div id = "construct_test_page"class="hidden">
-		<div id='modalQuestion' class='modalQuestion hidden'>
-<br><br>
-    <b><h3>Параметры вопроса</h3></b>
-    <br>
-    Текст вопроса:<br>
-    <input type="text" id='QuestionText'><br>
-    Тип шрифта:<br>
-    <select id='QuestionFontType'>
-      <option disabled>
-        Выберите тип шрифта
-      </option>
-      <option value='arial'>
-        Шрифт 1: Arial
-      </option>
-      <option value='serif'>
-        Шрифт 2: serif
-      </option>
-      <option value='sans-serif'>
-        Шрифт 3: sans-serif
-      </option>
-    </select><br>
-    Размер шрифта:<br>
-    <input type="text" id='QuestionFontSize'><br>
-    Цвет фона поля:<br>
-    <input type="color" id='QuestionColor'><br>
-    <input type="button" id='QuestionFinish' onclick='setQuestionSettings();' value="Применить" style="text-align: center;">
-    <br><br>
-  </div>
-			<div id="field">
+			<div id='modalQuestion' class='modalQuestion hidden'>
+				<br><br>
+				<b><h3>Параметры вопроса</h3></b>
+				<br>Текст вопроса:<br>
+				<input type="text" id='QuestionText'>
+				<br>Тип шрифта:<br>
+				<select id='QuestionFontType'>
+					<option disabled>
+						Выберите тип шрифта
+					</option>
+					<option value='arial'>
+						Шрифт 1: Arial
+					</option>
+					<option value='serif'>
+						Шрифт 2: serif
+					</option>
+					<option value='sans-serif'>
+						Шрифт 3: sans-serif
+					</option>
+				</select>
+				<br>Размер шрифта:<br>
+				<input type="text" id='QuestionFontSize'>
+				<br>Цвет фона поля:<br>
+				<input type="color" id='QuestionColor'><br>
+				<input type="button" id='QuestionFinish' onclick='setQuestionSettings();' value="Применить" style="text-align: center;">
+				<br><br>
 			</div>
+			<div id="field"></div>
 			<div id="button_next" onClick="button_next()"><p>Следующий вопрос</p></div>
 			<div id="button_save" ><p>Сохранить изменения</p></div>
 			<div id="scroll"> 
