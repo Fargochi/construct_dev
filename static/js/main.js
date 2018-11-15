@@ -42,7 +42,7 @@ function startPageSend(){
 
   var IDDIV;
 
-function newAnswer() {
+function newQuestion() {
     document.getElementById('field').classList.remove("visible");
     document.getElementById('field').classList.add("hidden");
     document.getElementById('button_next').classList.remove("visible");
@@ -75,8 +75,8 @@ function setQuestionSettings() {
     $(".questionclass").draggable({containment: "parent"});
     i++;
     reModalBlock();
-   }
-   function reModalBlock() {
+}
+function reModalBlock() {
     document.getElementById('field').classList.remove("hidden");
     document.getElementById('field').classList.add("visible");
     document.getElementById('button_next').classList.remove("hidden");
@@ -89,7 +89,7 @@ function setQuestionSettings() {
     document.getElementById('buttons').classList.add("visible");
     document.getElementById('modalQuestion').classList.remove("visible");
     document.getElementById('modalQuestion').classList.add("hidden");
-   }
+}
 var slide=1;
 function button_next() {
 	confirm("Сохранить изменения?");
