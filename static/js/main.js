@@ -41,8 +41,8 @@ function startPageSend(){
 }*/
 var i=0;
 var IDDIV;
-   function newQuestion() {
-   var newdiv = document.createElement('div');
+function newAnswer() {
+	var newdiv = document.createElement('div');
     document.getElementById('field').appendChild(newdiv);
     newdiv.classList.add("questionclass");
     newdiv.classList.add("ui-widget");
@@ -53,11 +53,12 @@ var IDDIV;
     document.getElementById(i).style.left="0px";
     document.getElementById(i).style.top="0px";
     newdiv.innerText = prompt("Введите новый текст: ");
+    $(".questionclass").resizable();
     $(".questionclass").draggable();
     LLL="#"+prompt("Введите цвет:");
     $(IDDIV).css("background-color", LLL);
     i++;
-   }
+}
 function button_next() {
 	var slide = document.createElement('div');
    document.getElementById('scroll').appendChild(slide);
