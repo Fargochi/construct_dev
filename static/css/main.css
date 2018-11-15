@@ -128,25 +128,22 @@ border-width:1px;
 #start_page {
     background: rgb(192, 192, 192) none repeat scroll 0% 0%;
     width: 30%;
-    height: 55%;
-    margin-top: 10%;
+    height: 42%;
+    margin-top: 15%;
+    border-radius: 3%;
+    border-style:solid;
+    border-width:3px;
     }
-#select_1 {
-    margin-top:10%;
+.select_1{
+    margin-top: 3%;
     position: static;
     font-family: arial;
     font-size: 120%;
 }
-#select_2 {
-    margin-top:5%;
-    position: static;
+.select_2 {
+    margin-top: 2%;
+    width:80%;
+    height: 10%;
     font-family: arial;
-    font-size: 120%;
-}
-#select_3 {
-    margin-top:5%;
-    position: static;
-    margin-bottom: 5%;
-    font-family: arial;
-    font-size: 120%;
-}
+    font-size: 90%;
+     }
