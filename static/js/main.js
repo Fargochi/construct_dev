@@ -59,10 +59,12 @@ function newAnswer() {
     $(IDDIV).css("background-color", LLL);
     i++;
 }
+var slide=1;
 function button_next() {
 	confirm("Сохранить изменения?");
 	var slide = document.createElement('div');
 	document.getElementById('scroll').appendChild(slide);
 	slide.classList.add("slide");
 	field.innerHTML='';
+	slide++;
 }
