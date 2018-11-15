@@ -38,26 +38,62 @@ function startPageSend(){
 
     document.getElementById('smile1').innerHTML = "<img src='/img/smile.png' style='position:absolute;left:" + (mouse_x-25) + "px;top:" + (mouse_y-25) + "px;width:50px;height:50px;'/>";
 }*/
-var i=0;
-var IDDIV;
+ var i=0;
+
+  var IDDIV;
+
 function newAnswer() {
-	var newdiv = document.createElement('div');
+    document.getElementById('field').classList.remove("visible");
+    document.getElementById('field').classList.add("hidden");
+    document.getElementById('deleteBox').classList.remove("visible");
+    document.getElementById('deleteBox').classList.add("hidden");
+    document.getElementById('button_next').classList.remove("visible");
+    document.getElementById('button_next').classList.add("hidden");
+    document.getElementById('button_save').classList.remove("visible");
+    document.getElementById('button_save').classList.add("hidden");
+    document.getElementById('scroll').classList.remove("visible");
+    document.getElementById('scroll').classList.add("hidden");
+    document.getElementById('buttons').classList.remove("visible");
+    document.getElementById('buttons').classList.add("hidden");
+	document.getElementById('modalQuestion').classList.remove("hidden");
+	document.getElementById('modalQuestion').classList.add("visible");
+}
+
+function setQuestionSettings() {
+    var newdiv = document.createElement('div');
     document.getElementById('field').appendChild(newdiv);
     newdiv.classList.add("questionclass");
     newdiv.classList.add("ui-widget");
     newdiv.classList.add("ui-corner-all");
     newdiv.classList.add("ui-draggable");
-    newdiv.id=i;
-    IDDIV="#"+i;
-    document.getElementById(i).style.left="0px";
-    document.getElementById(i).style.top="0px";
-    newdiv.innerText = prompt("Введите новый текст: ");
+    newdiv.id="question"+i;
+    IDDIV="#question"+i;
+    document.getElementById("question"+i).style.left="0px";
+    document.getElementById("question"+i).style.top="0px";
+    newdiv.innerText = document.getElementById('QuestionText').value;
+    $(IDDIV).css("font", document.getElementById('QuestionFontSize').value+"pt "+document.getElementById('QuestionFontType').value);
+    $(IDDIV).css("background-color", document.getElementById('QuestionColor').value);
     $(".questionclass").resizable();
     $(".questionclass").draggable({containment: "parent"});
-    LLL="#"+prompt("Введите цвет:");
-    $(IDDIV).css("background-color", LLL);
     i++;
-}
+    reModalBlock();
+   }
+   function reModalBlock() {
+    document.getElementById('field').classList.remove("hidden");
+    document.getElementById('field').classList.add("visible");
+    document.getElementById('deleteBox').classList.remove("hidden");
+    document.getElementById('deleteBox').classList.add("visible");
+    document.getElementById('button_next').classList.remove("hidden");
+    document.getElementById('button_next').classList.add("visible");
+    document.getElementById('button_save').classList.remove("hidden");
+    document.getElementById('button_save').classList.add("visible");
+    document.getElementById('scroll').classList.remove("hidden");
+    document.getElementById('scroll').classList.add("visible");
+    document.getElementById('buttons').classList.remove("hidden");
+    document.getElementById('buttons').classList.add("visible");
+    document.getElementById('modalQuestion').classList.remove("visible");
+    document.getElementById('modalQuestion').classList.add("hidden");
+   }
 var slide=1;
 function button_next() {
 	confirm("Сохранить изменения?");
