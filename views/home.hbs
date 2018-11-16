@@ -116,6 +116,14 @@
 				<input type="button" id='AnswerFinish' onclick='setAnswerSettings();' value="Применить" class = "submitter" style="text-align: center;">
 				<br></br>
 			</div>
+			<div id='modalBackground' class='modal hidden'>
+			<b><h2>Загрузите картинку</h2></b>
+			<br></br>
+			<form enctype="multipart/form-data" method="post">
+            <p><input type="file" name="f">
+            <input type="submit" value="Отправить"></p>
+            </form> 
+			</div>
 			<div id="field"></div>
 			<div id="button_next" onClick="button_next(); button_push_new_question();"><p>Следующий вопрос</p></div>
 			<div id="button_save" ><p>Сохранить изменения</p></div>

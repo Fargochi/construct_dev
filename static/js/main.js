@@ -190,3 +190,17 @@ function button_next() {
 	field.innerHTML='';
 	slideNum++;
 }
+function changeBackground() {
+	document.getElementById('field').classList.remove("visible");
+    document.getElementById('field').classList.add("hidden");
+    document.getElementById('button_next').classList.remove("visible");
+    document.getElementById('button_next').classList.add("hidden");
+    document.getElementById('button_save').classList.remove("visible");
+    document.getElementById('button_save').classList.add("hidden");
+    document.getElementById('scroll').classList.remove("visible");
+    document.getElementById('scroll').classList.add("hidden");
+    document.getElementById('buttons').classList.remove("visible");
+    document.getElementById('buttons').classList.add("hidden");
+    document.getElementById('modalBackground').classList.remove("hidden");
+    document.getElementById('modalBackground').classList.add("visible");
+}
