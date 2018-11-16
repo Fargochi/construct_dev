@@ -38,9 +38,19 @@ function startPageSend(){
 
     document.getElementById('smile1').innerHTML = "<img src='/img/smile.png' style='position:absolute;left:" + (mouse_x-25) + "px;top:" + (mouse_y-25) + "px;width:50px;height:50px;'/>";
 }*/
- var i=0;
+var i=0;
+var IDDIV;
+var x, y;
 
-  var IDDIV;
+$(document).ready(function(){
+	$(".questionclass").click(function(){
+		x = $(".questionclass").offset().position().left;
+		y = $(".questionclass").offset().position().top;
+		console.log("" + x + " " + y);
+		
+	});
+});
+
 
 function newQuestion() {
     document.getElementById('field').classList.remove("visible");
