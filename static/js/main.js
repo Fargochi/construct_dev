@@ -176,10 +176,10 @@ var x, y;
 var slideNum=0;
 function button_next() {
 	confirm("Сохранить изменения?");
+	slideNum++;
 	var slide = document.createElement('div');
 	slide.id='slide'+slideNum;
 	document.getElementById('scroll').appendChild(slide);
 	slide.classList.add("slide");
 	field.innerHTML='';
-	slideNum++;
 }
