@@ -1,3 +1,37 @@
+var test = []; //глобальный массив вопросов ответов (пока только текстовая информация, без графических характеристик)
+function button_push_new_question() //при нажатии кнопки "добавить вопрос"
+{
+    var newquestion = constructor_new_question();
+    test.push() = newquestion;
+}
+function button_push_question(idquestion)//при нажатии подтверждения в форме с вопросом
+{
+    var newquestion = document.getElementById('QuestionText').value; // получение данных из input вопроса
+    test[idquestion].push_question(newquestion);
+}
+function button_push_answer(idquestion) //при нажатии подтверждения поля с новым ответом, передает номер слайда и номер ответа (?)
+{
+    var newanswer = document.getElementById('AnswerText').value; 
+    var answertrue = document.getElementById('AnswerTrueLi').value;
+    test[idquestion].push_answer(newanswer,answertrue);
+}
+function constructor_new_question() //функция для создания нового вопроса
+{
+    this.question = "";
+    this.answers = [];
+    this.push_question = function(newquestion) //задать текст вопроса 
+    {
+        this.question = newquestion;
+    }
+    this.push_answer = function(newanswer, answertrue)//добавить вариант ответа и его "правильность"
+    {
+        var answer = {
+            text: newanswer,
+            trueorfalse: answertrue
+        }
+        this.answers.push(answer);
+    }
+}
 var category, classnum, difficult;
 
 
@@ -52,7 +86,8 @@ $(document).ready(function(){
 });
 
 
- var i=0;
+ var IQ=0;
+ var IA=0;
   var IDDIV;
   var divv;
    function newQuestion() {
@@ -76,10 +111,10 @@ $(document).ready(function(){
     newdiv.classList.add("ui-widget");
     newdiv.classList.add("ui-corner-all");
     newdiv.classList.add("ui-draggable");
-    newdiv.id="question"+i;
-    IDDIV="#question"+i;
-    document.getElementById("question"+i).style.left="0px";
-    document.getElementById("question"+i).style.top="0px";
+    newdiv.id="question"+IQ;
+    IDDIV="#question"+IQ;
+    document.getElementById("question"+IQ).style.left="0px";
+    document.getElementById("question"+IQ).style.top="0px";
     newdiv.innerText = document.getElementById('QuestionText').value;
     $(IDDIV).css("font", document.getElementById('QuestionFontSize').value+"pt "+document.getElementById('QuestionFontType').value);
     $(IDDIV).css("color", document.getElementById('QuestionFontColor').value);
@@ -87,8 +122,9 @@ $(document).ready(function(){
     $(IDDIV).css("background-color", document.getElementById('QuestionColor').value);
     $(".questionclass").resizable({containment: "parent"});
     $(".questionclass").draggable({containment: "parent"});
-    i++;
+    IQ++;
     reModalBlock();
+    button_push_question(slideNum);
    }
    function reModalBlock() {
     document.getElementById('field').classList.remove("hidden");
@@ -127,10 +163,10 @@ $(document).ready(function(){
     newdiv.classList.add("ui-widget");
     newdiv.classList.add("ui-corner-all");
     newdiv.classList.add("ui-draggable");
-    newdiv.id="answer"+i;
-    IDDIV="answer"+i;
-    document.getElementById("answer"+i).style.left="0px";
-    document.getElementById("answer"+i).style.top="0px";
+    newdiv.id="answer"+IA;
+    IDDIV="answer"+IA;
+    document.getElementById("answer"+IA).style.left="0px";
+    document.getElementById("answer"+IA).style.top="0px";
     newdiv.innerText = document.getElementById('QuestionText').value;
     $("#"+IDDIV).css("font", document.getElementById('AnswerFontSize').value+"pt "+document.getElementById('AnswerFontType').value);
     $("#"+IDDIV).css("color", document.getElementById('AnswerFontColor').value);
@@ -138,17 +174,19 @@ $(document).ready(function(){
     $("#"+IDDIV).css("background-color", document.getElementById('AnswerColor').value);
     $(".answerclass").resizable({containment: "parent"});
     $(".answerclass").draggable({containment: "parent"});
-    i++;
+    IA++;
     if(document.getElementById('AnswerTrueLi').value==1) document.getElementById(IDDIV).classList.add('TrueAnswer');
       else  document.getElementById(IDDIV).classList.add('FalseAnswer');
     reModalBlock();
+    button_push_answer(slideNum);
    }
-var slide=1;
+var slideNum=1;
 function button_next() {
 	confirm("Сохранить изменения?");
 	var slide = document.createElement('div');
+	slide.id='slide'+slideNum;
 	document.getElementById('scroll').appendChild(slide);
 	slide.classList.add("slide");
 	field.innerHTML='';
-	slide++;
+	slideNum++;
 }
