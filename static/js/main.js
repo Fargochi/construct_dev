@@ -26,8 +26,8 @@ function constructor_new_question() //функция для создания н�
     this.push_answer = function(newanswer, answertrue)//добавить вариант ответа и его "правильность"
     {
         var answer = {
-            text: newanswer;
-            trueorfalse: answertrue;
+            text: newanswer,
+            trueorfalse: answertrue
         }
         answers.push(answer);
     }
