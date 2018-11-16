@@ -128,7 +128,6 @@ function startPageSend(){
     if(document.getElementById('AnswerTrueLi').value==1) document.getElementById(IDDIV).classList.add('TrueAnswer');
       else  document.getElementById(IDDIV).classList.add('FalseAnswer');
     reModalBlock();
-    alert(document.getElementById('AnswerTrueLi').value);
    }
 var slide=1;
 function button_next() {
