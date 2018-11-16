@@ -54,7 +54,7 @@
 		</div>
 		
 		<div id = "construct_test_page"class="hidden">
-			<div id='modalQuestion' class='modalQuestion hidden'>
+			<div id='modalQuestion' class='modal hidden'>
 				<h2><br>Параметры вопроса</br></h2>
 				<br>Текст вопроса:<br>
 				<input type="text" class='Question' id='QuestionText'>
@@ -79,16 +79,15 @@
     			<input type="color" class='color' id='QuestionFontColor'><br>
 				<br>Цвет фона поля:<br>
 				<input type="color" class='color' id='QuestionColor'><br>
-				<input type="button" id="QuestionFinish" onclick='setQuestionSettings();' value="Применить">
+				<input type="button" class="submitter" id="QuestionFinish" onclick='setQuestionSettings();' value="Применить">
 				<br><br>
 			</div>
-			<div id='modalAnswer' class='modalAnswer hidden'>
-				<br><br>
-				<b><h3>Параметры ответа</h3></b>
-				<br>Текст ответа:<br>
-				<input type="text" id='AnswerText'>
+			<div id='modalAnswer' class='modal hidden'>
+				<b><h2>Параметры ответа</h2></b>
+				<p>Текст ответа:</p>
+				<input type="text" id='AnswerText' class='Question'>
 				<br>Тип шрифта:<br>
-				<select id='AnswerFontType'>
+				<select id='AnswerFontType' class='Question'>
 					<option disabled>
 						Выберите тип шрифта
 					</option>
@@ -102,18 +101,20 @@
 						Шрифт 3: sans-serif
 					</option>
 				</select>
-				<br>Размер шрифта:<br>
-				<input type="text" id='AnswerFontSize'>
-				<br>Цвет шрифта:<br>
-    			<input type="color" id='AnswerFontColor'><br>
-				<br>Цвет фона поля:<br>
-				<input type="color" id='AnswerColor'><br>
-				<select id='AnswerTrueLi'>
+				<br>Размер шрифта:</br>
+				<input type="text" id='AnswerFontSize' class='Question'>
+				<br>Цвет шрифта:</br>
+    			<input type="color" id='AnswerFontColor' class='Color'>
+				<br>Цвет фона поля:</br>
+				<input type="color" id='AnswerColor' class='Color'>
+				<br></br>
+				<select id='AnswerTrueLi' class='Question'>
     			  	<option value="1">Это верный ответ</option>
       				<option value="0">Это ошибочный ответ</option>
-    			</select><br>
-				<input type="button" id='AnswerFinish' onclick='setAnswerSettings();' value="Применить" style="text-align: center;">
-				<br><br>
+    			</select>
+    			<br></br>
+				<input type="button" id='AnswerFinish' onclick='setAnswerSettings();' value="Применить" class = "submitter" style="text-align: center;">
+				<br></br>
 			</div>
 			<div id="field"></div>
 			<div id="button_next" onClick="button_next(); button_push_new_question()';"><p>Следующий вопрос</p></div>
