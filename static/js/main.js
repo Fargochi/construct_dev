@@ -167,4 +167,6 @@ function button_next() {
 	document.getElementById('scroll').appendChild(slide);
 	slide.classList.add("slide");
 	field.innerHTML='';
+
+	slideNum++;
 }
