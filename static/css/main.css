@@ -132,15 +132,15 @@ border-width:1px;
 .hidden{
     display:none;
 }
-.modalQuestion{
- border:5px solid #808080;
+#modalQuestion{
+ border:3px solid #808080;
  background:#bababa;
  text-align: center;
  width: 30%;
  margin-top: 10%;
  font-family: arial;
  font-size: 100%;
- border-radius: 5%;
+ border-radius: 3%;
 }
 #start_page {
     background: rgb(192, 192, 192) none repeat scroll 0% 0%;
@@ -174,4 +174,25 @@ border-width:1px;
     font-family: arial;
     font-weight: bold;
     font-size: 100%;
+}
+.submitter{
+    width: 60%;
+    height: 5%;
+    background: #f5f5f5;
+    border-radius: 3%;
+    cursor: pointer;
+    border: 3px solid #808080;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 100%;
+}
+.color {
+    width:10%;
+    height: 3%;
+}
+.Question {
+    width:80%;
+    height: 5%;
+    font-family: arial;
+    font-size: 90%;
 }
