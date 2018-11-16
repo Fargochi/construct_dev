@@ -29,7 +29,7 @@ function constructor_new_question() //функция для создания н�
             text: newanswer;
             trueorfalse: answertrue;
         }
-        answers.push(answer);
+        this.answers.push(answer);
     }
 }
 var category, classnum, difficult;
