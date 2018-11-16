@@ -2,7 +2,7 @@ var test = []; //глобальный массив вопросов ответо
 function button_push_new_question() //при нажатии кнопки "добавить вопрос"
 {
     var newquestion = new constructor_new_question();
-    test.push() = newquestion;
+    test.push(newquestion);
 }
 function button_push_question(idquestion)//при нажатии подтверждения в форме с вопросом
 {
