@@ -38,11 +38,24 @@ function startPageSend(){
 
     document.getElementById('smile1').innerHTML = "<img src='/img/smile.png' style='position:absolute;left:" + (mouse_x-25) + "px;top:" + (mouse_y-25) + "px;width:50px;height:50px;'/>";
 }*/
+var i=0;
+var IDDIV;
+var x, y;
+
+$(document).ready(function(){
+	$(".questionclass").click(function(){
+		x = $(".questionclass").offset().position().left;
+		y = $(".questionclass").offset().position().top;
+		console.log("" + x + " " + y);
+		
+	});
+});
+
+
  var i=0;
-
   var IDDIV;
-
-function newQuestion() {
+  var divv;
+   function newQuestion() {
     document.getElementById('field').classList.remove("visible");
     document.getElementById('field').classList.add("hidden");
     document.getElementById('button_next').classList.remove("visible");
@@ -53,11 +66,10 @@ function newQuestion() {
     document.getElementById('scroll').classList.add("hidden");
     document.getElementById('buttons').classList.remove("visible");
     document.getElementById('buttons').classList.add("hidden");
-	document.getElementById('modalQuestion').classList.remove("hidden");
-	document.getElementById('modalQuestion').classList.add("visible");
-}
-
-function setQuestionSettings() {
+    document.getElementById('modalQuestion').classList.remove("hidden");
+    document.getElementById('modalQuestion').classList.add("visible");
+   }
+   function setQuestionSettings() {
     var newdiv = document.createElement('div');
     document.getElementById('field').appendChild(newdiv);
     newdiv.classList.add("questionclass");
@@ -71,13 +83,14 @@ function setQuestionSettings() {
     newdiv.innerText = document.getElementById('QuestionText').value;
     $(IDDIV).css("font", document.getElementById('QuestionFontSize').value+"pt "+document.getElementById('QuestionFontType').value);
     $(IDDIV).css("color", document.getElementById('QuestionFontColor').value);
+   // $(IDDIV).css("z-index", document.getElementById('QuestionZIndex').value);
     $(IDDIV).css("background-color", document.getElementById('QuestionColor').value);
     $(".questionclass").resizable({containment: "parent"});
     $(".questionclass").draggable({containment: "parent"});
     i++;
     reModalBlock();
-}
-function reModalBlock() {
+   }
+   function reModalBlock() {
     document.getElementById('field').classList.remove("hidden");
     document.getElementById('field').classList.add("visible");
     document.getElementById('button_next').classList.remove("hidden");
@@ -90,7 +103,46 @@ function reModalBlock() {
     document.getElementById('buttons').classList.add("visible");
     document.getElementById('modalQuestion').classList.remove("visible");
     document.getElementById('modalQuestion').classList.add("hidden");
-}
+    document.getElementById('modalAnswer').classList.remove("visible");
+    document.getElementById('modalAnswer').classList.add("hidden");
+   }
+   function newAnswer() {
+    document.getElementById('field').classList.remove("visible");
+    document.getElementById('field').classList.add("hidden");
+    document.getElementById('button_next').classList.remove("visible");
+    document.getElementById('button_next').classList.add("hidden");
+    document.getElementById('button_save').classList.remove("visible");
+    document.getElementById('button_save').classList.add("hidden");
+    document.getElementById('scroll').classList.remove("visible");
+    document.getElementById('scroll').classList.add("hidden");
+    document.getElementById('buttons').classList.remove("visible");
+    document.getElementById('buttons').classList.add("hidden");
+    document.getElementById('modalAnswer').classList.remove("hidden");
+    document.getElementById('modalAnswer').classList.add("visible");
+   }
+   function setAnswerSettings() {
+    var newdiv = document.createElement('div');
+    document.getElementById('field').appendChild(newdiv);
+    newdiv.classList.add("answerclass");
+    newdiv.classList.add("ui-widget");
+    newdiv.classList.add("ui-corner-all");
+    newdiv.classList.add("ui-draggable");
+    newdiv.id="answer"+i;
+    IDDIV="answer"+i;
+    document.getElementById("answer"+i).style.left="0px";
+    document.getElementById("answer"+i).style.top="0px";
+    newdiv.innerText = document.getElementById('QuestionText').value;
+    $("#"+IDDIV).css("font", document.getElementById('AnswerFontSize').value+"pt "+document.getElementById('AnswerFontType').value);
+    $("#"+IDDIV).css("color", document.getElementById('AnswerFontColor').value);
+    //$("#"+IDDIV).css("z-index", document.getElementById('AnswerZIndex').value);
+    $("#"+IDDIV).css("background-color", document.getElementById('AnswerColor').value);
+    $(".answerclass").resizable({containment: "parent"});
+    $(".answerclass").draggable({containment: "parent"});
+    i++;
+    if(document.getElementById('AnswerTrueLi').value==1) document.getElementById(IDDIV).classList.add('TrueAnswer');
+      else  document.getElementById(IDDIV).classList.add('FalseAnswer');
+    reModalBlock();
+   }
 var slide=1;
 function button_next() {
 	confirm("Сохранить изменения?");

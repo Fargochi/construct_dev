@@ -80,7 +80,7 @@
     cursor: pointer;
     width: 15%;
     height: 3,4%;
-    background: #808080; 
+    background: #c0c0c0; 
     border: 3px solid #696969;
     left: 22%;
     top: 88%;
@@ -95,7 +95,7 @@
     cursor: pointer;
     width: 15%;
     height: 3,4%;
-    background: #808080; 
+    background: #c0c0c0; 
     border: 3px solid #696969;
     right: 18%;
     top: 88%;
@@ -119,6 +119,15 @@ border-width:1px;
   border-width:1px;
   position: absolute;
 }
+.answerclass{
+  font-size: x-large;
+  width: 150px;
+  height: 150px;
+  padding:15px;
+  border-style:solid;
+  border-width:1px;
+  position: absolute;
+}
 #deleteBox{
   width: 50px;
   height: 50px;
@@ -132,16 +141,30 @@ border-width:1px;
 .hidden{
     display:none;
 }
-.modalQuestion{
- border:5px solid #808080;
- background:#bababa;
+#modalQuestion{
+ border:3px solid #808080;
+ background:#c0c0c0;
  text-align: center;
  width: 30%;
  margin-top: 10%;
  font-family: arial;
  font-size: 100%;
- border-radius: 5%;
+ border-radius: 3%;
 }
+.modalAnswer{
+ margin: auto;
+ background-color: grey;
+ text-align: center;
+ width: 500px;
+ margin-top: 100px;
+ font-size: large;
+}
+.TrueAnswer{
+}
+
+.FalseAnswer{
+}
+
 #start_page {
     background: rgb(192, 192, 192) none repeat scroll 0% 0%;
     width: 30%;
@@ -175,3 +198,29 @@ border-width:1px;
     font-weight: bold;
     font-size: 100%;
 }
+#QuestionFinish{
+    width: 60%;
+    height: 5%;
+    background: #f5f5f5;
+    border-radius: 3%;
+    cursor: pointer;
+    border: 3px solid #808080;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 100%;
+}
+.color {
+    width:10%;
+    height: 3%;
+}
+.Question {
+    width:80%;
+    height: 5%;
+    font-family: arial;
+    font-size: 90%;
+}
+#kot{
+ height: 11%;
+ width: 10.8%;
+ margin-top:4%;
+ margin-left:89%;
