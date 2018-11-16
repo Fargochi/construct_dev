@@ -69,7 +69,7 @@ function startPageSend(){
     newdiv.innerText = document.getElementById('QuestionText').value;
     $(IDDIV).css("font", document.getElementById('QuestionFontSize').value+"pt "+document.getElementById('QuestionFontType').value);
     $(IDDIV).css("color", document.getElementById('QuestionFontColor').value);
-    $(IDDIV).css("z-index", document.getElementById('QuestionZIndex').value);
+   // $(IDDIV).css("z-index", document.getElementById('QuestionZIndex').value);
     $(IDDIV).css("background-color", document.getElementById('QuestionColor').value);
     $(".questionclass").resizable({containment: "parent"});
     $(".questionclass").draggable({containment: "parent"});
@@ -120,7 +120,7 @@ function startPageSend(){
     newdiv.innerText = document.getElementById('QuestionText').value;
     $("#"+IDDIV).css("font", document.getElementById('AnswerFontSize').value+"pt "+document.getElementById('AnswerFontType').value);
     $("#"+IDDIV).css("color", document.getElementById('AnswerFontColor').value);
-    $("#"+IDDIV).css("z-index", document.getElementById('AnswerZIndex').value);
+   // $("#"+IDDIV).css("z-index", document.getElementById('AnswerZIndex').value);
     $("#"+IDDIV).css("background-color", document.getElementById('AnswerColor').value);
     $(".answerclass").resizable({containment: "parent"});
     $(".answerclass").draggable({containment: "parent"});
