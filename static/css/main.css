@@ -80,7 +80,7 @@
     cursor: pointer;
     width: 15%;
     height: 3,4%;
-    background: #808080; 
+    background: #c0c0c0; 
     border: 3px solid #696969;
     left: 22%;
     top: 88%;
@@ -95,7 +95,7 @@
     cursor: pointer;
     width: 15%;
     height: 3,4%;
-    background: #808080; 
+    background: #c0c0c0; 
     border: 3px solid #696969;
     right: 18%;
     top: 88%;
@@ -134,7 +134,7 @@ border-width:1px;
 }
 #modalQuestion{
  border:3px solid #808080;
- background:#bababa;
+ background:#c0c0c0;
  text-align: center;
  width: 30%;
  margin-top: 10%;
