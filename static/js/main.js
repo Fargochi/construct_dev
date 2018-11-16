@@ -160,7 +160,7 @@ function setAnswerSettings() {
     IDDIV="answer"+IA;
     document.getElementById("answer"+IA).style.left="0px";
     document.getElementById("answer"+IA).style.top="0px";
-    newdiv.innerText = document.getElementById('QuestionText').value;
+    newdiv.innerText = document.getElementById('AnswerText').value;
     $("#"+IDDIV).css("font", document.getElementById('AnswerFontSize').value+"pt "+document.getElementById('AnswerFontType').value);
     $("#"+IDDIV).css("color", document.getElementById('AnswerFontColor').value);
     //$("#"+IDDIV).css("z-index", document.getElementById('AnswerZIndex').value);
