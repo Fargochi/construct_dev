@@ -1,4 +1,4 @@
-<body bgcolor=#e7e7e7>
+
 <div id="background">
 <center>
 	<div class="fixme">
@@ -55,12 +55,11 @@
 		
 		<div id = "construct_test_page"class="hidden">
 			<div id='modalQuestion' class='modalQuestion hidden'>
-				<br><br>
-				<b><h3>Параметры вопроса</h3></b>
+				<h2><br>Параметры вопроса</br></h2>
 				<br>Текст вопроса:<br>
-				<input type="text" id='QuestionText'>
+				<input type="text" class='Question' id='QuestionText'>
 				<br>Тип шрифта:<br>
-				<select id='QuestionFontType'>
+				<select class='Question' id='QuestionFontType'>
 					<option disabled>
 						Выберите тип шрифта
 					</option>
@@ -75,12 +74,12 @@
 					</option>
 				</select>
 				<br>Размер шрифта:<br>
-				<input type="text" id='QuestionFontSize'>
-				Цвет шрифта:<br>
-    			<input type="color" id='QuestionFontColor'><br>
+				<input type="text" class='Question' id='QuestionFontSize'>
+				<br>Цвет шрифта:</br>
+    			<input type="color" class='color' id='QuestionFontColor'><br>
 				<br>Цвет фона поля:<br>
-				<input type="color" id='QuestionColor'><br>
-				<input type="button" id='QuestionFinish' onclick='setQuestionSettings();' value="Применить" style="text-align: center;">
+				<input type="color" class='color' id='QuestionColor'><br>
+				<input type="button" id="QuestionFinish" onclick='setQuestionSettings();' value="Применить">
 				<br><br>
 			</div>
 			<div id='modalAnswer' class='modalAnswer hidden'>
@@ -132,5 +131,3 @@
 	</div>
 </center>
 </div>
-</body>
- 
