@@ -129,7 +129,7 @@ function startPageSend(){
       else  document.getElementById(IDDIV).classList.add('FalseAnswer');
     reModalBlock();
    }
-var slideNum=1;
+var slideNum=2;
 function button_next() {
 	confirm("Сохранить изменения?");
 	var slide = document.createElement('div');
