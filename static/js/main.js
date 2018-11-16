@@ -157,7 +157,7 @@ function setAnswerSettings() {
     reModalBlock();
     button_push_answer(slideNum);
 }
-var slideNum = 1;
+var slideNum = 0;
 function button_next() {
 	confirm("Сохранить изменения?");
 	slideNum++;
