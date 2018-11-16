@@ -153,8 +153,8 @@ function setAnswerSettings() {
     $(".answerclass").resizable({containment: "parent"});
     $(".answerclass").draggable({containment: "parent"});
     IA++;
-    if(document.getElementById('AnswerTrueLi').value==1) document.getElementById(IDDIV).classList.add('TrueAnswer');
-      else  document.getElementById(IDDIV).classList.add('FalseAnswer');
+    // if(document.getElementById('AnswerTrueLi').value==1) document.getElementById(IDDIV).classList.add('TrueAnswer');
+    //  else  document.getElementById(IDDIV).classList.add('FalseAnswer');
     reModalBlock();
     button_push_answer(slideNum);
 }
