@@ -1,37 +1,52 @@
 var test = []; //глобальный массив вопросов ответов (пока только текстовая информация, без графических характеристик)
-var firstquestion = new constructor_new_question();
+var firstquestion = new constructor_new_slide();
     test.push(firstquestion); //глобальный массив вопросов ответов (пока только текстовая информация, без графических характеристик)
 function button_push_new_question() //при нажатии кнопки "добавить вопрос"
 {
-    var newquestion = constructor_new_question();
+    var newquestion =  new constructor_new_slide();
     test.push() = newquestion;
 }
 function button_push_question(idquestion)//при нажатии подтверждения в форме с вопросом
 {
-    var newquestion = document.getElementById('QuestionText').value; // получение данных из input вопроса
-    test[Number(idquestion)].push_question(newquestion);
+    test[Number(idquestion)].push_question();
 }
 function button_push_answer(idquestion) //при нажатии подтверждения поля с новым ответом, передает номер слайда и номер ответа (?)
-{
-    var newanswer = document.getElementById('AnswerText').value; 
-    var answertrue = document.getElementById('AnswerTrueLi').value;
-    test[Number(idquestion)].push_answer(newanswer,answertrue);
+{ 
+    test[Number(idquestion)].push_answer();
 }
-function constructor_new_question() //функция для создания нового вопроса
+function constructor_question_and_answers()
 {
-    this.question = "";
+    this.Text = "";
+    this.FontType = "";
+    this.FontSize = "";
+    this.FontColor = "";
+    this.Color = "";
+    this.TrueLi = 0;
+
+}
+function constructor_new_slide() //функция для создания нового вопроса
+{
+    this.question = new constructor_question_and_answers();
     this.answers = [];
-    this.push_question = function(newquestion) //задать текст вопроса 
+    this.push_question = function()
     {
-        this.question = newquestion;
+        this.question.Text = document.getElementById('QuestionText').value; 
+        this.question.FontType = document.getElementById('QuestionFontType').value;
+        this.question.FontSize = document.getElementById('QuestionFontSize').value;
+        this.question.FontColor = document.getElementById('QuestionFontColor').value;
+        this.question.Color = document.getElementById('QuestionColor').value;
+
     }
-    this.push_answer = function(newanswer, answertrue)//добавить вариант ответа и его "правильность"
+    this.push_answer = function()//добавить вариант ответа и его "правильность"
     {
-        var answer = {
-            text: newanswer,
-            trueorfalse: answertrue
-        }
-        this.answers.push(answer);
+        var newanswer = new constructor_question_and_answers();
+        newanswer.Text = document.getElementById('AnswerText').value; 
+        newanswer.TrueLi = document.getElementById('AnswerTrueLi').value;
+        newanswer.FontType = document.getElementById('AnswerFontType').value;
+        newanswer.FontSize = document.getElementById('AnswerFontSize').value;
+        newanswer.FontColor = document.getElementById('AnswerFontColor').value;
+        newanswer.Color = document.getElementById('AnswerColor').value;
+        this.answers.push(newanswer);
     }
 }
 var category, classnum, difficult;
