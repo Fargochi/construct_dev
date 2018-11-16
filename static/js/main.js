@@ -53,7 +53,7 @@ var getdata = "";
 function createjs() //генерация js кода приложения
 {   
     getdata = 'var newslide= new constructor_slide; var newanswer = new constructor_one_answer;'; var i;
-    for (i=0;i<n;i++)
+    for (i=0;i<test.lenght;i++)
     { getdata += i;
         var get_question = 'newslide.text_question = "' + test[i].question.Text + '";' ;
         var get_answers = "";
