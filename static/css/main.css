@@ -2,8 +2,8 @@
      position: absolute; 
      top: 5%; 
      left: 20%;
-     width: 65%; 
-     height: 80%;
+     width: 63%; 
+     height: 82%;
      background: #ffffff; 
      border: 3px solid #808080; 
     }
@@ -13,18 +13,15 @@
      left: 2,5%;
      width: 18%; 
      overflow-y: scroll;
-     height: 80%;
+     height: 82%;
      background: #c0c0c0; 
      border: 3px solid #808080;
     }
 .slide {
      position: static; 
-     margin-right: 5%;
-     margin-left: 5%;
-     margin-top: 10%;
-     margin-bottom: 10%;
-     width: 80%; 
-     height: 21%;
+     margin: 10% 5% 10% 5%;
+     width: 79%; 
+     height: 23%;
      background: #ffffff; 
      border: 2px solid #808080;
     }  
@@ -32,7 +29,7 @@
 #buttons{
      position: absolute; 
      top: 5%; 
-     right: 1%;
+     left: 85%;
      width: 12%; 
      height: 80%;
      background: #e7e7e7; 
@@ -83,7 +80,7 @@
     background: #c0c0c0; 
     border: 3px solid #696969;
     left: 22%;
-    top: 88%;
+    top: 90%;
     font-family: arial;
     font-weight: bold;
     font-size: 100%;
@@ -97,8 +94,8 @@
     height: 3,4%;
     background: #c0c0c0; 
     border: 3px solid #696969;
-    right: 18%;
-    top: 88%;
+    right: 19%;
+    top: 90%;
     font-family: arial;
     font-weight: bold;
     font-size: 100%;
@@ -215,4 +212,5 @@ border-width:1px;
  height: 11%;
  width: 10.8%;
  margin-top:5%;
- margin-left:89%;
+ margin-left:87%;
+}
