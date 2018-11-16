@@ -1,4 +1,6 @@
 var test = []; //глобальный массив вопросов ответов (пока только текстовая информация, без графических характеристик)
+var firstquestion = new constructor_new_question();
+    test.push(firstquestion); //глобальный массив вопросов ответов (пока только текстовая информация, без графических характеристик)
 function button_push_new_question() //при нажатии кнопки "добавить вопрос"
 {
     var newquestion = constructor_new_question();
@@ -155,7 +157,7 @@ function setAnswerSettings() {
     reModalBlock();
     button_push_answer(slideNum);
 }
-var slideNum = 1;
+var slideNum = 0;
 function button_next() {
 	confirm("Сохранить изменения?");
 	slideNum++;
