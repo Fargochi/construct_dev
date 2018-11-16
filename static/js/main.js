@@ -1,15 +1,15 @@
 var test = []; //глобальный массив вопросов ответов (пока только текстовая информация, без графических характеристик)
 function button_push_new_question() //при нажатии кнопки "добавить вопрос"
 {
-    newquestion = constructor_new_question();
+    var newquestion = constructor_new_question();
     test.push() = newquestion;
 }
-function button_push_question(idquestion)//при нажатии круглой кнопки с вопросом, передается номер слайда (вопроса в тесте)
+function button_push_question(idquestion)//при нажатии подтверждения в форме с вопросом
 {
     var newquestion = document.getElementById('QuestionText').value; // получение данных из input вопроса
     test[idquestion].push_question(newquestion);
 }
-function button_push_answer(idquestion) //при нажатии круглой кнопки с новым ответом, передает номер слайда и номер ответа (?)
+function button_push_answer(idquestion) //при нажатии подтверждения поля с новым ответом, передает номер слайда и номер ответа (?)
 {
     var newanswer = document.getElementById('AnswerText').value; 
     var answertrue = document.getElementById('AnswerTrueLi').value;
@@ -25,7 +25,7 @@ function constructor_new_question() //функция для создания н�
     }
     this.push_answer = function(newanswer, answertrue)//добавить вариант ответа и его "правильность"
     {
-        answer = {
+        var answer = {
             text: newanswer;
             trueorfalse: answertrue;
         }
