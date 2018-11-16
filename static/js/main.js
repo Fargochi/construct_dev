@@ -59,29 +59,13 @@ function startPageSend(){
 
 }
 
-/*function mousemove(event) {
-    var mouse_x = 0;
-    var mouse_y = 0;
-    if (document.attachEvent != null) {
-        mouse_x = window.event.clientX;
-        mouse_y = window.event.clientY;
-    } else if (!document.attachEvent && document.addEventListener) {
-        mouse_x = event.clientX;
-        mouse_y = event.clientY;
-    }
-
-    document.getElementById('smile1').innerHTML = "<img src='/img/smile.png' style='position:absolute;left:" + (mouse_x-25) + "px;top:" + (mouse_y-25) + "px;width:50px;height:50px;'/>";
-}*/
-var i=0;
+var i = 0;
 var IDDIV;
 var x, y;
-
-
- var IQ=0;
- var IA=0;
-  var IDDIV;
-  var divv;
-   function newQuestion() {
+var IQ = 0;
+var IA = 0;
+var divv;
+function newQuestion() {
     document.getElementById('field').classList.remove("visible");
     document.getElementById('field').classList.add("hidden");
     document.getElementById('button_next').classList.remove("visible");
@@ -95,29 +79,29 @@ var x, y;
     document.getElementById('modalQuestion').classList.remove("hidden");
     document.getElementById('modalQuestion').classList.add("visible");
    }
-   function setQuestionSettings() {
+function setQuestionSettings() {
     var newdiv = document.createElement('div');
     document.getElementById('field').appendChild(newdiv);
     newdiv.classList.add("questionclass");
     newdiv.classList.add("ui-widget");
     newdiv.classList.add("ui-corner-all");
     newdiv.classList.add("ui-draggable");
-    newdiv.id="question"+IQ;
-    IDDIV="#question"+IQ;
-    document.getElementById("question"+IQ).style.left="0px";
-    document.getElementById("question"+IQ).style.top="0px";
+    newdiv.id = "question" + IQ;
+    IDDIV = "#question" + IQ;
+    document.getElementById("question"+IQ).style.left = "0px";
+    document.getElementById("question"+IQ).style.top = "0px";
     newdiv.innerText = document.getElementById('QuestionText').value;
-    $(IDDIV).css("font", document.getElementById('QuestionFontSize').value+"pt "+document.getElementById('QuestionFontType').value);
+    $(IDDIV).css("font", document.getElementById('QuestionFontSize').value + "pt " + document.getElementById('QuestionFontType').value);
     $(IDDIV).css("color", document.getElementById('QuestionFontColor').value);
-   // $(IDDIV).css("z-index", document.getElementById('QuestionZIndex').value);
+	//$(IDDIV).css("z-index", document.getElementById('QuestionZIndex').value);
     $(IDDIV).css("background-color", document.getElementById('QuestionColor').value);
     $(".questionclass").resizable({containment: "parent"});
     $(".questionclass").draggable({containment: "parent"});
     IQ++;
     reModalBlock();
     button_push_question(slideNum);
-   }
-   function reModalBlock() {
+}
+function reModalBlock() {
     document.getElementById('field').classList.remove("hidden");
     document.getElementById('field').classList.add("visible");
     document.getElementById('button_next').classList.remove("hidden");
@@ -132,8 +116,8 @@ var x, y;
     document.getElementById('modalQuestion').classList.add("hidden");
     document.getElementById('modalAnswer').classList.remove("visible");
     document.getElementById('modalAnswer').classList.add("hidden");
-   }
-   function newAnswer() {
+}
+function newAnswer() {
     document.getElementById('field').classList.remove("visible");
     document.getElementById('field').classList.add("hidden");
     document.getElementById('button_next').classList.remove("visible");
@@ -146,8 +130,8 @@ var x, y;
     document.getElementById('buttons').classList.add("hidden");
     document.getElementById('modalAnswer').classList.remove("hidden");
     document.getElementById('modalAnswer').classList.add("visible");
-   }
-   function setAnswerSettings() {
+}
+function setAnswerSettings() {
     var newdiv = document.createElement('div');
     document.getElementById('field').appendChild(newdiv);
     newdiv.classList.add("answerclass");
@@ -170,8 +154,8 @@ var x, y;
       else  document.getElementById(IDDIV).classList.add('FalseAnswer');
     reModalBlock();
     button_push_answer(slideNum);
-   }
-var slideNum=1;
+}
+var slideNum = 1;
 function button_next() {
 	confirm("Сохранить изменения?");
 	var slide = document.createElement('div');
