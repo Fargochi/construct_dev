@@ -76,15 +76,6 @@ var i=0;
 var IDDIV;
 var x, y;
 
-$(document).ready(function(){
-	$(".questionclass").click(function(){
-		x = $(".questionclass").offset().position().left;
-		y = $(".questionclass").offset().position().top;
-		console.log("" + x + " " + y);
-		
-	});
-});
-
 
  var IQ=0;
  var IA=0;
