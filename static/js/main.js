@@ -130,7 +130,7 @@ function setQuestionSettings() {
     IQ++;
     reModalBlock();
     button_push_question(slideNum);
-	questionMove();
+	deleteEl();
 }
 function reModalBlock() {
     document.getElementById('field').classList.remove("hidden");
@@ -173,7 +173,7 @@ function setAnswerSettings() {
     IDDIV="answer"+IA;
     document.getElementById("answer"+IA).style.left="0px";
     document.getElementById("answer"+IA).style.top="0px";
-    newdiv.innerText = document.getElementById('QuestionText').value;
+    newdiv.innerText = document.getElementById('AnswerText').value;
     $("#"+IDDIV).css("font", document.getElementById('AnswerFontSize').value+"pt "+document.getElementById('AnswerFontType').value);
     $("#"+IDDIV).css("color", document.getElementById('AnswerFontColor').value);
     //$("#"+IDDIV).css("z-index", document.getElementById('AnswerZIndex').value);
@@ -185,6 +185,7 @@ function setAnswerSettings() {
       else  document.getElementById(IDDIV).classList.add('FalseAnswer');
     reModalBlock();
     button_push_answer(slideNum);
+	deleteEl();
 }
 var slideNum = 0;
 function button_next() {
@@ -196,8 +197,8 @@ function button_next() {
 	slide.classList.add("slide");
 	field.innerHTML='';
 }
-function questionMove(){
-	$(".questionclass").mouseup(function(){
+function deleteEl(){
+	$(".ui-draggable").mouseup(function(){
 		x = $(this).position().left;
 		y = $(this).position().top;
 		console.log("" + x + " " + y);
