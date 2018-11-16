@@ -117,7 +117,7 @@ function setQuestionSettings() {
     IQ++;
     reModalBlock();
     button_push_question(slideNum);
-	questionMove();
+	deleteEl();
 }
 function reModalBlock() {
     document.getElementById('field').classList.remove("hidden");
@@ -172,6 +172,7 @@ function setAnswerSettings() {
       else  document.getElementById(IDDIV).classList.add('FalseAnswer');
     reModalBlock();
     button_push_answer(slideNum);
+	deleteEl();
 }
 var slideNum = 0;
 function button_next() {
@@ -183,8 +184,8 @@ function button_next() {
 	slide.classList.add("slide");
 	field.innerHTML='';
 }
-function questionMove(){
-	$(".questionclass").mouseup(function(){
+function deleteEl(){
+	$(".ui-draggable").mouseup(function(){
 		x = $(this).position().left;
 		y = $(this).position().top;
 		console.log("" + x + " " + y);
