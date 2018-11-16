@@ -1,4 +1,6 @@
 var test = []; //глобальный массив вопросов ответов (пока только текстовая информация, без графических характеристик)
+var firstquestion = new constructor_new_question();
+    test.push(firstquestion);
 function button_push_new_question() //при нажатии кнопки "добавить вопрос"
 {
     var newquestion = new constructor_new_question();
@@ -7,13 +9,13 @@ function button_push_new_question() //при нажатии кнопки "доб
 function button_push_question(idquestion)//при нажатии подтверждения в форме с вопросом
 {
     var newquestion = document.getElementById('QuestionText').value; // получение данных из input вопроса
-    test[idquestion].push_question(newquestion);
+    test[Number(idquestion)].push_question(newquestion);
 }
 function button_push_answer(idquestion) //при нажатии подтверждения поля с новым ответом, передает номер слайда и номер ответа (?)
 {
     var newanswer = document.getElementById('AnswerText').value; 
     var answertrue = document.getElementById('AnswerTrueLi').value;
-    test[idquestion].push_answer(newanswer,answertrue);
+    test[Number(idquestion)].push_answer(newanswer,answertrue);
 }
 function constructor_new_question() //функция для создания нового вопроса
 {
@@ -171,7 +173,7 @@ var x, y;
     reModalBlock();
     button_push_answer(slideNum);
    }
-var slideNum=1;
+var slideNum=0;
 function button_next() {
 	confirm("Сохранить изменения?");
 	var slide = document.createElement('div');
