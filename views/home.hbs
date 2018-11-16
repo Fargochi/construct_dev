@@ -57,9 +57,9 @@
 			<div id='modalQuestion' class='modalQuestion hidden'>
 				<h2><br>Параметры вопроса</br></h2>
 				<br>Текст вопроса:<br>
-				<input type="text" class='Question'>
+				<input type="text" class='Question' id='QuestionText'>
 				<br>Тип шрифта:<br>
-				<select class='Question'>
+				<select class='Question' id='QuestionFontType'>
 					<option disabled>
 						Выберите тип шрифта
 					</option>
@@ -74,12 +74,12 @@
 					</option>
 				</select>
 				<br>Размер шрифта:<br>
-				<input type="text" class='Question'>
+				<input type="text" class='Question' id='QuestionFontSize'>
 				<br>Цвет шрифта:</br>
-    			<input type="color" class='color'><br>
+    			<input type="color" class='color' id='QuestionFontColor'><br>
 				<br>Цвет фона поля:<br>
-				<input type="color" class='color'><br>
-				<input type="button" class="submitter" onclick='setQuestionSettings();' value="Применить">
+				<input type="color" class='color' id='QuestionColor'><br>
+				<input type="button" id="QuestionFinish" onclick='setQuestionSettings();' value="Применить">
 				<br><br>
 			</div>
 			<div id="field"></div>
