@@ -140,6 +140,7 @@ function setAnswerSettings() {
     newdiv.classList.add("ui-widget");
     newdiv.classList.add("ui-corner-all");
     newdiv.classList.add("ui-draggable");
+	newdiv.classList.add("context-menu-one");
     newdiv.id="answer"+IA;
     IDDIV="answer"+IA;
     document.getElementById("answer"+IA).style.left="0px";
