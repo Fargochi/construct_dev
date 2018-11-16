@@ -11,6 +11,38 @@
 		<script>
 		document.oncontextmenu=new Function("return false;")
 		</script>
+		
+		
+		
+		 <style type="text/css">
+
+
+		.context-menu-one {
+		padding: 10px;
+		}
+
+		#res {
+		margin-top: 10px;
+		}
+
+		</style>
+		<script type="text/javascript">
+		$(window).load(function(){
+			$.contextMenu({
+				selector: '.context-menu-one',
+				items: {
+					open: {name: 'Открыть', icon: 'open'},
+				save:  {name: 'Сохранить', icon: 'save'},
+				sep1: '---------',
+				quit: {name: 'Выйти', icon: 'quit'}
+				},
+			callback: function(key, options) {
+					$('#res').html('Выбрана команда: <strong>' + key + '</strong>');
+					}
+			});
+		});
+		</script>
+
     </head>
     <body oncontextmenu="return false" bgcolor="e7e7e7">
         {{{body}}}
