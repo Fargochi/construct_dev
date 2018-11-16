@@ -4,7 +4,7 @@ var firstquestion = new constructor_new_slide();
 function button_push_new_question() //при нажатии кнопки "добавить вопрос"
 {
     var newquestion =  new constructor_new_slide();
-    test.push() = newquestion;
+    test.push(newquestion);
 }
 function button_push_question(idquestion)//при нажатии подтверждения в форме с вопросом
 {
@@ -49,10 +49,23 @@ function constructor_new_slide() //функция для создания нов
         this.answers.push(newanswer);
     }
 }
+var getdata = "";
+function createjs() //генерация js кода приложения
+{   
+    getdata = 'var newslide= new constructor_slide; var newanswer = new constructor_one_answer;'; var i;
+    for (i=0;i<n;i++)
+    { getdata += i;
+        var get_question = 'newslide.text_question = "' + test[i].question.Text + '";' ;
+        var get_answers = "";
+        var j;
+        for (j=0;j<test[i].answers.lenght;j++)
+        { 
+            get_answers += 'newanswer.Text = "' + text[i].answers[j].Text + '"; newanswer.TrueLi =' + text[i].answers[j].TrueLi + '; newslide.answers.push(newanswer);';
+        }
+        getdata += get_question + get_answers + 'test.push(newslide);';
+    }
+}
 var category, classnum, difficult;
-
-
-
 function reFocus(e,t){
 	var fieldIterator = t.id.split("_");
 	if(e.key == "Enter"){

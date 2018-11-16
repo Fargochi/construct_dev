@@ -1,19 +1,34 @@
-var test[]; //заполняется из данных пользователя скриптом
+var test[]; //заполняется из данных пользователя скриптом, только текст и правильность
 var number_question = 0;
 var ball = 0;
-start()
+function constructor_slide() //слайд теста
+{
+	this.text_question = "";
+	this.answers[];
+}
+function consructor_one_answer() //вариант ответа
+{
+	this.Text = "";
+	this.TrueLi = 0;
+}
+function chekanswer(id) //функция для "отметки" варианта ответа (меняется цвет кнопки и value)
+{
+	var flag = document.getElementById('')
+
+}
+function start()
 {   
 	document.getElementById('base').innerHTML = " ";
 	button_next = '<button onClick="next();">Следующий вопрос</button>';
 	document.getElementById('nextquestion').innerHTML = button_next;
 	setquestion();
 }
-next()
+function next()
 { 
 	chek();
 	setquestion();
 }
-chek()
+function chek()
 {
 	var right = 1; var i;
 	var n = test[number_question].answers.length;
@@ -25,7 +40,7 @@ chek()
 	ball += right;
 	number_question++;
 }
-setquestion()
+function setquestion()
 {   
 	if (number_question = = test.length) {finish();}
 	else {
@@ -43,7 +58,7 @@ setquestion()
 		divanswers.innerHTML += newanswer; //добавление этого div
 	}}
 }
-finish()
+function finish()
 {
 	document.getElementById("newdivquestion").innerHTML = " ";
 	document.getElementById("question").innerHTML = " ";
