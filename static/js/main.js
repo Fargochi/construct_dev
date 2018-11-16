@@ -117,6 +117,7 @@ function setQuestionSettings() {
     IQ++;
     reModalBlock();
     button_push_question(slideNum);
+	questionMove();
 }
 function reModalBlock() {
     document.getElementById('field').classList.remove("hidden");
@@ -155,7 +156,6 @@ function setAnswerSettings() {
     newdiv.classList.add("ui-widget");
     newdiv.classList.add("ui-corner-all");
     newdiv.classList.add("ui-draggable");
-	newdiv.classList.add("context-menu-one");
     newdiv.id="answer"+IA;
     IDDIV="answer"+IA;
     document.getElementById("answer"+IA).style.left="0px";
@@ -182,6 +182,18 @@ function button_next() {
 	document.getElementById('scroll').appendChild(slide);
 	slide.classList.add("slide");
 	field.innerHTML='';
-
-	slideNum++;
+}
+function questionMove(){
+	$(".questionclass").mouseup(function(){
+		x = $(this).position().left;
+		y = $(this).position().top;
+		console.log("" + x + " " + y);
+		var xdrop = $("#deleteBox").position().left;
+		var ydrop = $("#deleteBox").position().top;
+		var w = Number(($(this).css("width")).slice(0,-2)) + Number(($(this).css("padding")).slice(0,-2)) ;
+		var h = Number(($(this).css("height")).slice(0,-2)) + Number(($(this).css("padding")).slice(0,-2));
+		console.log("" + x + " " + xdrop + " " + (x+w));
+		if(x < xdrop && xdrop < x + w && y < ydrop && ydrop < y+h)
+			$(this).remove();
+	});
 }

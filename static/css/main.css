@@ -126,11 +126,11 @@ border-width:1px;
   position: absolute;
 }
 #deleteBox{
-  width: 50px;
-  height: 50px;
+  width: 90px;
+  height: 90px;
   position: absolute;
-  right: 0; 
-  bottom: 0;
+  right: 10; 
+  bottom: 10;
 }
 .visible{
     display:block;
