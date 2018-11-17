@@ -53,13 +53,13 @@ var getdata = "";
 function createjs() //генерация js кода приложения
 {   
     getdata = 'var newslide= new constructor_slide; var newanswer = new constructor_one_answer;';
-    for (let i=0; i<test.lenght; i++)
-    { getdata += i;
+    for (let i=0; test[i]!=undefined; i++)
+    { 
         var get_question = 'newslide.text_question = "' + test[i].question.Text + '";' ;
         var get_answers = "";
-        for (let j=0; j<test[i].answers.lenght; j++)
+        for (let j=0; test[i].answers[j]!=undefined; j++)
         { 
-            get_answers += 'newanswer.Text = "' + text[i].answers[j].Text + '"; newanswer.TrueLi =' + text[i].answers[j].TrueLi + '; newslide.answers.push(newanswer);';
+            get_answers += 'newanswer.Text = "' + test[i].answers[j].Text + '"; newanswer.TrueLi =' + test[i].answers[j].TrueLi + '; newslide.answers.push(newanswer);';
         }
         getdata += get_question + get_answers + 'test.push(newslide);';
     }
