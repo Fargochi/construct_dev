@@ -116,7 +116,9 @@
 				<input type="button" id='AnswerFinish' onclick='setAnswerSettings();' value="Применить" class = "submitter" style="text-align: center;">
 				<br></br>
 			</div>
-			<div id="field">
+			  <div id="field" class='field'>
+   			 	<div id='field0' class='fieldVloj'>
+    			</div>
 				<div id='deleteBoxdiv' style="z-index: 99;">
 				<img id = 'deleteBox'src="https://cdn.icon-icons.com/icons2/868/PNG/512/trash_bin_icon-icons.com_67981.png">
 			</div>
@@ -124,7 +126,7 @@
 			<div id="button_next" onClick="button_next(); button_push_new_question();"><p>Следующий вопрос</p></div>
 			<div id="button_save" ><p>Сохранить изменения</p></div>
 			<div id="scroll"> 
-				<div id="slide0" class="slide"></div>
+            <div class="slide slideActive" id='slide0'></div>
 			</div>
 			<div id="buttons">
 				<div class="button_question" onclick = "newQuestion();"></div>

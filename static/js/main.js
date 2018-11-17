@@ -87,7 +87,9 @@ function startPageSend(){
 	//background:#c0c0c0;
 
 }
-
+var slideNum = 0;
+var IDtoField=0;
+var activeSlideID;
 var i = 0;
 var IDDIV;
 var x, y;
@@ -95,12 +97,12 @@ var IQ = 0;
 var IA = 0;
 var divv;
 function newQuestion() {
-    hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons']);
+    hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field'+IDtoField]);
     showElements(['modalQuestion']);
    }
 function setQuestionSettings() {
     var newdiv = document.createElement('div');
-    document.getElementById('field').appendChild(newdiv);
+    document.getElementById('field'+IDtoField).appendChild(newdiv);
     newdiv.classList.add("questionclass");
     newdiv.classList.add("ui-widget");
     newdiv.classList.add("ui-corner-all");
@@ -123,10 +125,10 @@ function setQuestionSettings() {
 }
 function reModalBlock() {
     hideElements(['modalQuestion', 'modalAnswer']);
-    showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons']);
+    showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field'+IDtoField]);
 }
 function newAnswer() {
-    hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons']);
+    hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field'+IDtoField]);
     showElements(['modalAnswer']);
 }
 
@@ -146,7 +148,7 @@ function showElements(names) {
 
 function setAnswerSettings() {
     var newdiv = document.createElement('div');
-    document.getElementById('field').appendChild(newdiv);
+    document.getElementById('field'+IDtoField).appendChild(newdiv);
     newdiv.classList.add("answerclass");
     newdiv.classList.add("ui-widget");
     newdiv.classList.add("ui-corner-all");
@@ -169,15 +171,45 @@ function setAnswerSettings() {
     button_push_answer(slideNum);
 	deleteEl();
 }
-var slideNum = 0;
 function button_next() {
-	confirm("Сохранить изменения?");
-	slideNum++;
-	var slide = document.createElement('div');
-	slide.id='slide'+slideNum;
-	document.getElementById('scroll').appendChild(slide);
-	slide.classList.add("slide");
-	field.innerHTML='';
+  confirm("Сохранить изменения?");
+  slideNum++;
+  var slide = document.createElement('div');
+  slide.id='slide'+slideNum;
+  document.getElementById('scroll').appendChild(slide);
+  slide.classList.add("slide");
+  slide.classList.add('slideActive');
+  activeSlideID='slide'+slideNum;
+  for(var i=0; i<slideNum;i++){
+    document.getElementById('slide'+i).classList.remove('slideActive');
+    document.getElementById('slide'+i).classList.add('slidePassive');
+    hideElements(['field'+i]);
+  }
+  hideElements(['field'+(slideNum-1)])
+  //document.getElementById('field'+(slideNum-1)).classList.remove('visible');
+  //document.getElementById('field'+(slideNum-1)).classList.add('hidden');
+  var newField= document.createElement('div');
+  document.getElementById('field').appendChild(newField);
+  newField.classList.add('fieldVloj');
+  newField.classList.add('visible');
+  newField.id='field'+slideNum;
+  IDtoField=slideNum;
+  $(".slide").click(function(){
+  document.getElementById(activeSlideID).classList.remove('slideActive');
+  document.getElementById(activeSlideID).classList.add('slidePassive');
+  document.getElementById(this.id).classList.remove('slidePassive');
+  document.getElementById(this.id).classList.add('slideActive');
+  activeSlideID=this.id;
+  if(slideNum<10) IDtoField=Number(activeSlideID.charAt(activeSlideID.length-1));
+  for(var t=0; t<=slideNum; t++){
+  	hideElements(['field'+t]);
+    //document.getElementById('field'+t).classList.remove('visible');
+    //document.getElementById('field'+t).classList.add('hidden');
+  }
+  showElements(['field'+IDtoField])
+ // document.getElementById('field'+IDtoField).classList.remove('hidden');
+  //document.getElementById('field'+IDtoField).classList.add('visible');
+});
 }
 function deleteEl(){
 	$(".ui-draggable").mouseup(function(){
