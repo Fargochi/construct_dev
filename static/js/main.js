@@ -172,7 +172,7 @@ function setAnswerSettings() {
 	deleteEl();
 }
 function button_next() {
-  confirm("Сохранить изменения?");
+  confirm("Сохранить изменения?");//проработать этот момент про сохранения
   slideNum++;
   var slide = document.createElement('div');
   slide.id='slide'+slideNum;
