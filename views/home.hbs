@@ -75,10 +75,10 @@
 				</select>
 				<br>Размер шрифта:<br>
 				<input type="text" class='Question' id='QuestionFontSize'>
-				<br>Цвет шрифта:</br>
-    			<input type="color" class='color' id='QuestionFontColor'><br>
+				<br>Цвет шрифта:<br>
+    			<input type="color" class='color' id='QuestionFontColor'>
 				<br>Цвет фона поля:<br>
-				<input type="color" class='color' id='QuestionColor'><br>
+				<input type="color" class='color' value='#FFFF00' id='QuestionColor'><br><br>
 				<input type="button" class="submitter" id="QuestionFinish" onclick='setQuestionSettings();' value="Применить">
 				<br><br>
 			</div>
@@ -106,13 +106,13 @@
 				<br>Цвет шрифта:</br>
     			<input type="color" id='AnswerFontColor' class='Color'>
 				<br>Цвет фона поля:</br>
-				<input type="color" id='AnswerColor' class='Color'>
+				<input type="color" value='#FFFF00' id='AnswerColor' class='Color'>
 				<br></br>
 				<select id='AnswerTrueLi' class='Question'>
     			  	<option value="1">Это верный ответ</option>
       				<option value="0">Это ошибочный ответ</option>
     			</select>
-    			<br></br>
+    			<br><br>
 				<input type="button" id='AnswerFinish' onclick='setAnswerSettings();' value="Применить" class = "submitter" style="text-align: center;">
 				<br></br>
 			</div>
