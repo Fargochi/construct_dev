@@ -185,9 +185,7 @@ function button_next() {
     document.getElementById('slide'+i).classList.add('slidePassive');
     hideElements(['field'+i]);
   }
-  hideElements(['field'+(slideNum-1)])
-  //document.getElementById('field'+(slideNum-1)).classList.remove('visible');
-  //document.getElementById('field'+(slideNum-1)).classList.add('hidden');
+  hideElements(['field'+(slideNum-1)]);
   var newField= document.createElement('div');
   document.getElementById('field').appendChild(newField);
   newField.classList.add('fieldVloj');
@@ -203,12 +201,8 @@ function button_next() {
   if(slideNum<10) IDtoField=Number(activeSlideID.charAt(activeSlideID.length-1));
   for(var t=0; t<=slideNum; t++){
   	hideElements(['field'+t]);
-    //document.getElementById('field'+t).classList.remove('visible');
-    //document.getElementById('field'+t).classList.add('hidden');
   }
-  showElements(['field'+IDtoField])
- // document.getElementById('field'+IDtoField).classList.remove('hidden');
-  //document.getElementById('field'+IDtoField).classList.add('visible');
+  showElements(['field'+IDtoField]);
 });
 }
 function deleteEl(){
