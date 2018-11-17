@@ -52,13 +52,12 @@ function constructor_new_slide() //функция для создания нов
 var getdata = "";
 function createjs() //генерация js кода приложения
 {   
-    getdata = 'var newslide= new constructor_slide; var newanswer = new constructor_one_answer;'; var i;
-    for (i=0;i<test.lenght;i++)
+    getdata = 'var newslide= new constructor_slide; var newanswer = new constructor_one_answer;';
+    for (let i=0; i<test.lenght; i++)
     { getdata += i;
         var get_question = 'newslide.text_question = "' + test[i].question.Text + '";' ;
         var get_answers = "";
-        var j;
-        for (j=0;j<test[i].answers.lenght;j++)
+        for (let j=0; j<test[i].answers.lenght; j++)
         { 
             get_answers += 'newanswer.Text = "' + text[i].answers[j].Text + '"; newanswer.TrueLi =' + text[i].answers[j].TrueLi + '; newslide.answers.push(newanswer);';
         }
@@ -96,18 +95,8 @@ var IQ = 0;
 var IA = 0;
 var divv;
 function newQuestion() {
-    document.getElementById('field').classList.remove("visible");
-    document.getElementById('field').classList.add("hidden");
-    document.getElementById('button_next').classList.remove("visible");
-    document.getElementById('button_next').classList.add("hidden");
-    document.getElementById('button_save').classList.remove("visible");
-    document.getElementById('button_save').classList.add("hidden");
-    document.getElementById('scroll').classList.remove("visible");
-    document.getElementById('scroll').classList.add("hidden");
-    document.getElementById('buttons').classList.remove("visible");
-    document.getElementById('buttons').classList.add("hidden");
-    document.getElementById('modalQuestion').classList.remove("hidden");
-    document.getElementById('modalQuestion').classList.add("visible");
+    hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons']);
+    showElements(['modalQuestion']);
    }
 function setQuestionSettings() {
     var newdiv = document.createElement('div');
@@ -133,35 +122,28 @@ function setQuestionSettings() {
 	deleteEl();
 }
 function reModalBlock() {
-    document.getElementById('field').classList.remove("hidden");
-    document.getElementById('field').classList.add("visible");
-    document.getElementById('button_next').classList.remove("hidden");
-    document.getElementById('button_next').classList.add("visible");
-    document.getElementById('button_save').classList.remove("hidden");
-    document.getElementById('button_save').classList.add("visible");
-    document.getElementById('scroll').classList.remove("hidden");
-    document.getElementById('scroll').classList.add("visible");
-    document.getElementById('buttons').classList.remove("hidden");
-    document.getElementById('buttons').classList.add("visible");
-    document.getElementById('modalQuestion').classList.remove("visible");
-    document.getElementById('modalQuestion').classList.add("hidden");
-    document.getElementById('modalAnswer').classList.remove("visible");
-    document.getElementById('modalAnswer').classList.add("hidden");
+    hideElements(['modalQuestion', 'modalAnswer']);
+    showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons']);
 }
 function newAnswer() {
-    document.getElementById('field').classList.remove("visible");
-    document.getElementById('field').classList.add("hidden");
-    document.getElementById('button_next').classList.remove("visible");
-    document.getElementById('button_next').classList.add("hidden");
-    document.getElementById('button_save').classList.remove("visible");
-    document.getElementById('button_save').classList.add("hidden");
-    document.getElementById('scroll').classList.remove("visible");
-    document.getElementById('scroll').classList.add("hidden");
-    document.getElementById('buttons').classList.remove("visible");
-    document.getElementById('buttons').classList.add("hidden");
-    document.getElementById('modalAnswer').classList.remove("hidden");
-    document.getElementById('modalAnswer').classList.add("visible");
+    hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons']);
+    showElements(['modalAnswer']);
 }
+
+function hideElements(names) {
+    for (let i=0; i<names.length; i++) {
+        document.getElementById(names[i]).classList.remove("visible");
+        document.getElementById(names[i]).classList.add("hidden");
+    }
+}
+
+function showElements(names) {
+    for (let i=0; i<names.length; i++) {
+        document.getElementById(names[i]).classList.remove("hidden");
+        document.getElementById(names[i]).classList.add("visible");
+    }
+}
+
 function setAnswerSettings() {
     var newdiv = document.createElement('div');
     document.getElementById('field').appendChild(newdiv);
