@@ -198,7 +198,7 @@ function button_next() {
   document.getElementById(this.id).classList.remove('slidePassive');
   document.getElementById(this.id).classList.add('slideActive');
   activeSlideID=this.id;
-  if(slideNum<10) IDtoField=Number(activeSlideID.charAt(activeSlideID.length-1));
+  IDtoField=Number(activeSlideID.substr(5));
   for(var t=0; t<=slideNum; t++){
   	hideElements(['field'+t]);
   }
@@ -209,12 +209,12 @@ function deleteEl(){
 	$(".ui-draggable").mouseup(function(){
 		x = $(this).position().left;
 		y = $(this).position().top;
-		console.log("" + x + " " + y);
+		//console.log("" + x + " " + y);
 		var xdrop = $("#deleteBox").position().left;
 		var ydrop = $("#deleteBox").position().top;
 		var w = Number(($(this).css("width")).slice(0,-2)) + Number(($(this).css("padding")).slice(0,-2)) ;
 		var h = Number(($(this).css("height")).slice(0,-2)) + Number(($(this).css("padding")).slice(0,-2));
-		console.log("" + x + " " + xdrop + " " + (x+w));
+		//console.log("" + x + " " + xdrop + " " + (x+w));
 		if(x < xdrop && xdrop < x + w && y < ydrop && ydrop < y+h)
 			$(this).remove();
 	});
