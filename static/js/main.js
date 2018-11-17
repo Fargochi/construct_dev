@@ -205,6 +205,16 @@ function button_next() {
   showElements(['field'+IDtoField]);
 });
 }
+function setBackSettings() {
+$('#field'+IDtoField).css("background-color", document.getElementById('BackColor').value);
+hideElements(['modalBackground']);
+showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field'+IDtoField]);
+}
+
+function changeBackground() {
+    hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field'+IDtoField]);
+    showElements(['modalBackground']);
+}
 function deleteEl(){
 	$(".ui-draggable").mouseup(function(){
 		x = $(this).position().left;
