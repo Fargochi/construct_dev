@@ -39,6 +39,12 @@ function showElements(names) {
     }
 }
 
+function addClasses(el, names){
+    for (let i=0; i < names.length; i++) {
+        el.classList.add(names[i]);
+    }
+}
+
 function setBackSettings() {
     $('#field'+IDtoField).css("background-color", document.getElementById('BackColor').value);
     hideElements(['modalBackground']);

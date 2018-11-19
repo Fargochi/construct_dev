@@ -123,10 +123,7 @@ function newAnswer() {
 function setQuestionSettings() {
     var newdiv = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newdiv);
-    newdiv.classList.add("questionclass");
-    newdiv.classList.add("ui-widget");
-    newdiv.classList.add("ui-corner-all");
-    newdiv.classList.add("ui-draggable");
+    addClasses(newdiv, ["questionclass", "ui-widget", "ui-corner-all", "ui-draggable"])
     newdiv.id = "question" + IQ;
     IDDIV = "#question" + IQ;
     document.getElementById("question"+IQ).style.left = "0px";
@@ -147,10 +144,7 @@ function setQuestionSettings() {
 function setAnswerSettings() {
     var newdiv = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newdiv);
-    newdiv.classList.add("answerclass");
-    newdiv.classList.add("ui-widget");
-    newdiv.classList.add("ui-corner-all");
-    newdiv.classList.add("ui-draggable");
+    addClasses(newdiv, ["answerclass", "ui-widget", "ui-corner-all", "ui-draggable"])
     newdiv.id = "answer" + IDtoField+"_"+test[IDtoField].answers.length;
     IDDIV ="answer" + IDtoField+"_"+test[IDtoField].answers.length;
     document.getElementById("answer"+IDtoField+"_"+test[IDtoField].answers.length).style.left = "0px";
