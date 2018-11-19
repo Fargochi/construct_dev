@@ -77,7 +77,7 @@ function constructor_new_slide() //функция для создания нов
 }
 var getdata = "";
 function createjs() //генерация js кода приложения
-{
+{   
     getdata = 'var newslide= new constructor_slide; var newanswer = new constructor_one_answer;\n';
     for (let i=0; i<test.length; i++)
     {
@@ -90,13 +90,12 @@ function createjs() //генерация js кода приложения
         getdata += get_question + get_answers + 'test.push(newslide);\n';
     }
 }
-getdatacss = "";
-function createcss()
-{
-    get_style_question = "";
+var getdatacss = "";
+function createcss() //генерация css стилей приложения
+{   getdatacss = "";
     for (let i=0; i < test.length; i++)
-    {
-        get_style_question += '#question' + i + '{\nfont: '+ test[i].question.FontType + ' '+ test[i].question.FontSize + ';' + '\n';
+    {   let get_style_question = "";
+        get_style_question += '#question' + i + '{\nfont: '+ test[i].question.FontType + ' '+ test[i].question.FontSize + ';\n';
         get_style_question += 'color: '+ test[i].question.FontColor + ';\n' ;
         get_style_question += 'background-color: '+ test[i].question.Color +';\n';
         get_style_question += 'left: '+ test[i].question.Left +';\n';
@@ -104,9 +103,19 @@ function createcss()
         get_style_question += 'width: '+ test[i].question.Width +';\n';
         get_style_question += 'height: '+ test[i].question.Height +';}';
         getdatacss += get_style_question + '\n';
-
+        for (let j=0; j<test[i].answers.length; j++)
+        {
+            let get_style_answer = "";
+            get_style_answer += '#answer' + i + '_' + j + '{\nfont: '+ test[i].answers[j].FontType + ' '+ test[i].answers[j].FontSize + ';' + '\n';
+            get_style_answer += 'color: '+ test[i].answers[j].FontColor +  ';\n';
+            get_style_answer += 'background-color: '+ test[i].answers[j].Color +  ';\n';
+            get_style_answer += 'left: '+ test[i].answers[j].Left +  ';\n';
+            get_style_answer += 'top: '+ test[i].answers[j].Top +  ';\n';
+            get_style_answer += 'width: '+ test[i].answers[j].Width +  ';\n';
+            get_style_answer += 'height: '+ test[i].answers[j].Height +  ';\n';
+            getdatacss += get_style_answer;
+        }
     }
-    alert(getdatacss);
 }
 /////////////////////////////////////////////////////////////////////
 
