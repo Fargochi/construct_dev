@@ -91,7 +91,7 @@ function startPageSend(){
 	classnum  = field_2.value;
 	difficult = field_3.value;
 	switch (category) {
-		case 'Тест в выбором ответа':
+		case 'Тест с выбором ответа':
 			showElements(['construct_test_page']);
 			break;
 		case 'Тест-цепочка':
