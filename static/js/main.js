@@ -11,8 +11,12 @@ function button_push_question(idquestion)//при нажатии подтвер�
     test[Number(idquestion)].push_question();
 }
 function button_push_answer(idquestion) //при нажатии подтверждения поля с новым ответом, передает номер слайда и номер ответа (?)
-{ 
+{
     test[Number(idquestion)].push_answer();
+}
+function button_back_color(idquestion)
+{
+  test[Number(idquestion)].Back_Color = document.getElementById('BackColor').value;
 }
 function constructor_question_and_answers()
 {
@@ -22,15 +26,20 @@ function constructor_question_and_answers()
     this.FontColor = "";
     this.Color = "";
     this.TrueLi = 0;
+    this.Left  = 0;
+    this.Top = 0;
+    this.Width = 0;
+    this.Height = 0;
 
 }
 function constructor_new_slide() //функция для создания нового вопроса
 {
     this.question = new constructor_question_and_answers();
     this.answers = [];
+    this.Back_Color = "";
     this.push_question = function()
     {
-        this.question.Text = document.getElementById('QuestionText').value; 
+        this.question.Text = document.getElementById('QuestionText').value;
         this.question.FontType = document.getElementById('QuestionFontType').value;
         this.question.FontSize = document.getElementById('QuestionFontSize').value;
         this.question.FontColor = document.getElementById('QuestionFontColor').value;
@@ -40,7 +49,7 @@ function constructor_new_slide() //функция для создания нов
     this.push_answer = function()//добавить вариант ответа и его "правильность"
     {
         var newanswer = new constructor_question_and_answers();
-        newanswer.Text = document.getElementById('AnswerText').value; 
+        newanswer.Text = document.getElementById('AnswerText').value;
         newanswer.TrueLi = document.getElementById('AnswerTrueLi').value;
         newanswer.FontType = document.getElementById('AnswerFontType').value;
         newanswer.FontSize = document.getElementById('AnswerFontSize').value;
@@ -51,14 +60,14 @@ function constructor_new_slide() //функция для создания нов
 }
 var getdata = "";
 function createjs() //генерация js кода приложения
-{   
+{
     getdata = 'var newslide= new constructor_slide; var newanswer = new constructor_one_answer;';
     for (let i=0; test[i] != undefined; i++)
-    { 
+    {
         var get_question = 'newslide.text_question = "' + test[i].question.Text + '";' ;
         var get_answers = "";
         for (let j=0; test[i].answers[j]!=undefined; j++)
-        { 
+        {
             get_answers += 'newanswer.Text = "' + test[i].answers[j].Text + '"; newanswer.TrueLi =' + test[i].answers[j].TrueLi + '; newslide.answers.push(newanswer);';
         }
         getdata += get_question + get_answers + 'test.push(newslide);';
@@ -70,7 +79,7 @@ function reFocus(e,t){
 	if(e.key == "Enter"){
 		e.preventDefault();
 		t.blur();
-		fieldIterator[0]= fieldIterator[0] + "_" + (Number(fieldIterator[1]) + 1); 
+		fieldIterator[0]= fieldIterator[0] + "_" + (Number(fieldIterator[1]) + 1);
 		document.getElementById(fieldIterator[0]).focus();
 	}
 }
@@ -125,7 +134,7 @@ function setQuestionSettings() {
     $(".questionclass").draggable({containment: "parent"});
     IQ++;
     reModalBlock();
-    button_push_question(slideNum);
+    button_push_question(IDtoField);
 	deleteEl();
 }
 function reModalBlock() {
@@ -172,10 +181,10 @@ function setAnswerSettings() {
     IA++;
     if(document.getElementById('AnswerTrueLi').value == 1)
 		document.getElementById(IDDIV).classList.add('TrueAnswer');
-	else  
+	else
 		document.getElementById(IDDIV).classList.add('FalseAnswer');
     reModalBlock();
-    button_push_answer(slideNum);
+    button_push_answer(IDtoField);
 	deleteEl();
 }
 
@@ -215,9 +224,10 @@ function button_next() {
 }
 
 function setBackSettings() {
-	$('#field' + IDtoField).css("background-color", document.getElementById('BackColor').value);
-	hideElements(['modalBackground']);
-	showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
+$('#field'+IDtoField).css("background-color", document.getElementById('BackColor').value);
+hideElements(['modalBackground']);
+showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field'+IDtoField]);
+button_back_color(IDtoField);
 }
 
 function changeBackground() {
