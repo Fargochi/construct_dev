@@ -22,6 +22,10 @@ function button_delete_answer(idquestion,idanswer)
 {
     test[idquestion].answers.splice(idanswer,1);
 }
+function button_delete_question(idquestion)
+{
+    test[idquestion.question.Text = "";
+}
 function button_save_changes()
 {
     for (let i=0; i<test.length; i++)
