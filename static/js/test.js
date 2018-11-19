@@ -80,3 +80,100 @@ function newQuestion() {
     hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
     showElements(['modalQuestion']);
 }
+
+function newAnswer() {
+    hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
+    showElements(['modalAnswer']);
+}
+
+function setQuestionSettings() {
+    var newdiv = document.createElement('div');
+    document.getElementById('field' + IDtoField).appendChild(newdiv);
+    newdiv.classList.add("questionclass");
+    newdiv.classList.add("ui-widget");
+    newdiv.classList.add("ui-corner-all");
+    newdiv.classList.add("ui-draggable");
+    newdiv.id = "question" + IQ;
+    IDDIV = "#question" + IQ;
+    document.getElementById("question"+IQ).style.left = "0px";
+    document.getElementById("question"+IQ).style.top = "0px";
+    newdiv.innerText = document.getElementById('QuestionText').value;
+    $(IDDIV).css("font", document.getElementById('QuestionFontSize').value + "pt " + document.getElementById('QuestionFontType').value);
+    $(IDDIV).css("color", document.getElementById('QuestionFontColor').value);
+    //$(IDDIV).css("z-index", document.getElementById('QuestionZIndex').value);
+    $(IDDIV).css("background-color", document.getElementById('QuestionColor').value);
+    $(".questionclass").resizable({containment: "parent"});
+    $(".questionclass").draggable({containment: "parent"});
+    IQ++;
+    reModalBlock();
+    button_push_question(IDtoField);
+    deleteEl();
+}
+
+function setAnswerSettings() {
+    var newdiv = document.createElement('div');
+    document.getElementById('field' + IDtoField).appendChild(newdiv);
+    newdiv.classList.add("answerclass");
+    newdiv.classList.add("ui-widget");
+    newdiv.classList.add("ui-corner-all");
+    newdiv.classList.add("ui-draggable");
+    newdiv.id = "answer" + IA;
+    IDDIV = "answer" + IA;
+    document.getElementById("answer"+IA).style.left = "0px";
+    document.getElementById("answer"+IA).style.top = "0px";
+    newdiv.innerText = document.getElementById('AnswerText').value;
+    $("#"+IDDIV).css("font", document.getElementById('AnswerFontSize').value + "pt " + document.getElementById('AnswerFontType').value);
+    $("#"+IDDIV).css("color", document.getElementById('AnswerFontColor').value);
+    //$("#"+IDDIV).css("z-index", document.getElementById('AnswerZIndex').value);
+    $("#"+IDDIV).css("background-color", document.getElementById('AnswerColor').value);
+    $(".answerclass").resizable({containment: "parent"});
+    $(".answerclass").draggable({containment: "parent"});
+    IA++;
+    if(document.getElementById('AnswerTrueLi').value == 1)
+        document.getElementById(IDDIV).classList.add('TrueAnswer');
+    else
+        document.getElementById(IDDIV).classList.add('FalseAnswer');
+    reModalBlock();
+    button_push_answer(IDtoField);
+    deleteEl();
+}
+
+function reModalBlock() {
+    hideElements(['modalQuestion', 'modalAnswer']);
+    showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
+}
+
+function button_next() {
+	confirm("Сохранить изменения?");//проработать этот момент про сохранения
+	slideNum++;
+	var slide = document.createElement('div');
+	slide.id = 'slide' + slideNum;
+	document.getElementById('scroll').appendChild(slide);
+	slide.classList.add("slide");
+	slide.classList.add('slideActive');
+	activeSlideID = 'slide' + slideNum;
+	for(var i = 0; i < slideNum; i++){
+		document.getElementById('slide' + i).classList.remove('slideActive');
+		document.getElementById('slide' + i).classList.add('slidePassive');
+		hideElements(['field' + i]);
+	}
+	hideElements(['field' + (slideNum - 1)]);
+	var newField = document.createElement('div');
+	document.getElementById('field').appendChild(newField);
+	newField.classList.add('fieldVloj');
+	newField.classList.add('visible');
+	newField.id = 'field' + slideNum;
+	IDtoField = slideNum;
+	$(".slide").click(function(){
+		document.getElementById(activeSlideID).classList.remove('slideActive');
+		document.getElementById(activeSlideID).classList.add('slidePassive');
+		document.getElementById(this.id).classList.remove('slidePassive');
+		document.getElementById(this.id).classList.add('slideActive');
+		activeSlideID = this.id;
+		IDtoField = Number(activeSlideID.substr(5));
+		for(var t = 0; t <= slideNum; t++){
+			hideElements(['field' + t]);
+		}
+		showElements(['field' + IDtoField]);
+	});
+}
