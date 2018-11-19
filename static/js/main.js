@@ -18,9 +18,11 @@ function startPageSend(){
 	switch (category) {
 		case 'Тест с выбором ответа':
 			showElements(['construct_test_page']);
+			$('#construct_test_page').load('html/test.html');
 			break;
 		case 'Тест-цепочка':
 			showElements(['construct_chain_page']);
+			$('#construct_chain_page').load('html/chain.html');
 			break;
 	}
 }
@@ -57,6 +59,10 @@ function changeBackground() {
     showElements(['modalBackground']);
 }
 
+function reModalBlock() {
+    showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
+}
+
 function deleteEl(){
 	$(".ui-draggable").mouseup(function(){
 		x = $(this).position().left;
@@ -67,7 +73,10 @@ function deleteEl(){
 		var w = Number(($(this).css("width")).slice(0,-2)) + Number(($(this).css("padding")).slice(0,-2)) ;
 		var h = Number(($(this).css("height")).slice(0,-2)) + Number(($(this).css("padding")).slice(0,-2));
 		//console.log("" + x + " " + xdrop + " " + (x+w));
-		if(x < xdrop && xdrop < x + w && y < ydrop && ydrop < y + h)
+		if(x < xdrop && xdrop < x + w && y < ydrop && ydrop < y + h){
+      if(confirm("Вы точно хотите удалить?")){
 			$(this).remove();
+      button_delete_answer(IDtoField, Number(this.id.substr(6)));
+    }}
 	});
 }

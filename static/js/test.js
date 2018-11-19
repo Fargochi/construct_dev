@@ -85,7 +85,7 @@ function constructor_new_slide() //функция для создания нов
 }
 var getdata = "";
 function createjs() //генерация js кода приложения
-{   
+{
     getdata = 'var newslide= new constructor_slide; var newanswer = new constructor_one_answer;\n';
     for (let i=0; i<test.length; i++)
     {
@@ -153,6 +153,7 @@ function setQuestionSettings() {
     $(".questionclass").resizable({containment: "parent"});
     $(".questionclass").draggable({containment: "parent"});
     IQ++;
+    hideElements(['modalQuestion', 'modalAnswer']);
     reModalBlock();
     button_push_question(IDtoField);
     deleteEl();
@@ -178,14 +179,10 @@ function setAnswerSettings() {
         document.getElementById(IDDIV).classList.add('TrueAnswer');
     else
         document.getElementById(IDDIV).classList.add('FalseAnswer');
+    hideElements(['modalQuestion', 'modalAnswer']);
     reModalBlock();
     button_push_answer(IDtoField);
     deleteEl();
-}
-
-function reModalBlock() {
-    hideElements(['modalQuestion', 'modalAnswer']);
-    showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
 }
 
 function button_next() {
