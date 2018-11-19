@@ -53,7 +53,7 @@ function constructor_new_slide() //функция для создания нов
 {
     this.question = new constructor_question_and_answers();
     this.answers = [];
-    this.Back_Color = "";
+    this.Back_Color = "#ffffff";
     this.push_question = function()
     {
         this.question.Text = document.getElementById('QuestionText').value;
