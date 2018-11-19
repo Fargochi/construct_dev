@@ -18,6 +18,23 @@ function button_back_color(idquestion)
 {
   test[Number(idquestion)].Back_Color = document.getElementById('BackColor').value;
 }
+function button_save_changes()
+{
+    for (let i=0; i<test.length; i++)
+    {
+        test[i].question.Left = $("#question"+i).css("left");
+        test[i].question.Top = $("#question"+i).css("top");
+        test[i].question.Width = $("#question"+i).css("width");
+        test[i].question.Height = $("#question"+i).css("height");
+        for (let j=0; j<test[i].answers.length; j++)
+        {
+            test[i].answers[j].Left =  $("#answer"+i+"_"+j).css("left");
+            test[i].answers[j].Top =  $("#answer"+i+"_"+j).css("top");
+            test[i].answers[j].Width =  $("#answer"+i+"_"+j).css("width");
+            test[i].answers[j].Height =  $("#answer"+i+"_"+j).css("height");
+        }
+    }
+}
 function constructor_question_and_answers()
 {
     this.Text = "";
