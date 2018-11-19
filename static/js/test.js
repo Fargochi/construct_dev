@@ -24,7 +24,7 @@ function button_delete_answer(idquestion,idanswer)
 }
 function button_delete_question(idquestion)
 {
-    test[idquestion.question.Text = "";
+    test[idquestion].question.Text = "";
 }
 function button_save_changes()
 {
