@@ -219,3 +219,23 @@ function button_next() {
 		showElements(['field' + IDtoField]);
 	});
 }
+
+function deleteElTest(){
+	$(".ui-draggable").mouseup(function(){
+		x = $(this).position().left;
+		y = $(this).position().top;
+		//console.log("" + x + " " + y);
+		var xdrop = $("#deleteBoxTest").position().left;
+		var ydrop = $("#deleteBoxTest").position().top;
+		var w = Number(($(this).css("width")).slice(0,-2)) + Number(($(this).css("padding")).slice(0,-2)) ;
+		var h = Number(($(this).css("height")).slice(0,-2)) + Number(($(this).css("padding")).slice(0,-2));
+        var wdrop = Number(($("#deleteBoxTest").css("width")).slice(0,-2)) + Number(($("#deleteBoxTest").css("padding")).slice(0,-2));
+		var hdrop = Number(($("#deleteBoxTest").css("height")).slice(0,-2)) + Number(($("#deleteBoxTest").css("padding")).slice(0,-2));
+		if (max(x,xdrop) <= min(x+w,xdrop+wdrop) && max(y,ydrop)<=min(y+h,ydrop+hdrop)) {
+      		if(confirm("Вы точно хотите удалить?")){
+				$(this).remove();
+      			button_delete_answer(IDtoField, Number(this.id.substr(6)));
+    		}
+		}
+	});
+}

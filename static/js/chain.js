@@ -24,3 +24,23 @@ function setCardSettings() {
     //button_push_question(slideNum);
     deleteElChain();
 }
+
+function deleteElChain(){
+	$(".ui-draggable").mouseup(function(){
+		var x = $(this).position().left;
+		var y = $(this).position().top;
+		var xdrop = $("#deleteBoxChain").position().left;
+		var ydrop = $("#deleteBoxChain").position().top;
+		var w = Number(($(this).css("width")).slice(0,-2)) + Number(($(this).css("padding")).slice(0,-2));
+		var h = Number(($(this).css("height")).slice(0,-2)) + Number(($(this).css("padding")).slice(0,-2));
+		var wdrop = Number(($("#deleteBoxChain").css("width")).slice(0,-2)) + Number(($("#deleteBoxChain").css("padding")).slice(0,-2));
+		var hdrop = Number(($("#deleteBoxChain").css("height")).slice(0,-2)) + Number(($("#deleteBoxChain").css("padding")).slice(0,-2));
+		//if(x < xdrop && xdrop < x + w && y < ydrop && ydrop < y + h){
+		if (max(x,xdrop) <= min(x+w,xdrop+wdrop) && max(y,ydrop)<=min(y+h,ydrop+hdrop)) {
+      		if(confirm("Вы точно хотите удалить?")){
+				$(this).remove();
+      			button_delete_answer(IDtoField, Number(this.id.substr(6)));
+		    }
+		}
+	});
+}
