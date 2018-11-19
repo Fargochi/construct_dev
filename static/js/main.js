@@ -14,6 +14,10 @@ function button_push_answer(idquestion) //при нажатии подтверж
 { 
     test[Number(idquestion)].push_answer();
 }
+function button_back_color(idquestion)
+{
+  test[Number(idquestion)].Back_Color = document.getElementById('BackColor').value; 
+}
 function constructor_question_and_answers()
 {
     this.Text = "";
@@ -22,12 +26,17 @@ function constructor_question_and_answers()
     this.FontColor = "";
     this.Color = "";
     this.TrueLi = 0;
+    this.Left  = 0;
+    this.Top = 0;
+    this.Width = 0;
+    this.Height = 0;
 
 }
 function constructor_new_slide() //функция для создания нового вопроса
 {
     this.question = new constructor_question_and_answers();
     this.answers = [];
+    this.Back_Color = "";
     this.push_question = function()
     {
         this.question.Text = document.getElementById('QuestionText').value; 
