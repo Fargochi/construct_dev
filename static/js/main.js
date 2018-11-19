@@ -18,9 +18,11 @@ function startPageSend(){
 	switch (category) {
 		case 'Тест с выбором ответа':
 			showElements(['construct_test_page']);
+			$('#construct_test_page').load('html/test.html');
 			break;
 		case 'Тест-цепочка':
 			showElements(['construct_chain_page']);
+			$('#construct_chain_page').load('html/chain.html');
 			break;
 	}
 }
@@ -56,6 +58,12 @@ function changeBackground() {
     hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
     showElements(['modalBackground']);
 }
+
+function reModalBlock() {
+    hideElements(['modalQuestion', 'modalAnswer']);
+    showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
+}
+
 
 function deleteEl(){
 	$(".ui-draggable").mouseup(function(){
