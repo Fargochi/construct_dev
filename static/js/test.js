@@ -18,6 +18,10 @@ function button_back_color(idquestion)
 {
   test[Number(idquestion)].Back_Color = document.getElementById('BackColor').value;
 }
+function button_delete_answer(idquestion,idanswer)
+{
+    test[idquestion].answers.splice(idanswer,1);
+}
 function button_save_changes()
 {
     for (let i=0; i<test.length; i++)
