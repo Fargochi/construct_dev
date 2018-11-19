@@ -215,7 +215,9 @@ border-width:0px;
  margin-left:87%;
 }
 .slideActive{
-background-color: green;
+background-color: #ffffff;
+box-shadow: 0 0 10px #172caf;
+border: 0.1px solid #172caf;
 }
 .slidePassive{
 background-color: white;
