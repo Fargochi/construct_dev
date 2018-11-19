@@ -6,10 +6,7 @@ function newCard() {
 function setCardSettings() {
     var newdiv = document.createElement('div');
     document.getElementById('field'+IDtoField).appendChild(newdiv);
-    newdiv.classList.add("cardclass");
-    newdiv.classList.add("ui-widget");
-    newdiv.classList.add("ui-corner-all");
-    newdiv.classList.add("ui-draggable");
+    addClasses(newdiv, ["cardclass", "ui-widget", "ui-corner-all", "ui-draggable"])
     newdiv.id = "card" + IQ;
     IDDIV = "#card" + IQ;
     document.getElementById("card"+IQ).style.left = "0px";
