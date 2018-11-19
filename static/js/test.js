@@ -117,10 +117,10 @@ function setAnswerSettings() {
     newdiv.classList.add("ui-widget");
     newdiv.classList.add("ui-corner-all");
     newdiv.classList.add("ui-draggable");
-    newdiv.id = "answer" + IA;
-    IDDIV = "answer" + IA;
-    document.getElementById("answer"+IA).style.left = "0px";
-    document.getElementById("answer"+IA).style.top = "0px";
+    newdiv.id = "answer" + IDtoField+"_"+test[IDtoField].answers.length;
+    IDDIV ="answer" + IDtoField+"_"+test[IDtoField].answers.length;
+    document.getElementById("answer"+IDtoField+"_"+test[IDtoField].answers.length).style.left = "0px";
+    document.getElementById("answer"+IDtoField+"_"+test[IDtoField].answers.length).style.top = "0px";
     newdiv.innerText = document.getElementById('AnswerText').value;
     $("#"+IDDIV).css("font", document.getElementById('AnswerFontSize').value + "pt " + document.getElementById('AnswerFontType').value);
     $("#"+IDDIV).css("color", document.getElementById('AnswerFontColor').value);
