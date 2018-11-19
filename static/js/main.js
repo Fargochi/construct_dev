@@ -64,7 +64,6 @@ function reModalBlock() {
     showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
 }
 
-
 function deleteEl(){
 	$(".ui-draggable").mouseup(function(){
 		x = $(this).position().left;

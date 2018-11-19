@@ -81,7 +81,7 @@ function constructor_new_slide() //функция для создания нов
 }
 var getdata = "";
 function createjs() //генерация js кода приложения
-{   
+{
     getdata = 'var newslide= new constructor_slide; var newanswer = new constructor_one_answer;\n';
     for (let i=0; i<test.length; i++)
     {
@@ -177,11 +177,6 @@ function setAnswerSettings() {
     reModalBlock();
     button_push_answer(IDtoField);
     deleteEl();
-}
-
-function reModalBlock() {
-    hideElements(['modalQuestion', 'modalAnswer']);
-    showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
 }
 
 function button_next() {
