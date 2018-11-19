@@ -53,7 +53,7 @@ var getdata = "";
 function createjs() //генерация js кода приложения
 {   
     getdata = 'var newslide= new constructor_slide; var newanswer = new constructor_one_answer;';
-    for (let i=0; test[i]!=undefined; i++)
+    for (let i=0; test[i] != undefined; i++)
     { 
         var get_question = 'newslide.text_question = "' + test[i].question.Text + '";' ;
         var get_answers = "";
@@ -77,16 +77,20 @@ function reFocus(e,t){
 
 function startPageSend(){
 	field_4.blur();
-	document.getElementById('start_page').classList.remove("visible");
-	document.getElementById('start_page').classList.add("hidden");
+	hideElements(['start_page']);
 	category  = field_1.value;
 	classnum  = field_2.value;
 	difficult = field_3.value;
-	document.getElementById('construct_test_page').classList.remove("hidden"); 
-	document.getElementById('construct_test_page').classList.add("visible");
-	//background:#c0c0c0;
-
+	switch (category) {
+		case 'Тест в выбором ответа':
+			showElements(['construct_test_page']);
+			break;
+		case 'Тест-цепочка':
+			showElements(['construct_chain_page']);
+			break;
+	}
 }
+
 var slideNum = 0;
 var IDtoField=0;
 var activeSlideID;
@@ -96,13 +100,14 @@ var x, y;
 var IQ = 0;
 var IA = 0;
 var divv;
+
 function newQuestion() {
-    hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field'+IDtoField]);
+    hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
     showElements(['modalQuestion']);
    }
 function setQuestionSettings() {
     var newdiv = document.createElement('div');
-    document.getElementById('field'+IDtoField).appendChild(newdiv);
+    document.getElementById('field' + IDtoField).appendChild(newdiv);
     newdiv.classList.add("questionclass");
     newdiv.classList.add("ui-widget");
     newdiv.classList.add("ui-corner-all");
@@ -125,10 +130,10 @@ function setQuestionSettings() {
 }
 function reModalBlock() {
     hideElements(['modalQuestion', 'modalAnswer']);
-    showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field'+IDtoField]);
+    showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
 }
 function newAnswer() {
-    hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field'+IDtoField]);
+    hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
     showElements(['modalAnswer']);
 }
 
@@ -148,73 +153,78 @@ function showElements(names) {
 
 function setAnswerSettings() {
     var newdiv = document.createElement('div');
-    document.getElementById('field'+IDtoField).appendChild(newdiv);
+    document.getElementById('field' + IDtoField).appendChild(newdiv);
     newdiv.classList.add("answerclass");
     newdiv.classList.add("ui-widget");
     newdiv.classList.add("ui-corner-all");
     newdiv.classList.add("ui-draggable");
-    newdiv.id="answer"+IA;
-    IDDIV="answer"+IA;
-    document.getElementById("answer"+IA).style.left="0px";
-    document.getElementById("answer"+IA).style.top="0px";
+    newdiv.id = "answer" + IA;
+    IDDIV = "answer" + IA;
+    document.getElementById("answer"+IA).style.left = "0px";
+    document.getElementById("answer"+IA).style.top = "0px";
     newdiv.innerText = document.getElementById('AnswerText').value;
-    $("#"+IDDIV).css("font", document.getElementById('AnswerFontSize').value+"pt "+document.getElementById('AnswerFontType').value);
+    $("#"+IDDIV).css("font", document.getElementById('AnswerFontSize').value + "pt " + document.getElementById('AnswerFontType').value);
     $("#"+IDDIV).css("color", document.getElementById('AnswerFontColor').value);
     //$("#"+IDDIV).css("z-index", document.getElementById('AnswerZIndex').value);
     $("#"+IDDIV).css("background-color", document.getElementById('AnswerColor').value);
     $(".answerclass").resizable({containment: "parent"});
     $(".answerclass").draggable({containment: "parent"});
     IA++;
-    if(document.getElementById('AnswerTrueLi').value==1) document.getElementById(IDDIV).classList.add('TrueAnswer');
-      else  document.getElementById(IDDIV).classList.add('FalseAnswer');
+    if(document.getElementById('AnswerTrueLi').value == 1)
+		document.getElementById(IDDIV).classList.add('TrueAnswer');
+	else  
+		document.getElementById(IDDIV).classList.add('FalseAnswer');
     reModalBlock();
     button_push_answer(slideNum);
 	deleteEl();
 }
+
 function button_next() {
-  confirm("Сохранить изменения?");//проработать этот момент про сохранения
-  slideNum++;
-  var slide = document.createElement('div');
-  slide.id='slide'+slideNum;
-  document.getElementById('scroll').appendChild(slide);
-  slide.classList.add("slide");
-  slide.classList.add('slideActive');
-  activeSlideID='slide'+slideNum;
-  for(var i=0; i<slideNum;i++){
-    document.getElementById('slide'+i).classList.remove('slideActive');
-    document.getElementById('slide'+i).classList.add('slidePassive');
-    hideElements(['field'+i]);
-  }
-  hideElements(['field'+(slideNum-1)]);
-  var newField= document.createElement('div');
-  document.getElementById('field').appendChild(newField);
-  newField.classList.add('fieldVloj');
-  newField.classList.add('visible');
-  newField.id='field'+slideNum;
-  IDtoField=slideNum;
-  $(".slide").click(function(){
-  document.getElementById(activeSlideID).classList.remove('slideActive');
-  document.getElementById(activeSlideID).classList.add('slidePassive');
-  document.getElementById(this.id).classList.remove('slidePassive');
-  document.getElementById(this.id).classList.add('slideActive');
-  activeSlideID=this.id;
-  IDtoField=Number(activeSlideID.substr(5));
-  for(var t=0; t<=slideNum; t++){
-  	hideElements(['field'+t]);
-  }
-  showElements(['field'+IDtoField]);
-});
+	confirm("Сохранить изменения?");//проработать этот момент про сохранения
+	slideNum++;
+	var slide = document.createElement('div');
+	slide.id = 'slide' + slideNum;
+	document.getElementById('scroll').appendChild(slide);
+	slide.classList.add("slide");
+	slide.classList.add('slideActive');
+	activeSlideID = 'slide' + slideNum;
+	for(var i = 0; i < slideNum; i++){
+		document.getElementById('slide' + i).classList.remove('slideActive');
+		document.getElementById('slide' + i).classList.add('slidePassive');
+		hideElements(['field' + i]);
+	}
+	hideElements(['field' + (slideNum - 1)]);
+	var newField = document.createElement('div');
+	document.getElementById('field').appendChild(newField);
+	newField.classList.add('fieldVloj');
+	newField.classList.add('visible');
+	newField.id = 'field' + slideNum;
+	IDtoField = slideNum;
+	$(".slide").click(function(){
+		document.getElementById(activeSlideID).classList.remove('slideActive');
+		document.getElementById(activeSlideID).classList.add('slidePassive');
+		document.getElementById(this.id).classList.remove('slidePassive');
+		document.getElementById(this.id).classList.add('slideActive');
+		activeSlideID = this.id;
+		IDtoField = Number(activeSlideID.substr(5));
+		for(var t = 0; t <= slideNum; t++){
+			hideElements(['field' + t]);
+		}
+		showElements(['field' + IDtoField]);
+	});
 }
+
 function setBackSettings() {
-$('#field'+IDtoField).css("background-color", document.getElementById('BackColor').value);
-hideElements(['modalBackground']);
-showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field'+IDtoField]);
+	$('#field' + IDtoField).css("background-color", document.getElementById('BackColor').value);
+	hideElements(['modalBackground']);
+	showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
 }
 
 function changeBackground() {
-    hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field'+IDtoField]);
+    hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
     showElements(['modalBackground']);
 }
+
 function deleteEl(){
 	$(".ui-draggable").mouseup(function(){
 		x = $(this).position().left;
@@ -225,7 +235,7 @@ function deleteEl(){
 		var w = Number(($(this).css("width")).slice(0,-2)) + Number(($(this).css("padding")).slice(0,-2)) ;
 		var h = Number(($(this).css("height")).slice(0,-2)) + Number(($(this).css("padding")).slice(0,-2));
 		//console.log("" + x + " " + xdrop + " " + (x+w));
-		if(x < xdrop && xdrop < x + w && y < ydrop && ydrop < y+h)
+		if(x < xdrop && xdrop < x + w && y < ydrop && ydrop < y + h)
 			$(this).remove();
 	});
 }
