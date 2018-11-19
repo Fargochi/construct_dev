@@ -218,6 +218,7 @@ function setBackSettings() {
 $('#field'+IDtoField).css("background-color", document.getElementById('BackColor').value);
 hideElements(['modalBackground']);
 showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field'+IDtoField]);
+button_back_color(IDtoField);
 }
 
 function changeBackground() {
