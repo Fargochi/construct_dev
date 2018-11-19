@@ -152,7 +152,7 @@ function setQuestionSettings() {
     hideElements(['modalQuestion', 'modalAnswer']);
     reModalBlock();
     button_push_question(IDtoField);
-    deleteEl();
+    deleteElTest();
 }
 
 function setAnswerSettings() {
@@ -178,7 +178,7 @@ function setAnswerSettings() {
     hideElements(['modalQuestion', 'modalAnswer']);
     reModalBlock();
     button_push_answer(IDtoField);
-    deleteEl();
+    deleteElTest();
 }
 
 function button_next() {

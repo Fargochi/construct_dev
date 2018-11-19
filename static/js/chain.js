@@ -21,6 +21,6 @@ function setCardSettings() {
     IQ++;
 	hideElements(['modalCard']);
     reModalBlock();
-    button_push_question(slideNum);
-    deleteEl();
+    //button_push_question(slideNum);
+    deleteElChain();
 }
