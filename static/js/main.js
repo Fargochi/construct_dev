@@ -120,7 +120,7 @@ function setQuestionSettings() {
     $(".questionclass").draggable({containment: "parent"});
     IQ++;
     reModalBlock();
-    button_push_question(slideNum);
+    button_push_question(IDtoField);
 	deleteEl();
 }
 function reModalBlock() {
@@ -168,7 +168,7 @@ function setAnswerSettings() {
     if(document.getElementById('AnswerTrueLi').value==1) document.getElementById(IDDIV).classList.add('TrueAnswer');
       else  document.getElementById(IDDIV).classList.add('FalseAnswer');
     reModalBlock();
-    button_push_answer(slideNum);
+    button_push_answer(IDtoField);
 	deleteEl();
 }
 function button_next() {
