@@ -78,19 +78,36 @@ function constructor_new_slide() //функция для создания нов
 var getdata = "";
 function createjs() //генерация js кода приложения
 {
-    getdata = 'var newslide= new constructor_slide; var newanswer = new constructor_one_answer;';
-    for (let i=0; test[i] != undefined; i++)
+    getdata = 'var newslide= new constructor_slide; var newanswer = new constructor_one_answer;\n';
+    for (let i=0; i<test.length; i++)
     {
-        var get_question = 'newslide.text_question = "' + test[i].question.Text + '";' ;
+        var get_question = 'newslide.text_question = "' + test[i].question.Text + '";\n' ;
         var get_answers = "";
-        for (let j=0; test[i].answers[j]!=undefined; j++)
+        for (let j=0; j < test[i].answers.length; j++)
         {
-            get_answers += 'newanswer.Text = "' + test[i].answers[j].Text + '"; newanswer.TrueLi =' + test[i].answers[j].TrueLi + '; newslide.answers.push(newanswer);';
+            get_answers += 'newanswer.Text = "' + test[i].answers[j].Text + '";\n newanswer.TrueLi =' + test[i].answers[j].TrueLi + '; newslide.answers.push(newanswer);\n';
         }
-        getdata += get_question + get_answers + 'test.push(newslide);';
+        getdata += get_question + get_answers + 'test.push(newslide);\n';
     }
 }
+getdatacss = "";
+function createcss()
+{
+    get_style_question = "";
+    for (let i=0; i < test.length; i++)
+    {
+        get_style_question += '#question' + i + '{\nfont: '+ test[i].question.FontType + ' '+ test[i].question.FontSize + ';' + '\n';
+        get_style_question += 'color: '+ test[i].question.FontColor + ';\n' ;
+        get_style_question += 'background-color: '+ test[i].question.Color +';\n';
+        get_style_question += 'left: '+ test[i].question.Left +';\n';
+        get_style_question += 'top: '+ test[i].question.Top +';\n';
+        get_style_question += 'width: '+ test[i].question.Width +';\n';
+        get_style_question += 'height: '+ test[i].question.Height +';}';
+        getdatacss += get_style_question + '\n';
 
+    }
+    alert(getdatacss);
+}
 /////////////////////////////////////////////////////////////////////
 
 function newQuestion() {
