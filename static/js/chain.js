@@ -19,6 +19,7 @@ function setCardSettings() {
     $(".cardclass").resizable({containment: "parent"});
     $(".cardclass").draggable({containment: "parent"});
     IQ++;
+	hideElements(['modalCard']);
     reModalBlock();
     button_push_question(slideNum);
     deleteEl();

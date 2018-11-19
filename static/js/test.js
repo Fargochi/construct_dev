@@ -149,6 +149,7 @@ function setQuestionSettings() {
     $(".questionclass").resizable({containment: "parent"});
     $(".questionclass").draggable({containment: "parent"});
     IQ++;
+    hideElements(['modalQuestion', 'modalAnswer']);
     reModalBlock();
     button_push_question(IDtoField);
     deleteEl();
@@ -174,6 +175,7 @@ function setAnswerSettings() {
         document.getElementById(IDDIV).classList.add('TrueAnswer');
     else
         document.getElementById(IDDIV).classList.add('FalseAnswer');
+    hideElements(['modalQuestion', 'modalAnswer']);
     reModalBlock();
     button_push_answer(IDtoField);
     deleteEl();

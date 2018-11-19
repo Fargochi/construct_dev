@@ -60,7 +60,6 @@ function changeBackground() {
 }
 
 function reModalBlock() {
-    hideElements(['modalQuestion', 'modalAnswer']);
     showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
 }
 
