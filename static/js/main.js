@@ -186,7 +186,7 @@ function showElements(names) {
         document.getElementById(names[i]).classList.add("visible");
     }
 }
-var NumberOfAnswerOnSlide=0;
+
 function setAnswerSettings() {
     var newdiv = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newdiv);
@@ -196,9 +196,6 @@ function setAnswerSettings() {
     newdiv.classList.add("ui-draggable");
     newdiv.id = "answer" + IA;
     IDDIV = "answer" + IA;
-    document.getElementById(IDDIV).setAttribute("NumberOfSlide", IDtoField);
-    document.getElementById(IDDIV).setAttribute("NumberOfAnswerOnSlide", NumberOfAnswerOnSlide);
-    NumberOfAnswerOnSlide++;
     document.getElementById("answer"+IA).style.left = "0px";
     document.getElementById("answer"+IA).style.top = "0px";
     newdiv.innerText = document.getElementById('AnswerText').value;
@@ -221,7 +218,6 @@ function setAnswerSettings() {
 function button_next() {
 	confirm("Сохранить изменения?");//проработать этот момент про сохранения
 	slideNum++;
-  NumberOfAnswerOnSlide=0;
 	var slide = document.createElement('div');
 	slide.id = 'slide' + slideNum;
 	document.getElementById('scroll').appendChild(slide);
