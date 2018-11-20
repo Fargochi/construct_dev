@@ -103,7 +103,7 @@ function createcss() //генерация css стилей приложения
 {   getdatacss = "";
     for (let i=0; i < test.length; i++)
     {   let get_style_question = "";
-        get_style_question += '#question' + i + '{\nfont: '+ test[i].question.FontType + ' '+ test[i].question.FontSize + ';\n';.
+        get_style_question += '#question' + i + '{\nfont: '+ test[i].question.FontType + ' '+ test[i].question.FontSize + ';\n';
         get_style_question += 'color: '+ test[i].question.FontColor + ';\n' ;
         get_style_question += 'background-color: '+ test[i].question.Color +';\n';
         get_style_question += 'left: '+ test[i].question.Left +';\n';
