@@ -37,7 +37,7 @@ function next()
 }
 function chek()
 {
-	for (let i=0;i<test[number_question].answers.length ;i++)
+	for (let i=0;i<test[number_question].answers.length; i++)
 	{
 		pupilanswer =  $('#answer'+number_question+'_' + i).attr("trueli"); //значение select по id ответа
 		if (pupilanswer != test[number_question].answers[i].trueorfalse) {right=0;}

@@ -30,16 +30,16 @@ function button_save_changes()
 {
     for (let i=0; i<test.length; i++)
     {
-        test[i].question.Left = $("#question"+i).css("left");
-        test[i].question.Top = $("#question"+i).css("top");
-        test[i].question.Width = $("#question"+i).css("width");
-        test[i].question.Height = $("#question"+i).css("height");
+        test[i].question.Left = 100*Number($("#question"+i).css("left").slice(0, -2))/Number($("#field").css("width").slice(0, -2)) + "%";
+        test[i].question.Top = 100*Number($("#question"+i).css("top").slice(0, -2))/Number($("#field").css("height").slice(0, -2)) + "%";
+        test[i].question.Width = 100*Number($("#question"+i).css("width").slice(0, -2))/Number($("#field").css("width").slice(0, -2)) + "%";
+        test[i].question.Height = 100*Number($("#question"+i).css("height").slice(0, -2))/Number($("#field").css("height").slice(0, -2)) + "%";
         for (let j=0; j<test[i].answers.length; j++)
         {
-            test[i].answers[j].Left =  $("#answer"+i+"_"+j).css("left");
-            test[i].answers[j].Top =  $("#answer"+i+"_"+j).css("top");
-            test[i].answers[j].Width =  $("#answer"+i+"_"+j).css("width");
-            test[i].answers[j].Height =  $("#answer"+i+"_"+j).css("height");
+            test[i].answers[j].Left = 100*Number($("#answer"+i+"_"+j).css("left").slice(0, -2))/Number($("#field").css("width").slice(0, -2)) + "%";
+            test[i].answers[j].Top =  100*Number($("#answer"+i+"_"+j).css("top").slice(0, -2))/Number($("#field").css("height").slice(0, -2)) + "%";
+            test[i].answers[j].Width =  100*Number($("#answer"+i+"_"+j).css("left").slice(0, -2))/Number($("#field").css("width").slice(0, -2)) + "%";
+            test[i].answers[j].Height =  100*Number($("#answer"+i+"_"+j).css("top").slice(0, -2))/Number($("#field").css("height").slice(0, -2)) + "%";
         }
     }
 }
