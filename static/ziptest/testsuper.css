@@ -37,6 +37,8 @@ background-color: #140d97;
 left: 306px;
 top: 71px;
 width: 323px;
+position: absolute;
+text-align: center;
 height: 66px;}
 #answer0_0{
 font: serif 26;
@@ -45,6 +47,8 @@ background-color: #a4fdb4;
 left: 52px;
 top: 234px;
 width: 311px;
+position: absolute;
+text-align: center;
 height: 89px;}
 #answer0_1{
 font: sans-serif 26;
@@ -53,6 +57,8 @@ background-color: #ffff80;
 left: 510px;
 top: 232px;
 width: 355px;
+position: absolute;
+text-align: center;
 height: 90px;}
 #question1{
 font: arial 30;
@@ -61,6 +67,8 @@ background-color: #489140;
 left: 305px;
 top: 76px;
 width: 295px;
+position: absolute;
+text-align: center;
 height: 76px;}
 #answer1_0{
 font: sans-serif 26;
@@ -69,6 +77,8 @@ background-color: #ff80ff;
 left: 45px;
 top: 253px;
 width: 385px;
+position: absolute;
+text-align: center;
 height: 64px;}
 #answer1_1{
 font: arial 26;
@@ -77,4 +87,6 @@ background-color: #00ffff;
 left: 533px;
 top: 299px;
 width: 270px;
+position: absolute;
+text-align: center;
 height: 150px;}
