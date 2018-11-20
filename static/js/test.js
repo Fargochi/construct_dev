@@ -120,18 +120,16 @@ function createcss() //генерация css стилей приложения
             get_style_answer += 'left: '+ test[i].answers[j].Left +  ';\n';
             get_style_answer += 'top: '+ test[i].answers[j].Top +  ';\n';
             get_style_answer += 'width: '+ test[i].answers[j].Width +  ';\n';
-            get_style_answer += 'height: '+ test[i].answers[j].Height +  ';\n';
+            get_style_answer += 'height: '+ test[i].answers[j].Height +  ';}\n';
             getdatacss += get_style_answer;
         }
     }
 }
 /////////////////////////////////////////////////////////////////////
-
 function newQuestion() {
-    if(test[IDtoField].question.Text!=""){alert("Сначала удалите старый вопрос!");} else {
     hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
     showElements(['modalQuestion']);
-}}
+}
 
 function newAnswer() {
     hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
@@ -139,7 +137,6 @@ function newAnswer() {
 }
 
 function setQuestionSettings() {
-    if(document.getElementById('QuestionText').value!=""){
     var newdiv = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newdiv);
     addClasses(newdiv, ["questionclass", "ui-widget", "ui-corner-all", "ui-draggable"])
@@ -158,9 +155,7 @@ function setQuestionSettings() {
     hideElements(['modalQuestion', 'modalAnswer']);
     reModalBlock();
     button_push_question(IDtoField);
-    deleteElQuestion();
-}
-else alert('Вопрос не может быть пустым')
+    deleteElTest();
 }
 
 function setAnswerSettings() {
@@ -186,7 +181,7 @@ function setAnswerSettings() {
     hideElements(['modalQuestion', 'modalAnswer']);
     reModalBlock();
     button_push_answer(IDtoField);
-    deleteElAnswer();
+    deleteElTest();
 }
 
 function button_next() {
@@ -223,45 +218,23 @@ function button_next() {
 		showElements(['field' + IDtoField]);
 	});
 }
-function deleteElAnswer(){
-    $(".ui-draggable").mouseup(function(){
-        x = $(this).position().left;
-        y = $(this).position().top;
-        //console.log("" + x + " " + y);
-        var xdrop = $("#deleteBoxTest").position().left;
-        var ydrop = $("#deleteBoxTest").position().top;
-        var w = Number(($(this).css("width")).slice(0,-2)) + Number(($(this).css("padding")).slice(0,-2)) ;
-        var h = Number(($(this).css("height")).slice(0,-2)) + Number(($(this).css("padding")).slice(0,-2));
+
+function deleteElTest(){
+	$(".ui-draggable").mouseup(function(){
+		x = $(this).position().left;
+		y = $(this).position().top;
+		//console.log("" + x + " " + y);
+		var xdrop = $("#deleteBoxTest").position().left;
+		var ydrop = $("#deleteBoxTest").position().top;
+		var w = Number(($(this).css("width")).slice(0,-2)) + Number(($(this).css("padding")).slice(0,-2)) ;
+		var h = Number(($(this).css("height")).slice(0,-2)) + Number(($(this).css("padding")).slice(0,-2));
         var wdrop = Number(($("#deleteBoxTest").css("width")).slice(0,-2)) + Number(($("#deleteBoxTest").css("padding")).slice(0,-2));
-        var hdrop = Number(($("#deleteBoxTest").css("height")).slice(0,-2)) + Number(($("#deleteBoxTest").css("padding")).slice(0,-2));
-        if (max(x,xdrop) <= min(x+w,xdrop+wdrop) && max(y,ydrop)<=min(y+h,ydrop+hdrop)) {
-            if(confirm("Вы точно хотите удалить?")){
-                $(this).remove();
-                let rest=0;
-                while(this.id.charAt(rest)!='_') rest++;
-                rest++;
-                alert(this.id.substr(rest));
-                button_delete_answer(IDtoField, Number(this.id.substr(rest)));
-            }
-        }
-    });
-}
-function deleteElQuestion(){
-    $(".ui-draggable").mouseup(function(){
-        x = $(this).position().left;
-        y = $(this).position().top;
-        //console.log("" + x + " " + y);
-        var xdrop = $("#deleteBoxTest").position().left;
-        var ydrop = $("#deleteBoxTest").position().top;
-        var w = Number(($(this).css("width")).slice(0,-2)) + Number(($(this).css("padding")).slice(0,-2)) ;
-        var h = Number(($(this).css("height")).slice(0,-2)) + Number(($(this).css("padding")).slice(0,-2));
-        var wdrop = Number(($("#deleteBoxTest").css("width")).slice(0,-2)) + Number(($("#deleteBoxTest").css("padding")).slice(0,-2));
-        var hdrop = Number(($("#deleteBoxTest").css("height")).slice(0,-2)) + Number(($("#deleteBoxTest").css("padding")).slice(0,-2));
-        if (max(x,xdrop) <= min(x+w,xdrop+wdrop) && max(y,ydrop)<=min(y+h,ydrop+hdrop)) {
-            if(confirm("Вы точно хотите удалить?")){
-                $(this).remove();
-                button_delete_question(IDtoField);
-            }
-        }
-    });
+		var hdrop = Number(($("#deleteBoxTest").css("height")).slice(0,-2)) + Number(($("#deleteBoxTest").css("padding")).slice(0,-2));
+		if (max(x,xdrop) <= min(x+w,xdrop+wdrop) && max(y,ydrop)<=min(y+h,ydrop+hdrop)) {
+      		if(confirm("Вы точно хотите удалить?")){
+				$(this).remove();
+      			button_delete_answer(IDtoField, Number(this.id.substr(6)));
+    		}
+		}
+	});
 }
