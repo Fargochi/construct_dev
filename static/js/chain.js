@@ -42,13 +42,13 @@ function setCardSettings() {
     deleteElChain();
 }
 
-function newQuestion() {
+function newQuestionChain() {
     if(test[IDtoField].question.Text!=""){alert("Сначала удалите старый вопрос!");} else {
     hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
     showElements(['modalQuestion']);}
 }
 
-function setQuestionSettings() {
+function setQuestionSettingsChain() {
     if(document.getElementById('QuestionText').value!=""){
     var newdiv = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newdiv);
