@@ -1,9 +1,13 @@
 var test = [];
 var number_question=0; var ball =0;//заполняется из данных пользователя скриптом, только текст и правильность
 test.push(new constructor_slide);
-test[test.length-1].push_question("вопрос1");
-test[test.length-1].push_answer("ответ1","0");
-test[test.length-1].push_answer("ответ2","1");
+test[test.length-1].push_question("Вопрос 0");
+test[test.length-1].push_answer("Верный ответ 0","1");
+test[test.length-1].push_answer("Неверный ответ 0","0");
+test.push(new constructor_slide);
+test[test.length-1].push_question("Вопрос 1");
+test[test.length-1].push_answer("Неверный ответ 1","0");
+test[test.length-1].push_answer("Верный ответ 1","1");
 function constructor_slide() //слайд теста
 {
 	this.question = "";
