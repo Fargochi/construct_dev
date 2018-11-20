@@ -2,7 +2,12 @@ function newCard() {
 	hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field'+IDtoField]);
     showElements(['modalCard']);
 }
-
+function createSpot(){
+    var spot = document.createElement('div');
+    document.getElementById('card'+IQ).appendChild(spot);
+    spot.id="spot"+IQ;
+    addClasses(spot, ["spot"]);
+}
 function setCardSettings() {
     var newdiv = document.createElement('div');
     document.getElementById('field'+IDtoField).appendChild(newdiv);
@@ -18,6 +23,7 @@ function setCardSettings() {
     $(IDDIV).css("background-color", document.getElementById('CardColor').value);
     $(".cardclass").resizable({containment: "parent"});
     $(".cardclass").draggable({containment: "parent"});
+    createSpot();
     IQ++;
 	hideElements(['modalCard']);
     reModalBlock();
@@ -65,7 +71,7 @@ setInterval(function(){
 		b[a[i][1]] = i;
 	}
 	for (var i = 0; i < IQ; i++){
-		document.getElementById("card" + i).innerText = b[i];
+		document.getElementById("spot"+i).innerText = b[i];
 	}
 	console.log(s);
 },100);
