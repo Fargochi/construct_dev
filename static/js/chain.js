@@ -44,7 +44,9 @@ function deleteElChain(){
 	});
 }
 const pair = (x, y) => Object.freeze([x, y]);
+
 setInterval(function(){
+	if(category != "Тест-цепочка") return;
 	var a = [];
 	for (var i = 0;i<IQ;i++){
 		var x = $("#card" + i).position().left;
