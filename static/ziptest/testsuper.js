@@ -1,4 +1,17 @@
 var test[]; //заполняется из данных пользователя скриптом, только текст и правильность
+var newslide= new constructor_slide; var newanswer = new constructor_one_answer;
+newslide.text_question = "Вопрос 1";
+newanswer.Text = "Правильный ответ";
+ newanswer.TrueLi =1; newslide.answers.push(newanswer);
+newanswer.Text = "Неправильный ответ";
+ newanswer.TrueLi =0; newslide.answers.push(newanswer);
+test.push(newslide);
+newslide.text_question = "Вопрос 2";
+newanswer.Text = "Неправильный ответ";
+ newanswer.TrueLi =0; newslide.answers.push(newanswer);
+newanswer.Text = "Правильный ответ";
+ newanswer.TrueLi =0; newslide.answers.push(newanswer);
+test.push(newslide);
 var number_question = 0;
 var ball = 0;
 function constructor_slide() //слайд теста

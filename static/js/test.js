@@ -120,7 +120,7 @@ function createcss() //генерация css стилей приложения
             get_style_answer += 'left: '+ test[i].answers[j].Left +  ';\n';
             get_style_answer += 'top: '+ test[i].answers[j].Top +  ';\n';
             get_style_answer += 'width: '+ test[i].answers[j].Width +  ';\n';
-            get_style_answer += 'height: '+ test[i].answers[j].Height +  ';\n';
+            get_style_answer += 'height: '+ test[i].answers[j].Height +  ';}\n';
             getdatacss += get_style_answer;
         }
     }
@@ -240,7 +240,6 @@ function deleteElAnswer(){
                 let rest=0;
                 while(this.id.charAt(rest)!='_') rest++;
                 rest++;
-                alert(this.id.substr(rest));
                 button_delete_answer(IDtoField, Number(this.id.substr(rest)));
             }
         }
