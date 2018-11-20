@@ -1,11 +1,12 @@
+var IQ=0,IC=0;
 function newCard() {
 	hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field'+IDtoField]);
     showElements(['modalCard']);
 }
 function createSpot(){
     var spot = document.createElement('div');
-    document.getElementById('card'+IQ).appendChild(spot);
-    spot.id="spot"+IQ;
+    document.getElementById('card'+IC).appendChild(spot);
+    spot.id="spot"+IC;
     addClasses(spot, ["spot"]);
 }
 
@@ -15,17 +16,17 @@ function newSetting() {
 }
 
 function setSettingSettings() {
-    
+
 }
 
 function setCardSettings() {
     var newdiv = document.createElement('div');
     document.getElementById('field'+IDtoField).appendChild(newdiv);
     addClasses(newdiv, ["cardclass", "ui-widget", "ui-corner-all", "ui-draggable"])
-    newdiv.id = "card" + IQ;
-    IDDIV = "#card" + IQ;
-    document.getElementById("card"+IQ).style.left = "0px";
-    document.getElementById("card"+IQ).style.top = "0px";
+    newdiv.id = "card" + IC;
+    IDDIV = "#card" + IC;
+    document.getElementById("card"+IC).style.left = "0px";
+    document.getElementById("card"+IC).style.top = "0px";
     newdiv.innerText = document.getElementById('CardText').value;
     $(IDDIV).css("font", document.getElementById('CardFontSize').value + "pt " + document.getElementById('CardFontType').value);
     $(IDDIV).css("color", document.getElementById('CardFontColor').value);
@@ -34,20 +35,20 @@ function setCardSettings() {
     $(".cardclass").resizable({containment: "parent"});
     $(".cardclass").draggable({containment: "parent"});
     createSpot();
-    IQ++;
+    IC++;
 	hideElements(['modalCard']);
     reModalBlock();
     //button_push_question(slideNum);
     deleteElChain();
 }
 
-function newQuestion() {
+function newQuestionChain() {
     if(test[IDtoField].question.Text!=""){alert("Сначала удалите старый вопрос!");} else {
     hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
     showElements(['modalQuestion']);}
 }
 
-function setQuestionSettings() {
+function setQuestionSettingsChain() {
     if(document.getElementById('QuestionText').value!=""){
     var newdiv = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newdiv);
@@ -67,7 +68,7 @@ function setQuestionSettings() {
     hideElements(['modalQuestion']);
     reModalBlock();
     //button_push_question(IDtoField);
-    deleteElQuestion();
+    deleteElChain();
 }
 else alert('Вопрос не может быть пустым')
 }
@@ -84,8 +85,16 @@ function deleteElChain(){
 		var hdrop = Number(($("#deleteBoxChain").css("height")).slice(0,-2)) + Number(($("#deleteBoxChain").css("padding")).slice(0,-2));
 		if (max(x,xdrop) <= min(x+w,xdrop+wdrop) && max(y,ydrop)<=min(y+h,ydrop+hdrop)) {
       		if(confirm("Вы точно хотите удалить?")){
-				$(this).remove();
-      			button_delete_answer(IDtoField, Number(this.id.substr(6)));
+				if ($(this).attr('id').indexOf("card")!=-1){
+					var idEl = $(this).attr('id');
+					for (var i = IC-2; i >= idEl; i--)
+						document.getElementById("card"+i).id = "card" + (i+1);
+					IC--;
+					$("#card" + (IC-1)).remove();
+				}
+				else
+					$(this).remove();
+      			//button_delete_answer(IDtoField, Number(this.id.substr(6)));
 		    }
 		}
 	});
@@ -95,7 +104,7 @@ const pair = (x, y) => Object.freeze([x, y]);
 setInterval(function(){
 	if(category != "Тест-цепочка") return;
 	var a = [];
-	for (var i = 0;i<IQ;i++){
+	for (var i = 0;i<IC;i++){
 		var x = $("#card" + i).position().left;
 		a.push(pair(x, i));
 	}
@@ -104,14 +113,14 @@ setInterval(function(){
 		else return -1;
 	});
 	var s = "";
-	for (var i = 0; i < IQ; i++){
+	for (var i = 0; i < IC; i++){
 		s+= a[i][1] + " ";
 	}
 	b = new Array(IQ);
-	for (var i = 0; i < IQ; i++){
+	for (var i = 0; i < IC; i++){
 		b[a[i][1]] = i;
 	}
-	for (var i = 0; i < IQ; i++){
+	for (var i = 0; i < IC; i++){
 		document.getElementById("spot"+i).innerText = b[i];
 	}
 	console.log(s);
