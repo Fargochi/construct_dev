@@ -1,5 +1,5 @@
 
-
+var currentForm;
 
 
 
@@ -75,12 +75,12 @@ function onFilesSelect(e) {
             img = makePreview(img, 128);
             data.push('<img src="' + img.src + '" width=' + img.width + '" height="' + img.height + '" />')
 			alert('foo')
-			this.parent.innerHTML += '<img src="' + img.src + '" width=' + img.width + '" height="' + img.height + '" />';
+			document.getElementById('output').innerHTML += '<img src="' + img.src + '" width=' + img.width + '" height="' + img.height + '" />';
           } else {
             img.onload =  function () {
               img = makePreview(img, 128);
               data.push('<img src="' + img.src + '" width=' + img.width + '" height="' + img.height + '" />');
-			  this.parent.innerHTML += '<img src="' + img.src + '" width=' + img.width + '" height="' + img.height + '" />';
+			  document.getElementById('output').innerHTML += '<img src="' + img.src + '" width=' + img.width + '" height="' + img.height + '" />';
 			  alert('bar')
             }
           }
