@@ -1,5 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Тест</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="testsuper.css" />
+	<script type="text/javascript">
 var test = []; //заполняется из данных пользователя скриптом, только текст и правильность
-var newslide= new constructor_slide; var newanswer = new constructor_one_answer;
+function constructor_slide() //слайд теста
+
+{
+	this.text_question = "";
+	this.answers = [];
+}
+function constructor_one_answer() //вариант ответа
+{
+	this.Text = "";
+	this.TrueLi = 0;
+}
+
+var newslide= new constructor_slide; var newanswer= new constructor_one_answer;
 newslide.text_question = "Вопрос 1";
 newanswer.Text = "Правильный ответ";
  newanswer.TrueLi =1; newslide.answers.push(newanswer);
@@ -14,16 +33,6 @@ newanswer.Text = "Правильный ответ";
 test.push(newslide);
 var number_question = 0;
 var ball = 0;
-function constructor_slide() //слайд теста
-{
-	this.text_question = "";
-	this.answers = [];
-}
-function constructor_one_answer() //вариант ответа
-{
-	this.Text = "";
-	this.TrueLi = 0;
-}
 function chekanswer(id) //функция для "отметки" варианта ответа (меняется цвет кнопки и value)
 {
 	var flag = document.getElementById('')
@@ -80,3 +89,15 @@ function makePB() {
 		document.getElementById("mainTr").innerHTML="<td class='"+PBpassive+"'></td>";
 	}
 }
+	</script>
+</head>
+<body onload = "setquestion(); makePB();">
+	<div id = progress></div>
+	<div id = mainfield>
+	<div id = base> </div> <!-- для вывода результатов-->
+	<div id = "question"></div>
+	<div id = "answers"></div> <!-- сюда будут добавляться дивы вопросов-->
+	</div>
+
+</body>
+</html>
