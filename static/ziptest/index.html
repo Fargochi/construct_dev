@@ -6,11 +6,13 @@
 	<link rel="stylesheet" type="text/css" href="test.css" />
 	<script src="test.js"></script>
 </head>
-<body>
-	<div id = "base"><button onClick="start();">Начать тест!</button></div>
-	<div id = "question" class = ".."></div>
+<body onload = "setquestion()">
+	<div id = progress></div>
+	<div id = mainfield>
+	<div id = base> </div> <!-- для вывода результатов-->
+	<div id = "question"></div>
 	<div id = "answers"></div> <!-- сюда будут добавляться дивы вопросов-->
-	<div id = "nextquestion"></div>
+	</div>
 
 </body>
 </html>
