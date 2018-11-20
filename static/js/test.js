@@ -86,9 +86,9 @@ function constructor_new_slide() //функция для создания нов
 var getdata = "";
 function createjs() //генерация js кода приложения
 {
-    getdata = 'test.push(new constructor_slide);\n';
     for (let i=0; i<test.length; i++)
     {
+        getdata += 'test.push(new constructor_slide);\n';
         var get_question = 'test[test.length-1].push_question("' + test[i].question.Text + '");\n' ;
         var get_answers = "";
         for (let j=0; j < test[i].answers.length; j++)
@@ -133,7 +133,8 @@ function newQuestion() {
     if(test[IDtoField].question.Text!=""){alert("Сначала удалите старый вопрос!");} else {
     hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
     showElements(['modalQuestion']);
-}}
+}
+}
 
 function newAnswer() {
     hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
@@ -142,21 +143,26 @@ function newAnswer() {
 
 function setQuestionSettings() {
     if(document.getElementById('QuestionText').value!=""){
-    var newdiv = document.createElement('div');
+    let newdiv = document.createElement('div');
+        let newminidiv = document.createElement('div');    
     document.getElementById('field' + IDtoField).appendChild(newdiv);
+        document.getElementById('slide' + IDtoField).appendChild(newminidiv);
     addClasses(newdiv, ["questionclass", "ui-widget", "ui-corner-all", "ui-draggable"])
-    newdiv.id = "question" + IQ;
-    IDDIV = "#question" + IQ;
-    document.getElementById("question"+IQ).style.left = "0px";
-    document.getElementById("question"+IQ).style.top = "0px";
+    newdiv.id = "question" + IDtoField;
+    IDDIV = "#question" + IDtoField;
+        newminidiv.id = "miniature" + IDtoField;
+        IDMINIDIV = "#question" + IDtoField;
+        $(IDMINIDIV).css("z-index", "1000");
+    document.getElementById("question"+IDtoField).style.left = "0px";
+    document.getElementById("question"+IDtoField).style.top = "0px";
     newdiv.innerText = document.getElementById('QuestionText').value;
     $(IDDIV).css("font", document.getElementById('QuestionFontSize').value + "pt " + document.getElementById('QuestionFontType').value);
     $(IDDIV).css("color", document.getElementById('QuestionFontColor').value);
     //$(IDDIV).css("z-index", document.getElementById('QuestionZIndex').value);
     $(IDDIV).css("background-color", document.getElementById('QuestionColor').value);
+        $(IDMINIDIV).css("background-color", document.getElementById('QuestionColor').value);
     $(".questionclass").resizable({containment: "parent"});
     $(".questionclass").draggable({containment: "parent"});
-    IQ++;
     hideElements(['modalQuestion', 'modalAnswer']);
     reModalBlock();
     button_push_question(IDtoField);
@@ -180,7 +186,6 @@ function setAnswerSettings() {
     $("#"+IDDIV).css("background-color", document.getElementById('AnswerColor').value);
     $(".answerclass").resizable({containment: "parent"});
     $(".answerclass").draggable({containment: "parent"});
-    IA++;
     if(document.getElementById('AnswerTrueLi').value == 1)
         document.getElementById(IDDIV).classList.add('TrueAnswer');
     else
@@ -269,6 +274,7 @@ function deleteElQuestion(){
 
 function TsetBackSettings() {
     $('#field'+IDtoField).css("background-color", document.getElementById('BackColor').value);
+    $('#slide'+IDtoField).css("background-color", document.getElementById('BackColor').value);    
     hideElements(['modalBackground']);
     showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field'+IDtoField]);
     button_back_color(IDtoField);
