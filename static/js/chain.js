@@ -55,8 +55,15 @@ setInterval(function(){
 		else return -1;
 	});
 	var s = "";
-	for (var i = 0;i<IQ;i++){
+	for (var i = 0; i < IQ; i++){
 		s+= a[i][1] + " ";
+	}
+	b = new Array(IQ);
+	for (var i = 0; i < IQ; i++){
+		b[a[i][1]] = i;
+	}
+	for (var i = 0; i < IQ; i++){
+		document.getElementById("card" + i).innerText = b[i];
 	}
 	console.log(s);
 },100);
