@@ -87,10 +87,10 @@ function deleteElChain(){
       		if(confirm("Вы точно хотите удалить?")){
 				if ($(this).attr('id').indexOf("card")!=-1){
 					var idEl = $(this).attr('id');
-					for (var i = IC-2; i >= idEl; i--)
-						document.getElementById("card"+i).id = "card" + (i+1);
-					IC--;
+					for (var i = idEl; i < IC; i++)
+						document.getElementById("card"+i).innerHTML = document.getElementById("card"+(i+1)).innerHTML;
 					$("#card" + (IC-1)).remove();
+					IC--;
 				}
 				else
 					$(this).remove();
