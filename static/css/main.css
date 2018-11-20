@@ -247,3 +247,15 @@ background-color: white;
      background: #FFFFFF;
      border: 3px solid #808080;
 }
+.spot {
+    position:absolute;
+    background: #0969a2;
+    width: 20px;
+    height: 20px;
+    cursor: move;
+    border-radius: 50%;
+    top: -6%;
+    left: 47%;
+    font-size: 60%;
+    color: #ffffff;
+}
