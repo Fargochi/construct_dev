@@ -27,10 +27,12 @@ function startPageSend(){
 	switch (category) {
 		case 'Тест с выбором ответа':
 			showElements(['construct_test_page']);
+			//document.getElementById("test_construct").innerHTML = "<script src='/js/test.js'></script>";
 			$('#construct_test_page').load('html/test.html');
 			break;
 		case 'Тест-цепочка':
 			showElements(['construct_chain_page']);
+			//document.getElementById("chain_construct").innerHTML = "<script src='/js/chain.js'></script>";
 			$('#construct_chain_page').load('html/chain.html');
 			break;
 	}
