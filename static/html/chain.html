@@ -51,7 +51,7 @@
     <input type="color" class='color' id='QuestionFontColor'>
     <br>Цвет фона поля:<br>
     <input type="color" class='color' value='#FFFF00' id='QuestionColor'><br><br>
-    <input type="button" class="submitter" id="QuestionFinish" onclick='setQuestionSettings();' value="Применить">
+    <input type="button" class="submitter" id="QuestionFinish" onclick='setQuestionSettingsChain();' value="Применить">
     <br><br>
 </div>
 <div id='modalBackground' class='modal hidden'>
@@ -86,7 +86,7 @@
 <div class="slide slideActive" id='slide0'></div>
 </div>
 <div id="buttons">
-    <div class="button_question" onclick = "newQuestion();"></div>
+    <div class="button_question" onclick = "newQuestionChain();"></div>
     <div class="name">Вопрос</div>
     <div class="button_card" onclick = "newCard();"></div>
     <div class="name">Карточка</div>
