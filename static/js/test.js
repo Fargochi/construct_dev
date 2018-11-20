@@ -140,7 +140,7 @@ function newAnswer() {
     hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
     showElements(['modalAnswer']);
 }
-
+var IDMINIDIV;
 function setQuestionSettings() {
     if(document.getElementById('QuestionText').value!=""){
     let newdiv = document.createElement('div');
@@ -151,8 +151,7 @@ function setQuestionSettings() {
     newdiv.id = "question" + IDtoField;
     IDDIV = "#question" + IDtoField;
         newminidiv.id = "miniature" + IDtoField;
-        IDMINIDIV = "#question" + IDtoField;
-        $(IDMINIDIV).css("z-index", "1000");
+        IDMINIDIV = "#miniature" + IDtoField;
     document.getElementById("question"+IDtoField).style.left = "0px";
     document.getElementById("question"+IDtoField).style.top = "0px";
     newdiv.innerText = document.getElementById('QuestionText').value;
@@ -195,7 +194,6 @@ function setAnswerSettings() {
     button_push_answer(IDtoField);
     deleteElAnswer();
 }
-
 function button_next() {
 	confirm("Сохранить изменения?");//проработать этот момент про сохранения
 	slideNum++;
