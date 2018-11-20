@@ -42,8 +42,9 @@ function setCardSettings() {
 }
 
 function newQuestion() {
+    if(test[IDtoField].question.Text!=""){alert("Сначала удалите старый вопрос!");} else {
     hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
-    showElements(['modalQuestion']);
+    showElements(['modalQuestion']);}
 }
 
 function setQuestionSettings() {
