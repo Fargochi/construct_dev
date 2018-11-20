@@ -135,11 +135,6 @@ function newQuestion() {
     showElements(['modalQuestion']);
 }}
 
-function selectTemplate();{
-    hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
-    showElements(['modalTemplate']);
-}
-
 function newAnswer() {
     hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
     showElements(['modalAnswer']);
@@ -168,16 +163,6 @@ function setQuestionSettings() {
     deleteElQuestion();
 }
 else alert('Вопрос не может быть пустым')
-}
-
-function setTemplateSettings() {
-    var newq = document.createElement('div');
-    newq.id="newq";
-    var newa = document.createElement('div');
-    var newa = document.createElement('div');
-    var newa = document.createElement('div');
-    var newa = document.createElement('div');
-    newa.classList.add("newa");
 }
 
 function setAnswerSettings() {
