@@ -86,9 +86,9 @@ function constructor_new_slide() //функция для создания нов
 var getdata = "";
 function createjs() //генерация js кода приложения
 {
-    getdata = 'test.push(new constructor_slide);\n';
     for (let i=0; i<test.length; i++)
     {
+        getdata += 'test.push(new constructor_slide);\n';
         var get_question = 'test[test.length-1].push_question("' + test[i].question.Text + '");\n' ;
         var get_answers = "";
         for (let j=0; j < test[i].answers.length; j++)
