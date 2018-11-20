@@ -66,6 +66,16 @@
     <input type='color' value='#FFFFFF' id='BackColor' class='Color'><br><br><br>
     <input type="button" id='BackFinish' onclick='TsetBackSettings();' value="Применить" class = "submitter" style="text-align: center;"><br><br>
 </div>
+<div id='modalTemplate' class='modal hidden'>
+    <b><h2>Вид сортировки</h2></b>
+    <select class='Template' id='TemplateType'>
+        <option value='serif'>
+           1 вопрос, 4 варианта ответа
+        </option>
+    </select>
+    <br><br>
+    <input type="button" id='BackFinish' onclick='setTemplateSettings();' value="Применить" class = "submitter" style="text-align: center;"><br><br>
+</div>
   <div id="field" class='field'>
   <div id='deleteBoxdiv' style="z-index: 99;">
     <img id = 'deleteBoxTest' class = "deletebox" style='z-index: 100' src="/img/trash_bin_icon.png">
