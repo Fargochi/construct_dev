@@ -47,16 +47,29 @@ function setquestion()
 	if (number_question == test.length) {finish();}
 	else {
 	//работа c div "question"
-	var newdivquestion = '<div id="question'+ number_question + '">'+ test[number_question].question +'</div>"'
+	var newdivquestion = '<div id="question'+ number_question + '">'+ test[number_question].question +'</div>'
 	document.getElementById('question').innerHTML = newdivquestion;
 	//работа с div "answers"
 	document.getElementById('answers').innerHTML = " ";
 	var divanswers = document.getElementById("answers"); 
 	for (let i=0;i<test[number_question].answers.length ;i++)
-	{ alert(i);
+	{ 
 		new_answer = '<div id = "answer'+ number_question + '_' + i + '">'+ test[number_question].answers[i].Text + '</div>'; //создания div конкретного вопроса. НАДО ДОБАВИТЬ ЧЕКЕР с id-номером
-		
 		divanswers.innerHTML += new_answer; //добавление этого div
+		$("#answer"+ number_question + "_" + i).attr("trueli","0");
+		//document.getElementById("answer"+ number_question + "_" + i).setAttribute("trueli","0");
+		$("#answer"+ number_question + "_" + i).click(function(){
+        if(document.getElementById("answer"+ number_question + "_" + i).getAttribute("trueli")=="0"){
+        			$("#answer"+ number_question + "_" + i).attr("trueli","1");
+        			$("#answer"+ number_question + "_" + i).css("border-width","3px");
+        			$("#answer"+ number_question + "_" + i).css("border-color","green");
+        }
+        else
+        	{
+        			$("#answer"+ number_question + "_" + i).attr("trueli","0");
+        			$("#answer"+ number_question + "_" + i).css("border","0px green");
+        }
+		})
 	}}
 }
 function finish()
@@ -68,9 +81,9 @@ function finish()
 }
 
 function makePB() {
-	document.getElementById('progress').innerHTML="<table class='PBmain'><tr id='mainTr'></tr></table>";
+	/*document.getElementById('progress').innerHTML="<table class='PBmain'><tr id='mainTr'></tr></table>";
 	$("#mainTr").css("width", "50%");
 	for(let i=0;i<test.length;i++){
 		document.getElementById("mainTr").innerHTML="<td class='"+PBpassive+"'></td>";
-	}
+	}*/
 }
