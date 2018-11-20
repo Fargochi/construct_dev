@@ -20,6 +20,7 @@
   "dependencies": {
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
-    "handlebars": "^4.0.12"
+    "handlebars": "^4.0.12",
+    "node-zip": "^1.1.1"
   }
 }

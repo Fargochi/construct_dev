@@ -1,0 +1,67 @@
+<html lang="ru"><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-5">
+        <title>а</title>
+        <!--<link href="%D0%B0%20%D0%B0%D0%95%D0%B0%D0%9D%D0%B0%D0%95%D0%B1%20%D0%B0%D0%90%D0%B1%20%D0%B0%D0%98%D0%B1%20%20%D0%B0%D0%9F%D0%B1%20%D0%B0%D0%95%D0%B0%D0%92%D0%B1%20%D0%B1%20%20%D0%B1%20%D0%B1%20%D0%B0%D0%95%D0%B1%20%D0%B0%D0%98%D0%B0%D0%99%20%D0%B0%D0%9F%D0%B0%D0%9E%D0%B0%D0%94%D0%B1%20%D0%B0%D0%9E%D0%B0%D0%94%20%D0%B0%D0%9A%20%D0%B1%20%D0%B0%D0%9D%D0%B0%D0%90%D0%B1%20%D0%B1%20%D0%B0%D0%94%D0%B1_files/some-minimal-styles.css" rel="stylesheet">
+        -->
+		<script>
+            var listen = function(element, event, fn) {
+                return element.addEventListener(event, fn, false);
+            };
+
+            listen(document, 'DOMContentLoaded', function() {
+
+                var fileInput = document.querySelector('#file-input');
+                var listView = document.querySelector('#list-view');
+
+                var queue = [];
+                var isProcessing = false;
+
+                listen(fileInput, 'change', function(event) {
+                    var files = fileInput.files;
+                    if (files.lenght == 0) {
+                        return;
+                    }
+                    for(var i = 0; i < files.length; i++) {
+                        queue.push(files[i]);
+                    }
+                    fileInput.value = "";
+                    processQueue();
+                });
+
+                var processQueue = function() {
+                    if (isProcessing) {
+                        return;
+                    }
+                    if (queue.length == 0) {
+                        isProcessing = false;
+                        return;
+                    }
+                    isProcessing = true;
+                    file = queue.pop();
+                    var li = document.createElement('LI');
+                    var canvas = document.createElement('CANVAS');
+                    var ctx = canvas.getContext('2d');
+                    var image = new Image();
+                    listView.appendChild(li);
+                    image.onload = function() {
+                        var newWidth = 100;
+                        var newHeight = image.height * (newWidth / image.width);
+                        ctx.drawImage(image, 0, 0, newWidth, newHeight);
+                        URL.revokeObjectURL(image.src);
+                        li.appendChild(canvas);
+                        isProcessing = false;
+                        processQueue();
+                    };
+                    image.src = URL.createObjectURL(file);
+                };
+            });
+        </script>
+    </head>
+    <body>
+        <form action="">
+            <input type="file" id="file-input" multiple="multiple" accept="image/*">
+        </form>
+        <hr>
+        <ul id="list-view"></ul>
+    
+</body></html>
