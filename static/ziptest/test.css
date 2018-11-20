@@ -4,3 +4,29 @@ text-align: center;
  padding-top: 300px;
   padding-bottom: 200px;
 }
+.PBtrue{
+background-color: green;
+}
+.PBfalse{
+background-color: red; 
+}
+.PBpassive{
+background-color: grey;
+}
+.PBmain{
+width: 50%;
+position: absolute;
+top: 1%;
+}
+.PBactive{
+	position: absolute;
+}
+#mainfield {
+     position: absolute;
+     top: 5%;
+     left: 20%;
+     width: 63%;
+     height: 82%;
+     background: #ffffff;
+     border: 0px solid #808080;
+    }
