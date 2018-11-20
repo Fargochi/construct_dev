@@ -1,4 +1,4 @@
-var test[]; //заполняется из данных пользователя скриптом, только текст и правильность
+var test = []; //заполняется из данных пользователя скриптом, только текст и правильность
 var newslide= new constructor_slide; var newanswer = new constructor_one_answer;
 newslide.text_question = "Вопрос 1";
 newanswer.Text = "Правильный ответ";
@@ -17,9 +17,9 @@ var ball = 0;
 function constructor_slide() //слайд теста
 {
 	this.text_question = "";
-	this.answers[];
+	this.answers = [];
 }
-function consructor_one_answer() //вариант ответа
+function constructor_one_answer() //вариант ответа
 {
 	this.Text = "";
 	this.TrueLi = 0;
@@ -48,7 +48,7 @@ function chek()
 }
 function setquestion()
 {   
-	if (number_question = = test.length) {finish();}
+	if (number_question == test.length) {finish();}
 	else {
 	//работа c div "question"
 	var newdivquestion = '<div id="question'+ number_question + '">'+ test[number_question].question +'</div>"'
