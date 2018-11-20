@@ -4,6 +4,7 @@ test.push(new constructor_slide);
 test[test.length-1].push_question("Вопрос 0");
 test[test.length-1].push_answer("Верный ответ 0","1");
 test[test.length-1].push_answer("Неверный ответ 0","0");
+test[test.length-1].push_answer("Неверный ответ 1","0");
 test.push(new constructor_slide);
 test[test.length-1].push_question("Вопрос 1");
 test[test.length-1].push_answer("Неверный ответ 1","0");
@@ -36,11 +37,9 @@ function next()
 }
 function chek()
 {
-	var right = 1; var i;
-	var n = test[number_question].answers.length;
-	for (i=0;i<n;i++)
+	for (let i=0;i<test[number_question].answers.length; i++)
 	{
-		pupilanswer = document.getElementById('answer'+number_question+'_' + i).value; //значение select по id ответа
+		pupilanswer =  $('#answer'+number_question+'_' + i).attr("trueli"); //значение select по id ответа
 		if (pupilanswer != test[number_question].answers[i].trueorfalse) {right=0;}
 	}
 	ball += right;
@@ -58,22 +57,24 @@ function setquestion()
 	var divanswers = document.getElementById("answers"); 
 	for (let i=0;i<test[number_question].answers.length ;i++)
 	{ 
-		new_answer = '<div id = "answer'+ number_question + '_' + i + '">'+ test[number_question].answers[i].Text + '</div>'; //создания div конкретного вопроса. НАДО ДОБАВИТЬ ЧЕКЕР с id-номером
+		new_answer = '<div class="answerClass" id = "answer'+ number_question + '_' + i + '">'+ test[number_question].answers[i].Text + '</div>'; //создания div конкретного вопроса. НАДО ДОБАВИТЬ ЧЕКЕР с id-номером
 		divanswers.innerHTML += new_answer; //добавление этого div
 		$("#answer"+ number_question + "_" + i).attr("trueli","0");
 		//document.getElementById("answer"+ number_question + "_" + i).setAttribute("trueli","0");
-		$("#answer"+ number_question + "_" + i).click(function(){
-        if(document.getElementById("answer"+ number_question + "_" + i).getAttribute("trueli")=="0"){
-        			$("#answer"+ number_question + "_" + i).attr("trueli","1");
-        			$("#answer"+ number_question + "_" + i).css("border-width","3px");
-        			$("#answer"+ number_question + "_" + i).css("border-color","green");
+		$(".answerClass").click(function(){
+	alert(this.id);
+	alert("Произошел троллинг");
+        if(document.getElementById(this.id).getAttribute("trueli")=="0"){
+        			$("#"+this.id).attr("trueli","1");
+        			$("#"+this.id).css("box-shadow","0 0 25px #172caf");
+        			//box-shadow: 0 0 10px #172caf;
         }
         else
         	{
-        			$("#answer"+ number_question + "_" + i).attr("trueli","0");
-        			$("#answer"+ number_question + "_" + i).css("border","0px green");
+        			$("#"+this.id).attr("trueli","0");
+        			$("#"+this.id).css("box-shadow","0 0 0px #172caf");
         }
-		})
+})
 	}}
 }
 function finish()
