@@ -47,7 +47,7 @@ function setquestion()
 	var i;
 	for (i=0;i<n;i++)
 	{
-		newanswer = '<div id = "answer'+ number_question + '_' + i + '">'+ test[number_question].answers[i].text + '</div>'; //создания div конкретного вопроса. НАДО ДОБАВИТЬ ЧЕКЕР с id-номером
+		newanswer = '<div id = "answer'+ number_question + '_' + i + '">'+ test[number_question].answers[i].Text + '</div>'; //создания div конкретного вопроса. НАДО ДОБАВИТЬ ЧЕКЕР с id-номером
 		$
 		divanswers.innerHTML += newanswer; //добавление этого div
 	}}
@@ -60,4 +60,10 @@ function finish()
 	document.getElementById("base").innerHTML = total;
 }
 
-
+function makePB() {
+	document.getElementById('progress').innerHTML="<table class='PBmain'><tr id='mainTr'></tr></table>";
+	$("#mainTr").css("width", "50%");
+	for(let i=0;i<test.length;i++){
+		document.getElementById("mainTr").innerHTML="<td class='"+PBpassive+"'></td>";
+	}
+}
