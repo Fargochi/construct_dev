@@ -8,6 +8,16 @@ function createSpot(){
     spot.id="spot"+IQ;
     addClasses(spot, ["spot"]);
 }
+
+function newSetting() {
+    hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field'+IDtoField]);
+    showElements(['modalSetting']);
+}
+
+function setSettingSettings() {
+    
+}
+
 function setCardSettings() {
     var newdiv = document.createElement('div');
     document.getElementById('field'+IDtoField).appendChild(newdiv);
@@ -29,6 +39,37 @@ function setCardSettings() {
     reModalBlock();
     //button_push_question(slideNum);
     deleteElChain();
+}
+
+function newQuestion() {
+    if(test[IDtoField].question.Text!=""){alert("Сначала удалите старый вопрос!");} else {
+    hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
+    showElements(['modalQuestion']);}
+}
+
+function setQuestionSettings() {
+    if(document.getElementById('QuestionText').value!=""){
+    var newdiv = document.createElement('div');
+    document.getElementById('field' + IDtoField).appendChild(newdiv);
+    addClasses(newdiv, ["questionclass", "ui-widget", "ui-corner-all", "ui-draggable"])
+    newdiv.id = "question" + IQ;
+    IDDIV = "#question" + IQ;
+    document.getElementById("question"+IQ).style.left = "0px";
+    document.getElementById("question"+IQ).style.top = "0px";
+    newdiv.innerText = document.getElementById('QuestionText').value;
+    $(IDDIV).css("font", document.getElementById('QuestionFontSize').value + "pt " + document.getElementById('QuestionFontType').value);
+    $(IDDIV).css("color", document.getElementById('QuestionFontColor').value);
+    //$(IDDIV).css("z-index", document.getElementById('QuestionZIndex').value);
+    $(IDDIV).css("background-color", document.getElementById('QuestionColor').value);
+    $(".questionclass").resizable({containment: "parent"});
+    $(".questionclass").draggable({containment: "parent"});
+    IQ++;
+    hideElements(['modalQuestion']);
+    reModalBlock();
+    //button_push_question(IDtoField);
+    deleteElQuestion();
+}
+else alert('Вопрос не может быть пустым')
 }
 
 function deleteElChain(){

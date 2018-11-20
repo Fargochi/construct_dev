@@ -26,11 +26,52 @@
     <input type="button" class="submitter" id="CardFinish" onclick='setCardSettings();' value="Применить">
     <br><br>
 </div>
+<div id='modalQuestion' class='modal hidden'>
+    <h2><br>Параметры вопроса</br></h2>
+    <br>Текст вопроса:<br>
+    <input type="text" class='Question' id='QuestionText'>
+    <br>Тип шрифта:<br>
+    <select class='Question' id='QuestionFontType'>
+        <option disabled>
+            Выберите тип шрифта
+        </option>
+        <option value='arial'>
+            Шрифт 1: Arial
+        </option>
+        <option value='serif'>
+            Шрифт 2: serif
+        </option>
+        <option value='sans-serif'>
+            Шрифт 3: sans-serif
+        </option>
+    </select>
+    <br>Размер шрифта:<br>
+    <input type="text" class='Question' id='QuestionFontSize'>
+    <br>Цвет шрифта:<br>
+    <input type="color" class='color' id='QuestionFontColor'>
+    <br>Цвет фона поля:<br>
+    <input type="color" class='color' value='#FFFF00' id='QuestionColor'><br><br>
+    <input type="button" class="submitter" id="QuestionFinish" onclick='setQuestionSettings();' value="Применить">
+    <br><br>
+</div>
 <div id='modalBackground' class='modal hidden'>
     <b><h2>Параметры фона</h2></b>
     <p>Цвет фона:</p>
     <input type='color' value='#FFFFFF' id='BackColor' class='Color'><br><br><br>
     <input type="button" id='BackFinish' onclick='setBackSettings();' value="Применить" class = "submitter" style="text-align: center;"><br><br>
+</div>
+<div id='modalSetting' class='modal hidden'>
+    <b><h2>Вид сортировки</h2></b>
+    <select class='Question' id='QuestionFontType'>
+        <option value='serif'>
+           По горизонтали
+        </option>
+        <option value='sans-serif'>
+            По вертикали
+        </option>
+    </select>
+    <br><br>
+    <input type="button" id='BackFinish' onclick='setSettingSettings();' value="Применить" class = "submitter" style="text-align: center;"><br><br>
 </div>
   <div id="field" class='field'>
   <div id='deleteBoxdiv' style="z-index: 99;">
@@ -45,8 +86,12 @@
 <div class="slide slideActive" id='slide0'></div>
 </div>
 <div id="buttons">
+    <div class="button_question" onclick = "newQuestion();"></div>
+    <div class="name">Вопрос</div>
     <div class="button_card" onclick = "newCard();"></div>
     <div class="name">Карточка</div>
     <div class="button_background"onclick = "changeBackground();" ></div>
     <div class="name">Фон</div>
+    <div class="button_setting"onclick = "newSetting();" ></div>
+    <div class="name">Вид сортировки</div>
 </div>

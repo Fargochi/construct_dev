@@ -86,16 +86,16 @@ function constructor_new_slide() //функция для создания нов
 var getdata = "";
 function createjs() //генерация js кода приложения
 {
-    getdata = 'var newslide= new constructor_slide; var newanswer = new constructor_one_answer;\n';
+    getdata = 'test.push(new constructor_slide);\n';
     for (let i=0; i<test.length; i++)
     {
-        var get_question = 'newslide.text_question = "' + test[i].question.Text + '";\n' ;
+        var get_question = 'test[test.length-1].push_question("' + test[i].question.Text + '");\n' ;
         var get_answers = "";
         for (let j=0; j < test[i].answers.length; j++)
         {
-            get_answers += 'newanswer.Text = "' + test[i].answers[j].Text + '";\n newanswer.TrueLi =' + test[i].answers[j].TrueLi + '; newslide.answers.push(newanswer);\n';
+            get_answers += 'test[test.length-1].push_answer("' + test[i].answers[j].Text + '","' + test[i].answers[j].TrueLi + '");\n';
         }
-        getdata += get_question + get_answers + 'test.push(newslide);\n';
+        getdata += get_question + get_answers;
     }
 }
 var getdatacss = "";
@@ -103,12 +103,13 @@ function createcss() //генерация css стилей приложения
 {   getdatacss = "";
     for (let i=0; i < test.length; i++)
     {   let get_style_question = "";
-        get_style_question += '#question' + i + '{\nfont: '+ test[i].question.FontType + ' '+ test[i].question.FontSize + ';\n';
+        get_style_question += '#question' + i + '{\nfont: '+ test[i].question.FontType + ' '+ test[i].question.FontSize + ';\n';.
         get_style_question += 'color: '+ test[i].question.FontColor + ';\n' ;
         get_style_question += 'background-color: '+ test[i].question.Color +';\n';
         get_style_question += 'left: '+ test[i].question.Left +';\n';
         get_style_question += 'top: '+ test[i].question.Top +';\n';
         get_style_question += 'width: '+ test[i].question.Width +';\n';
+        get_style_question += 'position:absolute; \n ';
         get_style_question += 'height: '+ test[i].question.Height +';}';
         getdatacss += get_style_question + '\n';
         for (let j=0; j<test[i].answers.length; j++)
@@ -120,6 +121,7 @@ function createcss() //генерация css стилей приложения
             get_style_answer += 'left: '+ test[i].answers[j].Left +  ';\n';
             get_style_answer += 'top: '+ test[i].answers[j].Top +  ';\n';
             get_style_answer += 'width: '+ test[i].answers[j].Width +  ';\n';
+            get_style_answer += 'position:absolute; \n';
             get_style_answer += 'height: '+ test[i].answers[j].Height +  ';}\n';
             getdatacss += get_style_answer;
         }
