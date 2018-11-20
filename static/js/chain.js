@@ -43,9 +43,20 @@ function deleteElChain(){
 		}
 	});
 }
+const pair = (x, y) => Object.freeze([x, y]);
 setInterval(function(){
+	var a = [];
 	for (var i = 0;i<IQ;i++){
-		var a = $("#card" + i).position().left;
-		console.log("#card" + i + " "  + a);
+		var x = $("#card" + i).position().left;
+		a.push(pair(x, i));
 	}
+	a.sort(function(v,u){
+		if (v[0] > u[0]) return 1;
+		else return -1;
+	});
+	var s = "";
+	for (var i = 0;i<IQ;i++){
+		s+= a[i][1] + " ";
+	}
+	console.log(s);
 },100);
