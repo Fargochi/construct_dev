@@ -16,13 +16,6 @@ function chekanswer(id) //функция для "отметки" вариант�
 	var flag = document.getElementById('')
 
 }
-function start()
-{   
-	document.getElementById('base').innerHTML = " ";
-	button_next = '<button onClick="next();">Следующий вопрос</button>';
-	document.getElementById('nextquestion').innerHTML = button_next;
-	setquestion();
-}
 function next()
 { 
 	chek();
@@ -34,7 +27,7 @@ function chek()
 	var n = test[number_question].answers.length;
 	for (i=0;i<n;i++)
 	{
-		pupilanswer = document.getElementById(idselect).value; //значение select по id ответа
+		pupilanswer = document.getElementById('answer'+number_question+'_' + i).value; //значение select по id ответа
 		if (pupilanswer != test[number_question].answers[i].trueorfalse) {right=0;}
 	}
 	ball += right;
@@ -45,7 +38,7 @@ function setquestion()
 	if (number_question = = test.length) {finish();}
 	else {
 	//работа c div "question"
-	var newdivquestion = '<div class="question'+ number_question + '">'+ test[number_question].question +'</div>"'
+	var newdivquestion = '<div id="question'+ number_question + '">'+ test[number_question].question +'</div>"'
 	document.getElementById('question').innerHTML = newdivquestion;
 	//работа с div "answers"
 	document.getElementById('answers').innerHTML = " ";
@@ -54,16 +47,17 @@ function setquestion()
 	var i;
 	for (i=0;i<n;i++)
 	{
-		newanswer = '<div class = "answer'+ i + '">'+ test[number_question].answers[i].text + '</div>'; //создания div конкретного вопроса. НАДО ДОБАВИТЬ ЧЕКЕР с id-номером
+		newanswer = '<div id = "answer'+ number_question + '_' + i + '">'+ test[number_question].answers[i].text + '</div>'; //создания div конкретного вопроса. НАДО ДОБАВИТЬ ЧЕКЕР с id-номером
+		$
 		divanswers.innerHTML += newanswer; //добавление этого div
 	}}
 }
 function finish()
 {
-	document.getElementById("newdivquestion").innerHTML = " ";
 	document.getElementById("question").innerHTML = " ";
 	document.getElementById("answers").innerHTML = " ";
 	total = '<div>Ваш результат: ' +  ball + 'из' + number_question + '</div>';
 	document.getElementById("base").innerHTML = total;
 }
+
 
