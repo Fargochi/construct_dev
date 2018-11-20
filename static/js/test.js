@@ -88,14 +88,13 @@ function createjs() //генерация js кода приложения
 {
     for (let i=0; i<test.length; i++)
     {
-        getdata += 'test.push(new constructor_slide);\n';
         var get_question = 'test[test.length-1].push_question("' + test[i].question.Text + '");\n' ;
         var get_answers = "";
         for (let j=0; j < test[i].answers.length; j++)
         {
             get_answers += 'test[test.length-1].push_answer("' + test[i].answers[j].Text + '","' + test[i].answers[j].TrueLi + '");\n';
         }
-        getdata += get_question + get_answers;
+        getdata += 'test.push(new constructor_slide);\n'+get_question + get_answers;
     }
 }
 var getdatacss = "";
