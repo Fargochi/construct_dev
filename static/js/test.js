@@ -86,16 +86,16 @@ function constructor_new_slide() //функция для создания нов
 var getdata = "";
 function createjs() //генерация js кода приложения
 {
-    getdata = 'var newslide= new constructor_slide; var newanswer = new constructor_one_answer;\n';
+    getdata = 'test.push(new constructor_slide);\n';
     for (let i=0; i<test.length; i++)
     {
-        var get_question = 'newslide.text_question = "' + test[i].question.Text + '";\n' ;
+        var get_question = 'test[test.length-1].push_question("' + test[i].question.Text + '");\n' ;
         var get_answers = "";
         for (let j=0; j < test[i].answers.length; j++)
         {
-            get_answers += 'newanswer.Text = "' + test[i].answers[j].Text + '";\n newanswer.TrueLi =' + test[i].answers[j].TrueLi + '; newslide.answers.push(newanswer);\n';
+            get_answers += 'test[test.length-1].push_answer("' + test[i].answers[j].Text + '","' + test[i].answers[j].TrueLi + '");\n';
         }
-        getdata += get_question + get_answers + 'test.push(newslide);\n newslide.answers.splice(0,newslide.answers.length);\n';
+        getdata += get_question + get_answers;
     }
 }
 var getdatacss = "";

@@ -1,28 +1,24 @@
-var test = []; //заполняется из данных пользователя скриптом, только текст и правильность
-var newslide= new constructor_slide; var newanswer = new constructor_one_answer;
-newslide.text_question = "Вопрос 1";
-newanswer.Text = "Правильный ответ";
- newanswer.TrueLi =1; newslide.answers.push(newanswer);
-newanswer.Text = "Неправильный ответ";
- newanswer.TrueLi =0; newslide.answers.push(newanswer);
-test.push(newslide);
-newslide.text_question = "Вопрос 2";
-newanswer.Text = "Неправильный ответ";
- newanswer.TrueLi =0; newslide.answers.push(newanswer);
-newanswer.Text = "Правильный ответ";
- newanswer.TrueLi =0; newslide.answers.push(newanswer);
-test.push(newslide);
-var number_question = 0;
-var ball = 0;
+var test = [];
+var number_question=0; var ball =0;//заполняется из данных пользователя скриптом, только текст и правильность
+test.push(new constructor_slide);
+test[test.length-1].push_question("вопрос1");
+test[test.length-1].push_answer("ответ1","0");
+test[test.length-1].push_answer("ответ2","1");
 function constructor_slide() //слайд теста
 {
-	this.text_question = "";
+	this.question = "";
 	this.answers = [];
-}
-function constructor_one_answer() //вариант ответа
-{
-	this.Text = "";
-	this.TrueLi = 0;
+	this.push_question = function(textquestion)
+	{
+		this.question = textquestion;
+	}
+	this.push_answer = function(textanswer,truelianswer)
+	{
+		let answer = {
+			Text: textanswer, TrueLi:truelianswer
+		}
+		this.answers.push(answer);
+	}
 }
 function chekanswer(id) //функция для "отметки" варианта ответа (меняется цвет кнопки и value)
 {
@@ -56,13 +52,11 @@ function setquestion()
 	//работа с div "answers"
 	document.getElementById('answers').innerHTML = " ";
 	var divanswers = document.getElementById("answers"); 
-	var n = test[number_question].answers.length;
-	var i;
-	for (i=0;i<n;i++)
-	{
-		newanswer = '<div id = "answer'+ number_question + '_' + i + '">'+ test[number_question].answers[i].Text + '</div>'; //создания div конкретного вопроса. НАДО ДОБАВИТЬ ЧЕКЕР с id-номером
-		$
-		divanswers.innerHTML += newanswer; //добавление этого div
+	for (let i=0;i<test[number_question].answers.length ;i++)
+	{ alert(i);
+		new_answer = '<div id = "answer'+ number_question + '_' + i + '">'+ test[number_question].answers[i].Text + '</div>'; //создания div конкретного вопроса. НАДО ДОБАВИТЬ ЧЕКЕР с id-номером
+		
+		divanswers.innerHTML += new_answer; //добавление этого div
 	}}
 }
 function finish()
