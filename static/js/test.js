@@ -294,6 +294,7 @@ function TchangeBackground() {
 function setTemplateSettings() {
     showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
     hideElements(['modalTemplateInfo']);
+    var TrueAnswersOnTemplate=$("#AnswerTrueTemplate").val();
     var newQ = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newQ);
     newQ.id="question"+IDtoField;
@@ -329,6 +330,12 @@ function setTemplateSettings() {
     addClasses(newA4, ["newA"]);
     newA4.innerText = document.getElementById('TemplateAnswerText4').value;
     test[IDtoField].answers[3].Text=document.getElementById('TemplateAnswerText4').value;
+    for(let i=0; i<4;i++){
+        test[IDtoField].answers[i].TrueLi = 0;}
+    for(let i=0; i<TrueAnswersOnTemplate.length;i++){
+        test[IDtoField].answers[TrueAnswersOnTemplate[i]].TrueLi = 1;
+        alert(TrueAnswersOnTemplate[i]);
+    }
 }
 
 function selectTemplate() {
