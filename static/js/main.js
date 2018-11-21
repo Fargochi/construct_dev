@@ -103,3 +103,7 @@ function showPreview(filename) {
     preview.src = "/filestorage/" + filename;
     document.getElementById("uploader").appendChild(preview);
 }
+
+function cleaner() {
+    
+}

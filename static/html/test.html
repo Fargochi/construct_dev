@@ -87,13 +87,20 @@
     <div class="name">Фон</div>
     <div class="button_template" onclick = "selectTemplate();"></div>
     <div class="name">Шаблон</div>
+    <div class="button_cleaner" onclick = "cleaner();"></div>
+    <div class="name">Очистить поле</div>
 </div>
 <div id="Tend" class="modal hidden">
  <h2>Приложение</h2>
  <br>
  <p>Таймер</p>
  <input type="text" class="Question"> мин.</input><br><br>
- <p>Скачать архив</p>
+ <p>
+ <form action = "/loader" method = "post">
+ <input type = "submit" value = 'Скачать архив' />
+ </form>
+ 
+ </p>
 </div>
 <div id='modalTemplateInfo' class="modal hidden">
     <b><h2>Параметры</h2></b>
