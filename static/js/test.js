@@ -313,3 +313,4 @@ function selectTemplate() {
     hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
     showElements(['modalTemplateInfo']);
 }
+

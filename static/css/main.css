@@ -59,25 +59,32 @@
     cursor: pointer;
     }
 .button_template {
-    margin:80% 10% 0% 10%;
+    margin:0% 10% 0% 10%;
     width: 29%;
     height: 9%;
     background: url(/img/1070277.svg);
     cursor: pointer;
     }
 .button_setting {
-    margin:80% 10% 0% 10%;
+    margin:0% 10% 0% 10%;
     width: 29%;
     height: 9%;
     background: url(/img/149294.svg);
     cursor: pointer;
     }
 .button_card {
-    margin:10% 10% 0% 10%;
+    margin:0% 10% 0% 10%;
     width: 29%;
     height: 9%;
     background: url(/img/118796.svg);
     cursor: pointer;
+}
+.button_cleaner {
+    margin:0% 10% 0% 10%;
+    width: 29%;
+    height: 9%;
+    cursor: pointer;
+    background: url(/img/926612.svg);
 }
 .name {
     position: static;
