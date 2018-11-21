@@ -295,6 +295,7 @@ function setTemplateSettings() {
     showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
     hideElements(['modalTemplateInfo']);
     var TrueAnswersOnTemplate=$("#AnswerTrueTemplate").val();
+
     var newQ = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newQ);
     newQ.id="question"+IDtoField;
@@ -302,6 +303,8 @@ function setTemplateSettings() {
     addClasses(newQ, ["newQ"]);
     newQ.innerText = document.getElementById('TemplateQuestionText').value;
     test[IDtoField].question.Text=document.getElementById('TemplateQuestionText').value;
+    $("#question"+IDtoField).css("background-color", document.getElementById("TemplateColorQuestion").value);
+
     var newA1 = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newA1);
     newA1.id="answer"+IDtoField+"_0";
@@ -309,6 +312,8 @@ function setTemplateSettings() {
     addClasses(newA1, ["newA"]);
     newA1.innerText = document.getElementById('TemplateAnswerText1').value;
     test[IDtoField].answers[0].Text=document.getElementById('TemplateAnswerText1').value;
+    $("#answer"+IDtoField+"_0").css("background-color", document.getElementById("TemplateColorAnswer").value);
+
     var newA2 = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newA2);
     newA2.id="answer"+IDtoField+"_1";
@@ -316,6 +321,8 @@ function setTemplateSettings() {
     addClasses(newA2, ["newA"]);
     newA2.innerText = document.getElementById('TemplateAnswerText2').value;
     test[IDtoField].answers[1].Text=document.getElementById('TemplateAnswerText2').value;
+    $("#answer"+IDtoField+"_1").css("background-color", document.getElementById("TemplateColorAnswer").value);
+
     var newA3 = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newA3);
     newA3.id="answer"+IDtoField+"_2";
@@ -323,6 +330,8 @@ function setTemplateSettings() {
     addClasses(newA3, ["newA"]);
     newA3.innerText = document.getElementById('TemplateAnswerText3').value;
     test[IDtoField].answers[2].Text=document.getElementById('TemplateAnswerText3').value;
+    $("#answer"+IDtoField+"_2").css("background-color", document.getElementById("TemplateColorAnswer").value);
+
     var newA4 = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newA4);
     newA4.id="answer"+IDtoField+"_3";
@@ -330,12 +339,14 @@ function setTemplateSettings() {
     addClasses(newA4, ["newA"]);
     newA4.innerText = document.getElementById('TemplateAnswerText4').value;
     test[IDtoField].answers[3].Text=document.getElementById('TemplateAnswerText4').value;
+    $("#answer"+IDtoField+"_3").css("background-color", document.getElementById("TemplateColorAnswer").value);
+
     for(let i=0; i<4;i++){
         test[IDtoField].answers[i].TrueLi = 0;}
     for(let i=0; i<TrueAnswersOnTemplate.length;i++){
         test[IDtoField].answers[TrueAnswersOnTemplate[i]].TrueLi = 1;
-        alert(TrueAnswersOnTemplate[i]);
     }
+
 }
 
 function selectTemplate() {
