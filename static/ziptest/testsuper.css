@@ -18,12 +18,22 @@ width: 50%;
 position: absolute;
 top: 1%;
 }
+#progress{
+    margin-left: 25%;
+     top: 5%;
+     width: 63%;
+     height: 82%;
+}
 .PBactive{
 	position: absolute;
 }
+.TDBorder{
+    border: 3px green;
+}
 #mainfield {
      position: absolute;
-     top: 5%;
+     margin-top: 1%;
+     top: 7%;
      left: 20%;
      width: 63%;
      height: 82%;

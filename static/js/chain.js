@@ -131,3 +131,9 @@ setInterval(function(){
 	}
 	console.log(s);
 },100);
+
+function Cbutton_save_changes()
+{
+    hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
+    showElements(['Cend']);
+}

@@ -26,15 +26,17 @@ function button_delete_question(idquestion)
 {
     test[idquestion].question.Text = "";
 }
-function button_save_changes()
+function Tbutton_save_changes()
 {
+    hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
+    showElements(['Tend']);
     for (let i=0; i<test.length; i++)
     {
         test[i].question.Left = 100*Number($("#question"+i).css("left").slice(0, -2))/Number($("#field").css("width").slice(0, -2)) + "%";
         test[i].question.Top = 100*Number($("#question"+i).css("top").slice(0, -2))/Number($("#field").css("height").slice(0, -2)) + "%";
         test[i].question.Width = 100*Number($("#question"+i).css("width").slice(0, -2))/Number($("#field").css("width").slice(0, -2)) + "%";
         test[i].question.Height = 100*Number($("#question"+i).css("height").slice(0, -2))/Number($("#field").css("height").slice(0, -2)) + "%";
-        for (let j=0; j<test[i].answers.length; j++)
+        for (let j=0; j<test[i].answers.length; j++)  
         {
             test[i].answers[j].Left = 100*Number($("#answer"+i+"_"+j).css("left").slice(0, -2))/Number($("#field").css("width").slice(0, -2)) + "%";
             test[i].answers[j].Top =  100*Number($("#answer"+i+"_"+j).css("top").slice(0, -2))/Number($("#field").css("height").slice(0, -2)) + "%";
