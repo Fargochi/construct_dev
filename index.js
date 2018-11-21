@@ -5,7 +5,8 @@ const exphbs = require('express-handlebars')
 const fs = require('fs');
 var zip = new require('node-zip')();
 const app = express()
-
+var bodyParser = require("body-parser");
+var urlencodedParser = bodyParser.urlencoded({extended: false});
 app.engine('.hbs', exphbs({
     defaultLayout: 'main',
     extname: '.hbs',
@@ -34,6 +35,8 @@ app.get('/', (request, response) => {
 
 })
 
+
+
 app.post('/upload/*', (request, response) => {
     let fileName = "static/filestorage/" + request.url.substr(8);
 
@@ -55,14 +58,35 @@ app.post('/upload/*', (request, response) => {
     });
 })
 
-app.post('/loader', (request, response) => {
+app.post('/loader', urlencodedParser,(request, response) => {
+	
+
+    if(!request.body) return response.sendStatus(400);
+    console.log(request.body.someText);
+  
+	
 	
 	zip.file('index.html', fs.readFileSync(path.join(__dirname, 'static/ziptest/index.html')));
-	zip.file('testsuper.css', fs.readFileSync(path.join(__dirname, 'static/ziptest/testsuper.css'))+"alert('я ломал стекло')");
-	zip.file('testsuper.js', fs.readFileSync(path.join(__dirname, 'static/ziptest/testsuper.js'))+"alert('я ломал стекло')");
+	zip.file('testsuper.css', fs.readFileSync(path.join(__dirname, 'static/ziptest/testsuper.css'))+"alert('request.body.someText')");
+	zip.file('testsuper.js', fs.readFileSync(path.join(__dirname, 'static/ziptest/testsuper.js'))+request.body.someText);
 	zip.file('arrow.svg', fs.readFileSync(path.join(__dirname, 'static/ziptest/arrow.svg')));
 	var data = zip.generate({ base64:false, compression: 'DEFLATE' });
 	fs.writeFileSync('test.zip', data, 'binary');
+	/*console.log("File saved: " + fileName);*/
+
+	
+	
+	
 }
-	)
+)
+
+/*app.get('/loader', urlencodedParser, function (request, response) {
+    if(!request.body) return response.sendStatus(400);
+    console.log(request.body);
+  response.send(`${request.body.someText}`);
+});*/
+	
+	
+	
+
 	
