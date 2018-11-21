@@ -283,3 +283,31 @@ function TchangeBackground() {
     hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
     showElements(['modalBackground']);
 }
+
+function setTemplateSettings() {
+    var newQ = document.createElement('div');
+    document.getElementById('field' + IDtoField).appendChild(newQ);
+    addClasses(newQ, ["newQ"]);
+    newQ.innerText = document.getElementById('TemplateQuestionText').value;
+    var newA = document.createElement('div');
+    document.getElementById('field' + IDtoField).appendChild(newA);
+    addClasses(newA, ["newA"]);
+    newA.innerText = document.getElementById('TemplateAnswerText').value;
+    var newA = document.createElement('div');
+    document.getElementById('field' + IDtoField).appendChild(newA);
+    addClasses(newA, ["newA"]);
+    newA.innerText = document.getElementById('TemplateAnswerText').value;
+    var newA = document.createElement('div');
+    document.getElementById('field' + IDtoField).appendChild(newA);
+    addClasses(newA, ["newA"]);
+    newA.innerText = document.getElementById('TemplateAnswerText').value;
+    var newA = document.createElement('div');
+    document.getElementById('field' + IDtoField).appendChild(newA);
+    addClasses(newA, ["newA"]);
+    newA.innerText = document.getElementById('TemplateAnswerText').value;
+}
+
+function selectTemplate() {
+    hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
+    showElements(['modalTemplateInfo']);
+}
