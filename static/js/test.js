@@ -294,7 +294,7 @@ function TchangeBackground() {
 function setTemplateSettings() {
     showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
     hideElements(['modalTemplateInfo']);
-    var TrueAnswersOnTemplate=$("#AnswerTrueTemplate").val();
+    var TrueAnswersOnTemplate=$("#AnswerTrueTemplate").val()||[];
 
     var newQ = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newQ);
@@ -382,7 +382,7 @@ function setTemplateSettings() {
 
     for(let i=0; i<4;i++){
         test[IDtoField].answers[i].TrueLi = 0;}
-    for(let i=0; i<TrueAnswersOnTemplate.length;i++){
+    for(let i=0; i<TrueAnswersOnTemplate.length; i++){
         test[IDtoField].answers[TrueAnswersOnTemplate[i]].TrueLi = 1;
     }
 

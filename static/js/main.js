@@ -106,9 +106,10 @@ function showPreview(filename) {
 
 function cleaner() {
 	if(confirm("Вы точно хотите очистить поле?")){
-    	document.getElementById('field' + IDtoField).innerHTML = "";
 		button_delete_question(IDtoField);
-		for (let i = 0; i < test[IDtoField].length; i++)
+		for (let i = test[IDtoField].answers.length-1; i >= 0; i--){
 		button_delete_answer(IDtoField, i);
+	}
+		document.getElementById('field' + IDtoField).innerHTML = "";
 	}
 }
