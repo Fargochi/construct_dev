@@ -14,9 +14,11 @@ function constructor_slide() //слайд теста
 {
 	this.question = "";
 	this.answers = [];
-	this.push_question = function(textquestion)
+	this.backcolor = "";
+	this.push_question_and_backcolor = function(textquestion,colormainfield)
 	{
 		this.question = textquestion;
+		this.backcolor = colormainfield;
 	}
 	this.push_answer = function(textanswer,truelianswer)
 	{
@@ -55,7 +57,7 @@ function chek()
 	number_question++;
 }
 function setquestion()
-{   
+{   $("#mainfield").css("background-color", test[number_question].backcolor);
 	if (number_question == test.length) {finish();}
 	else {
 	//работа c div "question"
