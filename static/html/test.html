@@ -73,8 +73,8 @@
     <div id='field0' class='fieldVloj'>
     </div>
 </div>
-<div id="button_next" onClick="button_next(); button_push_new_question();"><p>Добавить вопрос</p></div>
-<div id="button_save" onclick="Tbutton_save_changes(); createcss(); createjs();"><p>Закончить тест</p></div>
+<div id="button_next" onClick="button_next(); button_push_new_question();"><p>Добавить слайд</p></div>
+<div id="button_save" onclick="Tbutton_save_changes();"><p>Закончить тест</p></div>
 <div id="scroll">
 <div class="slide slideActive" id='slide0'></div>
 </div>
@@ -94,9 +94,10 @@
  <h2>Приложение</h2>
  <br>
  <p>Таймер</p>
- <input type="text" class="Question"> мин.</input><br><br>
+ <input type="text" id='Pipoiop' class="Question"> мин.</input><br><br>
  <p>
  <form action = "/loader" method = "post">
+    <input type="button" onclick="function(){document.getElementById('Pipoiop').innerHTML = getdata;  }">
  <input type = "submit" value = 'Скачать архив' />
  </form>
  
@@ -121,7 +122,7 @@
         <option value="1">Ответ 2</option>
         <option value="2">Ответ 3</option>
         <option value="3">Ответ 4</option>
-    </select>
+    </select><br>
     <br>Цвет фона поля вопроса:</br>
     <input type="color" value='#FFB173' id='TemplateColorQuestion' class='Color'>
     <br>

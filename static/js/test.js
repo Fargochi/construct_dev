@@ -33,6 +33,8 @@ function button_delete_question(idquestion)
 }
 function Tbutton_save_changes()
 {
+    createcss(); 
+    createjs();
     hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
     showElements(['Tend']);
     for (let i=0; i<test.length; i++)
@@ -158,6 +160,7 @@ function setQuestionSettings() {
     IDDIV = "#question" + IDtoField;
         newminidiv.id = "miniature" + IDtoField;
         IDMINIDIV = "#miniature" + IDtoField;
+        alert(IDMINIDIV);
     document.getElementById("question"+IDtoField).style.left = "0px";
     document.getElementById("question"+IDtoField).style.top = "0px";
     document.getElementById("miniature"+IDtoField).style.left = "0px";
@@ -307,7 +310,7 @@ function setTemplateSettings() {
     test[IDtoField].question.FontColor = "#000000";
     test[IDtoField].question.FontSize = "25pt";
     test[IDtoField].question.Color = document.getElementById('TemplateColorQuestion').value;
-    $("#question"+IDtoField).css("width",  Number($("#field").css("width").slice(0, -2))*0.8+"px");      //Number($("#field").css("width").slice(0, -2))*0.8+"px"
+    $("#question"+IDtoField).css("width",  Number($("#field").css("width").slice(0, -2))*0.8+"px");
     $("#question"+IDtoField).css("height",  Number($("#field").css("height").slice(0, -2))*0.17+"px");
     $("#question"+IDtoField).css("left",  Number($("#field").css("width").slice(0, -2))*0.1+"px");
     $("#question"+IDtoField).css("top",  Number($("#field").css("height").slice(0, -2))*0.02+"px");
