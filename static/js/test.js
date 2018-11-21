@@ -40,8 +40,8 @@ function Tbutton_save_changes()
         {
             test[i].answers[j].Left = 100*Number($("#answer"+i+"_"+j).css("left").slice(0, -2))/Number($("#field").css("width").slice(0, -2)) + "%";
             test[i].answers[j].Top =  100*Number($("#answer"+i+"_"+j).css("top").slice(0, -2))/Number($("#field").css("height").slice(0, -2)) + "%";
-            test[i].answers[j].Width =  100*Number($("#answer"+i+"_"+j).css("left").slice(0, -2))/Number($("#field").css("width").slice(0, -2)) + "%";
-            test[i].answers[j].Height =  100*Number($("#answer"+i+"_"+j).css("top").slice(0, -2))/Number($("#field").css("height").slice(0, -2)) + "%";
+            test[i].answers[j].Width =  100*Number($("#answer"+i+"_"+j).css("width").slice(0, -2))/Number($("#field").css("width").slice(0, -2)) + "%";
+            test[i].answers[j].Height =  100*Number($("#answer"+i+"_"+j).css("height").slice(0, -2))/Number($("#field").css("height").slice(0, -2)) + "%";
         }
     }
 }
