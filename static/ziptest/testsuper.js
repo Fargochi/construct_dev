@@ -2,14 +2,24 @@ var test = [];
 var number_question=0; var ball =0;//заполняется из данных пользователя скриптом, только текст и правильность
 var maxball=0;
 test.push(new constructor_slide);
-test[test.length-1].push_question("Вопрос 0");
-test[test.length-1].push_answer("Верный ответ 0","1");
-test[test.length-1].push_answer("Неверный ответ 0","0");
-test[test.length-1].push_answer("Неверный ответ 1","0");
+test[test.length-1].push_question_and_backcolor("Сколько будет 2*2?","#3deb4c");
+test[test.length-1].push_answer("Думаю, 4","1");
+test[test.length-1].push_answer("Может, 6?","0");
+test[test.length-1].push_answer("Маловероятно, но, быть может, миллион?","0");
+test[test.length-1].push_answer("Все знают, то это 15","0");
 test.push(new constructor_slide);
-test[test.length-1].push_question("Вопрос 1");
-test[test.length-1].push_answer("Неверный ответ 1","0");
-test[test.length-1].push_answer("Верный ответ 1","1");
+test[test.length-1].push_question_and_backcolor("Кто был президентом России?","#3deb4c");
+test[test.length-1].push_answer("ВЛАДИМИР ВЛАДИМИРОВИЧ ПУТИН","1");
+test[test.length-1].push_answer("Да Медведев тоже вродь","1");
+test[test.length-1].push_answer("Ельцин, ящитаю","1");
+test[test.length-1].push_answer("Обэма","0");
+test.push(new constructor_slide);
+test[test.length-1].push_question_and_backcolor("Сколько ног у человека?","#3deb4c");
+test[test.length-1].push_answer("Ну 2 же","1");
+test[test.length-1].push_answer("У человека-паука 8 точно","0");
+test[test.length-1].push_answer("Ник Вуйчич - 0","0");
+test[test.length-1].push_answer("Коренной чернобылец - от 0 до 9","0");
+
 function constructor_slide() //слайд теста
 {
 	this.question = "";

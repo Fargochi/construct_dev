@@ -28,8 +28,8 @@ function button_delete_question(idquestion)
 }
 function Tbutton_save_changes()
 {
-    hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
-    showElements(['Tend']);
+    //hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
+    //showElements(['Tend']);
     for (let i=0; i<test.length; i++)
     {
         test[i].question.Left = 100*Number($("#question"+i).css("left").slice(0, -2))/Number($("#field").css("width").slice(0, -2)) + "%";
@@ -90,7 +90,7 @@ function createjs() //генерация js кода приложения
 {
     for (let i=0; i<test.length; i++)
     {
-        var get_question = 'test[test.length-1].push_question_and_backcolor("' + test[i].question.Text + ','+ test[i].Back_Color + '");\n' ;
+        var get_question = 'test[test.length-1].push_question_and_backcolor("' + test[i].question.Text + '","'+ test[i].Back_Color + '");\n' ;
         var get_answers = "";
         for (let j=0; j < test[i].answers.length; j++)
         {
