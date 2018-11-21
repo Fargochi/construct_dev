@@ -86,9 +86,9 @@ function finish()
 }
 
 function makePB() {
-	/*document.getElementById('progress').innerHTML="<table class='PBmain'><tr id='mainTr'></tr></table>";
+	document.getElementById('progress').innerHTML="<table class='PBmain'><tr id='mainTr'></tr></table>";
 	$("#mainTr").css("width", "50%");
 	for(let i=0;i<test.length;i++){
 		document.getElementById("mainTr").innerHTML="<td class='"+PBpassive+"'></td>";
-	}*/
+	}
 }
