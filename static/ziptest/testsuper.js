@@ -37,10 +37,11 @@ function next()
 }
 function chek()
 {
+	let right=1;
 	for (let i=0;i<test[number_question].answers.length; i++)
 	{
 		pupilanswer =  $('#answer'+number_question+'_' + i).attr("trueli"); //значение select по id ответа
-		if (pupilanswer != test[number_question].answers[i].trueorfalse) {right=0;}
+		if (pupilanswer != test[number_question].answers[i].TrueLi) {right=0;}
 	}
 	ball += right;
 	number_question++;
@@ -62,8 +63,6 @@ function setquestion()
 		$("#answer"+ number_question + "_" + i).attr("trueli","0");
 		//document.getElementById("answer"+ number_question + "_" + i).setAttribute("trueli","0");
 		$(".answerClass").click(function(){
-	alert(this.id);
-	alert("Произошел троллинг");
         if(document.getElementById(this.id).getAttribute("trueli")=="0"){
         			$("#"+this.id).attr("trueli","1");
         			$("#"+this.id).css("box-shadow","0 0 25px #172caf");
@@ -81,7 +80,7 @@ function finish()
 {
 	document.getElementById("question").innerHTML = " ";
 	document.getElementById("answers").innerHTML = " ";
-	total = '<div>Ваш результат: ' +  ball + 'из' + number_question + '</div>';
+	total = '<div>Ваш результат: ' +  ball + ' из ' + number_question + '</div>';
 	document.getElementById("base").innerHTML = total;
 }
 
