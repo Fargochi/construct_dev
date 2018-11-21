@@ -30,18 +30,18 @@ top: 1%;
 .TDBorder{
     border: 3px green;
 }
-#arrow{
+#next_b {
+    right: 3%;
+    top:40%;
+    width: 10%;
+    background: url(https://image.flaticon.com/icons/svg/126/126490.svgt);
     position: absolute;
-    top: 0.3%;
-    left: 79.75%;
-    width: 50px;
-    height: 50px;
-    background: url(https://image.flaticon.com/icons/svg/626/626043.svg);
-    cursor: pointer;
     border: none;
+    cursor: pointer;
 }
-#arrow:hover{
+#next_b:hover{
 background-color: #32CD32;
+border-radius: 30%;
 }
 #mainfield {
      position: absolute;
@@ -54,13 +54,14 @@ background-color: #32CD32;
      border: 0px solid #808080;
     }
 #question0{
-font: arial ;
+font: arial 20;
 color: #000000;
 background-color: #ffff00;
 left: 29.280397022332504%;
 top: 19.765166340508806%;
 width: 34.7394540942928%;
 position:absolute; 
+border-radius: 10px;
  height: 7.240704500978474%;}
 #answer0_0{
 font: arial ;

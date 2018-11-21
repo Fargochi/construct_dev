@@ -14,11 +14,11 @@ test[test.length-1].push_answer("Да Медведев же","1");
 test[test.length-1].push_answer("Ельцин ящитаю","1");
 test[test.length-1].push_answer("Обэма","0");
 test.push(new constructor_slide);
-test[test.length-1].push_question_and_backcolor("Кто был президентом России?","#55e326");
-test[test.length-1].push_answer("ВЛАДИМИР ВЛАДИМИРОВИЧ ПУТИН","1");
-test[test.length-1].push_answer("Да Медведев же","1");
-test[test.length-1].push_answer("Ельцин ящитаю","1");
-test[test.length-1].push_answer("Обэма","0");
+test[test.length-1].push_question_and_backcolor("Сколько ног у человека?","#55e326");
+test[test.length-1].push_answer("ну 2 же","1");
+test[test.length-1].push_answer("У человека-паука точно 8","0");
+test[test.length-1].push_answer("Ник Вуйчич - 0","0");
+test[test.length-1].push_answer("Коренной житель Чернобыля - от 0 до 9 включительно","0");
 
 function constructor_slide() //слайд теста
 {
@@ -61,15 +61,15 @@ function chek()
 	if (type == 1) {ball+= Number(right>1); right = 2* Number(right>1);}
 	else {ball+=right;}
 	maxball+= 1 + Number(type>1);
-	if(right==2){$("#TD"+number_question).css("background-color", "green");}
-	else if(right==1){$("#TD"+number_question).css("background-color", "yellow");}
-	else{$("#TD"+number_question).css("background-color", "red");}
+	if(right==2){$("#TD"+number_question).css("background-color", "green"); alert("Абсолютно верно!");}
+	else if(right==1){$("#TD"+number_question).css("background-color", "yellow");alert("Частично верно");}
+	else{$("#TD"+number_question).css("background-color", "red"); alert("Вы совершили ошибку!");}
 	number_question++;
 }
-function setquestion()
-{   $("#mainfield").css("background-color", test[number_question].backcolor);
+function setquestion(){
 	if (number_question == test.length) {finish();}
 	else {
+	$("#mainfield").css("background-color", test[number_question].backcolor);
 	//работа c div "question"
 	var newdivquestion = '<div id="question'+ number_question + '">'+ test[number_question].question +'</div>'
 	document.getElementById('question').innerHTML = newdivquestion;
@@ -100,7 +100,7 @@ function finish()
 {
 	document.getElementById("question").innerHTML = " ";
 	document.getElementById("answers").innerHTML = " ";
-	total = '<div>Ваш результат: ' +  ball + ' из ' + maxball + '</div>';
+	total = '<br><br><br><br><div><h1><b>Ваш результат: ' +  ball + ' из ' + maxball + '</b></h1></div>';
 	document.getElementById("base").innerHTML = total;
 }
 
