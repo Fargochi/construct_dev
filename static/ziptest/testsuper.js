@@ -1,5 +1,6 @@
 var test = [];
 var number_question=0; var ball =0;//заполняется из данных пользователя скриптом, только текст и правильность
+var maxball=0;
 test.push(new constructor_slide);
 test[test.length-1].push_question("Вопрос 0");
 test[test.length-1].push_answer("Верный ответ 0","1");
@@ -45,8 +46,9 @@ function chek()
 		if (test[number_question].answers[i].TrueLi==1) {type++;}
 		if (pupilanswer != test[number_question].answers[i].TrueLi && right!=0) {right--;}
 	}
-	if (type == 1) {ball+= (right>1);}
+	if (type == 1) {ball+= Number(right>1); right = 2* Number(right>1);}
 	else {ball+=right;}
+	maxball+= 1 + Number(type>1);
 	if(right==2){$("#TD"+number_question).css("background-color", "green");}
 	else if(right==1){$("#TD"+number_question).css("background-color", "yellow");}
 	else{$("#TD"+number_question).css("background-color", "red");}
@@ -86,7 +88,7 @@ function finish()
 {
 	document.getElementById("question").innerHTML = " ";
 	document.getElementById("answers").innerHTML = " ";
-	total = '<div>Ваш результат: ' +  ball + ' из ' + number_question + '</div>';
+	total = '<div>Ваш результат: ' +  ball + ' из ' + maxball + '</div>';
 	document.getElementById("base").innerHTML = total;
 }
 
