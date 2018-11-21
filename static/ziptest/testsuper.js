@@ -19,11 +19,7 @@ function constructor_slide() //слайд теста
 		this.answers.push(answer);
 	}
 }
-function chekanswer(id) //функция для "отметки" варианта ответа (меняется цвет кнопки и value)
-{
-	var flag = document.getElementById('')
 
-}
 function next()
 { 
 	chek();

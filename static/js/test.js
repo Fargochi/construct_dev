@@ -160,6 +160,8 @@ function setQuestionSettings() {
         IDMINIDIV = "#miniature" + IDtoField;
     document.getElementById("question"+IDtoField).style.left = "0px";
     document.getElementById("question"+IDtoField).style.top = "0px";
+    document.getElementById("miniature"+IDtoField).style.left = "0px";
+    document.getElementById("miniature"+IDtoField).style.top = "0px";
     newdiv.innerText = document.getElementById('QuestionText').value;
     $(IDDIV).css("font", document.getElementById('QuestionFontSize').value + "pt " + document.getElementById('QuestionFontType').value);
     $(IDDIV).css("color", document.getElementById('QuestionFontColor').value);
@@ -294,24 +296,39 @@ function setTemplateSettings() {
     hideElements(['modalTemplateInfo']);
     var newQ = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newQ);
+    newQ.id="question"+IDtoField;
+    button_push_question(IDtoField);
     addClasses(newQ, ["newQ"]);
     newQ.innerText = document.getElementById('TemplateQuestionText').value;
+    test[IDtoField].question.Text=document.getElementById('TemplateQuestionText').value;
     var newA1 = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newA1);
+    newA1.id="answer"+IDtoField+"_0";
+    button_push_answer(IDtoField);
     addClasses(newA1, ["newA"]);
     newA1.innerText = document.getElementById('TemplateAnswerText1').value;
+    test[IDtoField].answers[0].Text=document.getElementById('TemplateAnswerText1').value;
     var newA2 = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newA2);
+    newA2.id="answer"+IDtoField+"_1";
+    button_push_answer(IDtoField);
     addClasses(newA2, ["newA"]);
     newA2.innerText = document.getElementById('TemplateAnswerText2').value;
+    test[IDtoField].answers[1].Text=document.getElementById('TemplateAnswerText2').value;
     var newA3 = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newA3);
+    newA3.id="answer"+IDtoField+"_2";
+    button_push_answer(IDtoField);
     addClasses(newA3, ["newA"]);
     newA3.innerText = document.getElementById('TemplateAnswerText3').value;
+    test[IDtoField].answers[2].Text=document.getElementById('TemplateAnswerText3').value;
     var newA4 = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newA4);
+    newA4.id="answer"+IDtoField+"_3";
+    button_push_answer(IDtoField);
     addClasses(newA4, ["newA"]);
     newA4.innerText = document.getElementById('TemplateAnswerText4').value;
+    test[IDtoField].answers[3].Text=document.getElementById('TemplateAnswerText4').value;
 }
 
 function selectTemplate() {
