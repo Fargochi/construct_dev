@@ -41,7 +41,7 @@ top: 1%;
     border: none;
 }
 #arrow:hover{
-background-color: green;
+background-color: #32CD32;
 }
 #mainfield {
      position: absolute;

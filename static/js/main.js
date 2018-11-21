@@ -74,3 +74,32 @@ function reModalBlock() {
     showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
 }
 
+function handleFiles(files) {
+    for (let i=0; i<files.length; i++) {
+        fileUpload(files[i]);
+    }
+}
+
+function fileUpload(file) {
+    let reader = new FileReader();
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("POST", "/upload/" + file.name);
+    xhr.overrideMimeType('application/octet-stream');
+
+    reader.onload = function(evt) {
+        //console.log(evt.target.result);
+        xhr.send(evt.target.result);
+        xhr.onload = function () {
+            console.log("File sent to server: " + file.name);
+            showPreview(file.name);
+        }
+    };
+    reader.readAsDataURL(file);
+}
+
+function showPreview(filename) {
+    let preview = document.createElement('img');
+    preview.src = "/filestorage/" + filename;
+    document.getElementById("uploader").appendChild(preview);
+}
