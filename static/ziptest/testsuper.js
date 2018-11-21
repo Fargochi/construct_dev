@@ -44,6 +44,8 @@ function chek()
 		if (pupilanswer != test[number_question].answers[i].TrueLi) {right=0;}
 	}
 	ball += right;
+	if(right==1){$("#TD"+number_question).css("background-color", "green");}
+	else{$("#TD"+number_question).css("background-color", "red");}
 	number_question++;
 }
 function setquestion()
@@ -88,6 +90,7 @@ function makePB() {
 	document.getElementById('progress').innerHTML="<table height='5%'class='PBmain'><tr id='mainTr'></tr></table>";
 	$("#mainTr").css("width", "50%");
 	for(let i=0;i<test.length;i++){
-		document.getElementById("mainTr").innerHTML+="<td class='PBpassive'></td>";
+		document.getElementById("mainTr").innerHTML+="<td id='TD"+i+"'class='PBpassive TDmain'></td>";
 	}
+
 }
