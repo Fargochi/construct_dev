@@ -26,10 +26,10 @@ function button_delete_question(idquestion)
 {
     test[idquestion].question.Text = "";
 }
-function button_save_changes()
+function Tbutton_save_changes()
 {
     hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
-    showElements(['end']);
+    showElements(['Tend']);
     for (let i=0; i<test.length; i++)
     {
         test[i].question.Left = 100*Number($("#question"+i).css("left").slice(0, -2))/Number($("#field").css("width").slice(0, -2)) + "%";
