@@ -37,13 +37,16 @@ function next()
 }
 function chek()
 {
-	let right=1;
+	let right=2;
+	let type = 0;
 	for (let i=0;i<test[number_question].answers.length; i++)
 	{
 		pupilanswer =  $('#answer'+number_question+'_' + i).attr("trueli"); //значение select по id ответа
-		if (pupilanswer != test[number_question].answers[i].TrueLi) {right=0;}
+		if (test[number_question].answers[i].TrueLi==1) {type++;}
+		if (pupilanswer != test[number_question].answers[i].TrueLi && right!=0) {right--;}
 	}
-	ball += right;
+	if (type == 1) {ball+= (right>1);}
+	else {ball+=right;}
 	if(right==1){$("#TD"+number_question).css("background-color", "green");}
 	else{$("#TD"+number_question).css("background-color", "red");}
 	number_question++;
