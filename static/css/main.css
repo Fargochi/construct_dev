@@ -156,8 +156,8 @@ border-width:0px;
   position: absolute;
 }
 .deleteBox{
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
   position: absolute;
   right: 10;
   bottom: 10;
@@ -298,4 +298,11 @@ background-color: white;
     border-radius: 5px;
     font-family: arial;
     word-wrap: break-word;
+}
+
+.QuestionTemplate {
+    width:80%;
+    height: 11%;
+    font-family: arial;
+    font-size: 90%;
 }

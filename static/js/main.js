@@ -107,6 +107,8 @@ function showPreview(filename) {
 function cleaner() {
 	if(confirm("Вы точно хотите очистить поле?")){
     	document.getElementById('field' + IDtoField).innerHTML = "";
-		test[IDtoField].question = "";
+		button_delete_question(IDtoField);
+		for (let i = 0; i < test[IDtoField].length; i++)
+		button_delete_answer(IDtoField, i);
 	}
 }
