@@ -57,63 +57,134 @@ background-color: #32CD32;
 font: arial ;
 color: #000000;
 background-color: #ffff00;
-left: 301px;
-top: 140px;
-width: 150px;
+left: 25.43424317617866%;
+top: 18.98238747553816%;
+width: 40.69478908188586%;
 position:absolute; 
- height: 39px;}
+ height: 7.632093933463796%;}
 #answer0_0{
 font: arial ;
 color: #000000;
-background-color: #ffff00;
-left: 78px;
-top: 271px;
-width: 143px;
+background-color: #ff0000;
+left: 13.15136476426799%;
+top: 41.68297455968689%;
+width: 13.15136476426799%;
 position:absolute; 
-height: 56px;}
+height: 41.68297455968689%;}
 #answer0_1{
 font: arial ;
-color: #cdf44e;
-background-color: #2e39d1;
-left: 501px;
-top: 268px;
-width: 133px;
+color: #000000;
+background-color: #ff0000;
+left: 64.39205955334988%;
+top: 42.6614481409002%;
+width: 64.39205955334988%;
 position:absolute; 
-border: 3px green;
-height: 54px;}
+height: 42.6614481409002%;}
 #answer0_2{
 font: arial ;
-color: #cdf44e;
-background-color: #2e39d1;
-left: 501px;
-top: 400px;
-width: 133px;
+color: #000000;
+background-color: #ff0000;
+left: 8.933002481389579%;
+top: 63.79647749510763%;
+width: 8.933002481389579%;
 position:absolute; 
-height: 54px;}
+height: 63.79647749510763%;}
+#answer0_3{
+font: arial ;
+color: #000000;
+background-color: #ff0000;
+left: 64.1439205955335%;
+top: 68.4931506849315%;
+width: 64.1439205955335%;
+position:absolute; 
+height: 68.4931506849315%;}
 #question1{
 font: arial ;
 color: #000000;
-background-color: #babcd4;
-left: 114px;
-top: 148px;
-width: 492px;
+background-color: #ffff00;
+left: 31.76178660049628%;
+top: 18.98238747553816%;
+width: 33.49875930521092%;
 position:absolute; 
- height: 20px;}
+ height: 11.741682974559687%;}
 #answer1_0{
 font: arial ;
-color: #f4584e;
-background-color: #d12e51;
-left: 489px;
-top: 249px;
-width: 153px;
+color: #000000;
+background-color: #ff0000;
+left: 6.327543424317618%;
+top: 43.639921722113506%;
+width: 6.327543424317618%;
 position:absolute; 
-height: 64px;}
+height: 43.639921722113506%;}
 #answer1_1{
-font: arial 12;
-color: #6ff44e;
-background-color: #2ed14f;
-left: 72px;
-top: 283px;
-width: 165px;
+font: arial ;
+color: #000000;
+background-color: #ff0000;
+left: 64.39205955334988%;
+top: 45.98825831702544%;
+width: 64.39205955334988%;
 position:absolute; 
-height: 19px;}
+height: 45.98825831702544%;}
+#answer1_2{
+font: arial ;
+color: #000000;
+background-color: #ff0000;
+left: 10.66997518610422%;
+top: 74.75538160469668%;
+width: 10.66997518610422%;
+position:absolute; 
+height: 74.75538160469668%;}
+#answer1_3{
+font: arial ;
+color: #000000;
+background-color: #ff0000;
+left: 60.421836228287844%;
+top: 77.49510763209393%;
+width: 60.421836228287844%;
+position:absolute; 
+height: 77.49510763209393%;}
+#question2{
+font: arial ;
+color: #000000;
+background-color: #ffff00;
+left: 30.272952853598013%;
+top: 15.264187866927592%;
+width: 30.64516129032258%;
+position:absolute; 
+ height: 10.95890410958904%;}
+#answer2_0{
+font: arial ;
+color: #000000;
+background-color: #ff0000;
+left: 5.955334987593052%;
+top: 42.857142857142854%;
+width: 5.955334987593052%;
+position:absolute; 
+height: 42.857142857142854%;}
+#answer2_1{
+font: arial ;
+color: #000000;
+background-color: #ff0000;
+left: 63.64764267990074%;
+top: 41.87866927592955%;
+width: 63.64764267990074%;
+position:absolute; 
+height: 41.87866927592955%;}
+#answer2_2{
+font: arial ;
+color: #000000;
+background-color: #ff0000;
+left: 3.970223325062035%;
+top: 74.75538160469668%;
+width: 3.970223325062035%;
+position:absolute; 
+height: 74.75538160469668%;}
+#answer2_3{
+font: arial ;
+color: #000000;
+background-color: #ff0000;
+left: 61.16625310173697%;
+top: 70.45009784735812%;
+width: 61.16625310173697%;
+position:absolute; 
+height: 70.45009784735812%;}
