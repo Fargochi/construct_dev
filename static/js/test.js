@@ -36,7 +36,7 @@ function Tbutton_save_changes()
         test[i].question.Top = 100*Number($("#question"+i).css("top").slice(0, -2))/Number($("#field").css("height").slice(0, -2)) + "%";
         test[i].question.Width = 100*Number($("#question"+i).css("width").slice(0, -2))/Number($("#field").css("width").slice(0, -2)) + "%";
         test[i].question.Height = 100*Number($("#question"+i).css("height").slice(0, -2))/Number($("#field").css("height").slice(0, -2)) + "%";
-        for (let j=0; j<test[i].answers.length; j++)  
+        for (let j=0; j<test[i].answers.length; j++)
         {
             test[i].answers[j].Left = 100*Number($("#answer"+i+"_"+j).css("left").slice(0, -2))/Number($("#field").css("width").slice(0, -2)) + "%";
             test[i].answers[j].Top =  100*Number($("#answer"+i+"_"+j).css("top").slice(0, -2))/Number($("#field").css("height").slice(0, -2)) + "%";
@@ -145,7 +145,7 @@ var IDMINIDIV;
 function setQuestionSettings() {
     if(document.getElementById('QuestionText').value!=""){
     let newdiv = document.createElement('div');
-        let newminidiv = document.createElement('div');    
+        let newminidiv = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newdiv);
         document.getElementById('slide' + IDtoField).appendChild(newminidiv);
     addClasses(newdiv, ["questionclass", "ui-widget", "ui-corner-all", "ui-draggable"])
@@ -273,7 +273,7 @@ function deleteElQuestion(){
 
 function TsetBackSettings() {
     $('#field'+IDtoField).css("background-color", document.getElementById('BackColor').value);
-    $('#slide'+IDtoField).css("background-color", document.getElementById('BackColor').value);    
+    $('#slide'+IDtoField).css("background-color", document.getElementById('BackColor').value);
     hideElements(['modalBackground']);
     showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field'+IDtoField]);
     button_back_color(IDtoField);
@@ -310,6 +310,10 @@ function setTemplateSettings() {
 }
 
 function selectTemplate() {
+    if (document.getElementById('field' + IDtoField).childElementCount > 0){
+        alert("Пожалуйста, очистите поле.")
+        return;
+    }
     hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
     showElements(['modalTemplateInfo']);
 }
