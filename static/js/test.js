@@ -307,10 +307,10 @@ function setTemplateSettings() {
     test[IDtoField].question.FontColor = "#000000";
     test[IDtoField].question.FontSize = "25pt";
     test[IDtoField].question.Color = document.getElementById('TemplateColorQuestion').value;
-    $("#question"+IDtoField).css("width", "80%");
-    $("#question"+IDtoField).css("height", "17%");
-    $("#question"+IDtoField).css("left", "10%");
-    $("#question"+IDtoField).css("top", "2%");
+    $("#question"+IDtoField).css("width",  Number($("#field").css("width").slice(0, -2))*0.8+"px");      //Number($("#field").css("width").slice(0, -2))*0.8+"px"
+    $("#question"+IDtoField).css("height",  Number($("#field").css("height").slice(0, -2))*0.17+"px");
+    $("#question"+IDtoField).css("left",  Number($("#field").css("width").slice(0, -2))*0.1+"px");
+    $("#question"+IDtoField).css("top",  Number($("#field").css("height").slice(0, -2))*0.02+"px");
 
     var newA1 = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newA1);
@@ -323,10 +323,10 @@ function setTemplateSettings() {
     test[IDtoField].answers[0].FontColor =  "#000000";
     test[IDtoField].answers[0].FontSize = "25pt";
     test[IDtoField].answers[0].Color = document.getElementById('TemplateColorAnswer').value;
-    $("#answer"+IDtoField+"_0").css("width", "65%");
-    $("#answer"+IDtoField+"_0").css("height", "14%");
-    $("#answer"+IDtoField+"_0").css("left", "17.5%");
-    $("#answer"+IDtoField+"_0").css("top", "22%");
+    $("#answer"+IDtoField+"_0").css("width",  Number($("#field").css("width").slice(0, -2))*0.65+"px");
+    $("#answer"+IDtoField+"_0").css("height",  Number($("#field").css("height").slice(0, -2))*0.14+"px");
+    $("#answer"+IDtoField+"_0").css("left",  Number($("#field").css("width").slice(0, -2))*0.175+"px");
+    $("#answer"+IDtoField+"_0").css("top",  Number($("#field").css("height").slice(0, -2))*0.22+"px");
 
 
     var newA2 = document.createElement('div');
@@ -340,10 +340,10 @@ function setTemplateSettings() {
     test[IDtoField].answers[1].FontColor =  "#000000";
     test[IDtoField].answers[1].FontSize = "25pt";
     test[IDtoField].answers[1].Color = document.getElementById('TemplateColorAnswer').value;
-    $("#answer"+IDtoField+"_1").css("width", "65%");
-    $("#answer"+IDtoField+"_1").css("height", "14%");
-    $("#answer"+IDtoField+"_1").css("left", "17.5%");
-    $("#answer"+IDtoField+"_1").css("top", "39%");
+    $("#answer"+IDtoField+"_1").css("width",  Number($("#field").css("width").slice(0, -2))*0.65+"px");
+    $("#answer"+IDtoField+"_1").css("height",  Number($("#field").css("height").slice(0, -2))*0.14+"px");
+    $("#answer"+IDtoField+"_1").css("left",  Number($("#field").css("width").slice(0, -2))*0.175+"px");
+    $("#answer"+IDtoField+"_1").css("top",  Number($("#field").css("height").slice(0, -2))*0.39+"px");
 
 
     var newA3 = document.createElement('div');
@@ -357,10 +357,10 @@ function setTemplateSettings() {
     test[IDtoField].answers[2].FontColor =  "#000000";
     test[IDtoField].answers[2].FontSize = "25pt";
     test[IDtoField].answers[2].Color = document.getElementById('TemplateColorAnswer').value;
-    $("#answer"+IDtoField+"_2").css("width", "65%");
-    $("#answer"+IDtoField+"_2").css("height", "14%");
-    $("#answer"+IDtoField+"_2").css("left", "17.5%");
-    $("#answer"+IDtoField+"_2").css("top", "56%");
+    $("#answer"+IDtoField+"_2").css("width",  Number($("#field").css("width").slice(0, -2))*0.65+"px");
+    $("#answer"+IDtoField+"_2").css("height",  Number($("#field").css("height").slice(0, -2))*0.14+"px");
+    $("#answer"+IDtoField+"_2").css("left",  Number($("#field").css("width").slice(0, -2))*0.175+"px");
+    $("#answer"+IDtoField+"_2").css("top",  Number($("#field").css("height").slice(0, -2))*0.56+"px");
 
 
     var newA4 = document.createElement('div');
@@ -374,10 +374,10 @@ function setTemplateSettings() {
     test[IDtoField].answers[3].FontColor =  "#000000";
     test[IDtoField].answers[3].FontSize = "25pt";
     test[IDtoField].answers[3].Color = document.getElementById('TemplateColorAnswer').value;
-    $("#answer"+IDtoField+"_3").css("width", "65%");
-    $("#answer"+IDtoField+"_3").css("height", "14%");
-    $("#answer"+IDtoField+"_3").css("left", "17.5%");
-    $("#answer"+IDtoField+"_3").css("top", "73%");
+    $("#answer"+IDtoField+"_3").css("width",  Number($("#field").css("width").slice(0, -2))*0.65+"px");
+    $("#answer"+IDtoField+"_3").css("height",  Number($("#field").css("height").slice(0, -2))*0.14+"px");
+    $("#answer"+IDtoField+"_3").css("left",  Number($("#field").css("width").slice(0, -2))*0.175+"px");
+    $("#answer"+IDtoField+"_3").css("top",  Number($("#field").css("height").slice(0, -2))*0.73+"px");
 
 
     for(let i=0; i<4;i++){
