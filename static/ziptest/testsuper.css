@@ -40,6 +40,9 @@ top: 1%;
     cursor: pointer;
     border: none;
 }
+#arrow:hover{
+background-color: #32CD32;
+}
 #mainfield {
      position: absolute;
      margin-top: 1%;

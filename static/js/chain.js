@@ -129,7 +129,7 @@ setInterval(function(){
 	for (var i = 0; i < IC; i++){
 		document.getElementById("spot"+i).innerText = b[i];
 	}
-	console.log(s);
+	//console.log(s);
 },100);
 
 function Cbutton_save_changes()
