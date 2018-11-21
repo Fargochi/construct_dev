@@ -299,3 +299,9 @@ background-color: white;
     font-family: arial;
     word-wrap: break-word;
 }
+.QuestionTemplate {
+    width:80%;
+    height: 11%;
+    font-family: arial;
+    font-size: 90%;
+}
