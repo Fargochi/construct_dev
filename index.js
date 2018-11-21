@@ -49,5 +49,17 @@ app.post('/upload/*', (request, response) => {
 
         console.log("File saved: " + fileName);
         response.sendStatus(200);
+		
+		/*response.render('<img src="'+'/filestorage/'+fileName+'"' +' width = 100px >')*/
     });
 })
+/*
+app.post('/loader', (request, response) => {
+	
+	
+	
+	
+	
+}
+	)8*/
+	
