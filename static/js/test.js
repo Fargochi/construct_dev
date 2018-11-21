@@ -90,7 +90,7 @@ function createjs() //генерация js кода приложения
 {
     for (let i=0; i<test.length; i++)
     {
-        var get_question = 'test[test.length-1].push_question("' + test[i].question.Text + '");\n' ;
+        var get_question = 'test[test.length-1].push_question_and_backcolor("' + test[i].question.Text + ','+ test[i].Back_Color + '");\n' ;
         var get_answers = "";
         for (let j=0; j < test[i].answers.length; j++)
         {
