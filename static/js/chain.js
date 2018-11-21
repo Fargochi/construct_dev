@@ -1,4 +1,4 @@
-var IQ=0,IC=0;
+var IQ=0, IC=0, vert;
 function newCard() {
 	hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field'+IDtoField]);
     showElements(['modalCard']);
@@ -16,7 +16,10 @@ function newSetting() {
 }
 
 function setSettingSettings() {
-
+	//console.log(sort.value);
+	vert = sort.value != 'serif';
+	hideElements(['modalSetting']);
+	reModalBlock();
 }
 
 function setCardSettings() {
@@ -105,7 +108,10 @@ setInterval(function(){
 	if(category != "Тест-цепочка") return;
 	var a = [];
 	for (var i = 0;i<IC;i++){
-		var x = $("#card" + i).position().left;
+		if (vert)
+			var x = $("#card" + i).position().top;
+		else
+			var x = $("#card" + i).position().left;
 		a.push(pair(x, i));
 	}
 	a.sort(function(v,u){
