@@ -110,7 +110,7 @@ function createcss() //генерация css стилей приложения
         get_style_question += 'left: '+ test[i].question.Left +';\n';
         get_style_question += 'top: '+ test[i].question.Top +';\n';
         get_style_question += 'width: '+ test[i].question.Width +';\n';
-        get_style_question += 'position:absolute; \n ';
+        get_style_question += 'position:absolute; \n border-radius: 10px;\n ';
         get_style_question += 'height: '+ test[i].question.Height +';}';
         getdatacss += get_style_question + '\n';
         for (let j=0; j<test[i].answers.length; j++)
@@ -122,7 +122,7 @@ function createcss() //генерация css стилей приложения
             get_style_answer += 'left: '+ test[i].answers[j].Left +  ';\n';
             get_style_answer += 'top: '+ test[i].answers[j].Top +  ';\n';
             get_style_answer += 'width: '+ test[i].answers[j].Width +  ';\n';
-            get_style_answer += 'position:absolute; \n';
+            get_style_answer += 'position:absolute; \n  border-radius: 10px;\n';
             get_style_answer += 'height: '+ test[i].answers[j].Height +  ';}\n';
             getdatacss += get_style_answer;
         }
