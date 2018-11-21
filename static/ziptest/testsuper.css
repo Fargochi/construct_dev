@@ -38,6 +38,7 @@ top: 1%;
     height: 50px;
     background: url(https://image.flaticon.com/icons/svg/626/626043.svg);
     cursor: pointer;
+    border: none;
 }
 #mainfield {
      position: absolute;
