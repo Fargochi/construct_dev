@@ -285,26 +285,28 @@ function TchangeBackground() {
 }
 
 function setTemplateSettings() {
+    showElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
+    hideElements(['modalTemplateInfo']);
     var newQ = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newQ);
     addClasses(newQ, ["newQ"]);
     newQ.innerText = document.getElementById('TemplateQuestionText').value;
-    var newA = document.createElement('div');
-    document.getElementById('field' + IDtoField).appendChild(newA);
-    addClasses(newA, ["newA"]);
-    newA.innerText = document.getElementById('TemplateAnswerText').value;
-    var newA = document.createElement('div');
-    document.getElementById('field' + IDtoField).appendChild(newA);
-    addClasses(newA, ["newA"]);
-    newA.innerText = document.getElementById('TemplateAnswerText').value;
-    var newA = document.createElement('div');
-    document.getElementById('field' + IDtoField).appendChild(newA);
-    addClasses(newA, ["newA"]);
-    newA.innerText = document.getElementById('TemplateAnswerText').value;
-    var newA = document.createElement('div');
-    document.getElementById('field' + IDtoField).appendChild(newA);
-    addClasses(newA, ["newA"]);
-    newA.innerText = document.getElementById('TemplateAnswerText').value;
+    var newA1 = document.createElement('div');
+    document.getElementById('field' + IDtoField).appendChild(newA1);
+    addClasses(newA1, ["newA"]);
+    newA1.innerText = document.getElementById('TemplateAnswerText1').value;
+    var newA2 = document.createElement('div');
+    document.getElementById('field' + IDtoField).appendChild(newA2);
+    addClasses(newA2, ["newA"]);
+    newA2.innerText = document.getElementById('TemplateAnswerText2').value;
+    var newA3 = document.createElement('div');
+    document.getElementById('field' + IDtoField).appendChild(newA3);
+    addClasses(newA3, ["newA"]);
+    newA3.innerText = document.getElementById('TemplateAnswerText3').value;
+    var newA4 = document.createElement('div');
+    document.getElementById('field' + IDtoField).appendChild(newA4);
+    addClasses(newA4, ["newA"]);
+    newA4.innerText = document.getElementById('TemplateAnswerText4').value;
 }
 
 function selectTemplate() {
