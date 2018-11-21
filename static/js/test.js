@@ -21,6 +21,11 @@ function button_back_color(idquestion)
 function button_delete_answer(idquestion,idanswer)
 {
     test[idquestion].answers.splice(idanswer,1);
+    let mojnoda = 0;
+    for(let i=0; i<test[idquestion].answers.length; i++){
+        if(i==idanswer) {mojnoda = 1;}
+        if(mojnoda==1){document.getElementById('answer'+idquestion+"_"+(i+1)).id="answer"+idquestion+"_"+i;}
+    }
 }
 function button_delete_question(idquestion)
 {
@@ -242,10 +247,10 @@ function deleteElAnswer(){
         var hdrop = Number(($("#deleteBoxTest").css("height")).slice(0,-2)) + Number(($("#deleteBoxTest").css("padding")).slice(0,-2));
         if (max(x,xdrop) <= min(x+w,xdrop+wdrop) && max(y,ydrop)<=min(y+h,ydrop+hdrop)) {
             if(confirm("Вы точно хотите удалить?")){
-                $(this).remove();
                 let rest=0;
                 while(this.id.charAt(rest)!='_') rest++;
                 rest++;
+                $(this).remove();
                 button_delete_answer(IDtoField, Number(this.id.substr(rest)));
             }
         }
