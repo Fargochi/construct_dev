@@ -2,7 +2,8 @@
 const path = require('path')
 const express = require('express')
 const exphbs = require('express-handlebars')
-var fs = require('fs');
+const fs = require('fs');
+var zip = new require('node-zip')();
 const app = express()
 
 app.engine('.hbs', exphbs({
@@ -53,13 +54,15 @@ app.post('/upload/*', (request, response) => {
 		/*response.render('<img src="'+'/filestorage/'+fileName+'"' +' width = 100px >')*/
     });
 })
-/*
+
 app.post('/loader', (request, response) => {
 	
-	
-	
-	
-	
+	zip.file('index.html', fs.readFileSync(path.join(__dirname, 'static/ziptest/index.html')));
+	zip.file('testsuper.css', fs.readFileSync(path.join(__dirname, 'static/ziptest/testsuper.css'))+"alert('я ломал стекло')");
+	zip.file('testsuper.js', fs.readFileSync(path.join(__dirname, 'static/ziptest/testsuper.js'))+"alert('я ломал стекло')");
+	zip.file('arrow.svg', fs.readFileSync(path.join(__dirname, 'static/ziptest/arrow.svg')));
+	var data = zip.generate({ base64:false, compression: 'DEFLATE' });
+	fs.writeFileSync('test.zip', data, 'binary');
 }
-	)8*/
+	)
 	
