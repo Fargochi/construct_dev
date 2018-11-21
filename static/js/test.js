@@ -58,10 +58,10 @@ function constructor_question_and_answers()
     this.FontColor = "";
     this.Color = "";
     this.TrueLi = 0;
-    this.Left  = 0;
-    this.Top = 0;
-    this.Width = 0;
-    this.Height = 0;
+    this.Left  = "";
+    this.Top = "";
+    this.Width = "";
+    this.Height = "";
 
 }
 function constructor_new_slide() //функция для создания нового вопроса
@@ -304,6 +304,13 @@ function setTemplateSettings() {
     newQ.innerText = document.getElementById('TemplateQuestionText').value;
     test[IDtoField].question.Text=document.getElementById('TemplateQuestionText').value;
     $("#question"+IDtoField).css("background-color", document.getElementById("TemplateColorQuestion").value);
+    test[IDtoField].question.FontColor = "#000000";
+    test[IDtoField].question.FontSize = "25pt";
+    test[IDtoField].question.Color = document.getElementById('TemplateColorQuestion').value;
+    $("#question"+IDtoField).css("width", "80%");
+    $("#question"+IDtoField).css("height", "17%");
+    $("#question"+IDtoField).css("left", "10%");
+    $("#question"+IDtoField).css("top", "2%");
 
     var newA1 = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newA1);
@@ -313,6 +320,14 @@ function setTemplateSettings() {
     newA1.innerText = document.getElementById('TemplateAnswerText1').value;
     test[IDtoField].answers[0].Text=document.getElementById('TemplateAnswerText1').value;
     $("#answer"+IDtoField+"_0").css("background-color", document.getElementById("TemplateColorAnswer").value);
+    test[IDtoField].answers[0].FontColor =  "#000000";
+    test[IDtoField].answers[0].FontSize = "25pt";
+    test[IDtoField].answers[0].Color = document.getElementById('TemplateColorAnswer').value;
+    $("#answer"+IDtoField+"_0").css("width", "65%");
+    $("#answer"+IDtoField+"_0").css("height", "14%");
+    $("#answer"+IDtoField+"_0").css("left", "17.5%");
+    $("#answer"+IDtoField+"_0").css("top", "22%");
+
 
     var newA2 = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newA2);
@@ -322,6 +337,14 @@ function setTemplateSettings() {
     newA2.innerText = document.getElementById('TemplateAnswerText2').value;
     test[IDtoField].answers[1].Text=document.getElementById('TemplateAnswerText2').value;
     $("#answer"+IDtoField+"_1").css("background-color", document.getElementById("TemplateColorAnswer").value);
+    test[IDtoField].answers[1].FontColor =  "#000000";
+    test[IDtoField].answers[1].FontSize = "25pt";
+    test[IDtoField].answers[1].Color = document.getElementById('TemplateColorAnswer').value;
+    $("#answer"+IDtoField+"_1").css("width", "65%");
+    $("#answer"+IDtoField+"_1").css("height", "14%");
+    $("#answer"+IDtoField+"_1").css("left", "17.5%");
+    $("#answer"+IDtoField+"_1").css("top", "39%");
+
 
     var newA3 = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newA3);
@@ -331,6 +354,14 @@ function setTemplateSettings() {
     newA3.innerText = document.getElementById('TemplateAnswerText3').value;
     test[IDtoField].answers[2].Text=document.getElementById('TemplateAnswerText3').value;
     $("#answer"+IDtoField+"_2").css("background-color", document.getElementById("TemplateColorAnswer").value);
+    test[IDtoField].answers[2].FontColor =  "#000000";
+    test[IDtoField].answers[2].FontSize = "25pt";
+    test[IDtoField].answers[2].Color = document.getElementById('TemplateColorAnswer').value;
+    $("#answer"+IDtoField+"_2").css("width", "65%");
+    $("#answer"+IDtoField+"_2").css("height", "14%");
+    $("#answer"+IDtoField+"_2").css("left", "17.5%");
+    $("#answer"+IDtoField+"_2").css("top", "56%");
+
 
     var newA4 = document.createElement('div');
     document.getElementById('field' + IDtoField).appendChild(newA4);
@@ -340,6 +371,14 @@ function setTemplateSettings() {
     newA4.innerText = document.getElementById('TemplateAnswerText4').value;
     test[IDtoField].answers[3].Text=document.getElementById('TemplateAnswerText4').value;
     $("#answer"+IDtoField+"_3").css("background-color", document.getElementById("TemplateColorAnswer").value);
+    test[IDtoField].answers[3].FontColor =  "#000000";
+    test[IDtoField].answers[3].FontSize = "25pt";
+    test[IDtoField].answers[3].Color = document.getElementById('TemplateColorAnswer').value;
+    $("#answer"+IDtoField+"_3").css("width", "65%");
+    $("#answer"+IDtoField+"_3").css("height", "14%");
+    $("#answer"+IDtoField+"_3").css("left", "17.5%");
+    $("#answer"+IDtoField+"_3").css("top", "73%");
+
 
     for(let i=0; i<4;i++){
         test[IDtoField].answers[i].TrueLi = 0;}
