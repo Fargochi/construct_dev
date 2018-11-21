@@ -105,5 +105,8 @@ function showPreview(filename) {
 }
 
 function cleaner() {
-    
+	if(confirm("Вы точно хотите очистить поле?")){
+    	document.getElementById('field' + IDtoField).innerHTML = "";
+		test[IDtoField].question = "";
+	}
 }
