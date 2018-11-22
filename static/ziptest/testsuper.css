@@ -34,7 +34,6 @@ top: 1%;
     right: 3%;
     top:40%;
     width: 10%;
-    background: url(https://image.flaticon.com/icons/svg/126/126490.svgt);
     position: absolute;
     border: none;
     cursor: pointer;
@@ -48,12 +47,16 @@ top: 1%;
     cursor: pointer;
 }
 #next_b:hover{
-background-color: #32CD32;
-border-radius: 30%;
+width: 12%;
+right: 2%;
+top: 37.5%;
+position: absolute;
 }
 #back_b:hover{
-background-color: #32CD32;
-border-radius: 30%;
+width: 12%;
+left: 2%;
+top: 37.5%;
+position: absolute;
 }
 #mainfield {
      position: absolute;
