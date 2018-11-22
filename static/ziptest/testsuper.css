@@ -39,7 +39,19 @@ top: 1%;
     border: none;
     cursor: pointer;
 }
+#back_b {
+    left: 3%;
+    top:40%;
+    width: 10%;
+    position: absolute;
+    border: none;
+    cursor: pointer;
+}
 #next_b:hover{
+background-color: #32CD32;
+border-radius: 30%;
+}
+#back_b:hover{
 background-color: #32CD32;
 border-radius: 30%;
 }
