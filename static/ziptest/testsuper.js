@@ -104,6 +104,7 @@ function setquestion(){
 }
 function finish()
 {
+	number_slide=test.length;
 	document.getElementById('next_b').classList.remove("visible");
 	document.getElementById('next_b').classList.add("hidden");
 	document.getElementById("question").innerHTML = " ";
