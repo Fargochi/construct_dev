@@ -1,7 +1,7 @@
 var test = [];
 var number_question=0; var number_slide=0; var ball =0;//заполняется из данных пользователя скриптом, только текст и правильность
 var maxball=0;
-var hour =0;
+var hour =0; var sec =0;
 function constructor_slide() //слайд теста
 {
 	this.question = "";
