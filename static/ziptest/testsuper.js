@@ -1,5 +1,5 @@
 var test = [];
-var number_question=0; var ball =0;//заполняется из данных пользователя скриптом, только текст и правильность
+var number_question=0; var number_slide=0; var ball =0;//заполняется из данных пользователя скриптом, только текст и правильность
 var maxball=0;
 function constructor_slide() //слайд теста
 {
@@ -22,10 +22,15 @@ function constructor_slide() //слайд теста
 
 function next()
 { 	
-	chek();
+	if (number_slide==number_question) {chek();}
+	number_slide++;
 	setquestion();
 }
-
+function back()
+{
+	number_slide--;
+	setquestion();
+}
 function chek()
 {
 	let right=2;
@@ -45,7 +50,7 @@ function chek()
 	number_question++;
 }
 function setquestion(){
-	if (number_question == test.length) {finish();}
+	if (number_slide == test.length) {finish();}
 	else {
 	$("#mainfield").css("background-color", test[number_question].backcolor);
 	//работа c div "question"
@@ -58,6 +63,8 @@ function setquestion(){
 	{ 
 		new_answer = '<div class="answerClass" id = "answer'+ number_question + '_' + i + '">'+ test[number_question].answers[i].Text + '</div>'; //создания div конкретного вопроса. НАДО ДОБАВИТЬ ЧЕКЕР с id-номером
 		divanswers.innerHTML += new_answer; //добавление этого div
+		if (number_slide==number_question)
+		{
 		$("#answer"+ number_question + "_" + i).attr("trueli","0");
 		//document.getElementById("answer"+ number_question + "_" + i).setAttribute("trueli","0");
 		$(".answerClass").click(function(){
@@ -65,15 +72,25 @@ function setquestion(){
         			$("#"+this.id).attr("trueli","1");
         			$("#"+this.id).css("box-shadow","0 0 25px #172caf");
         			//box-shadow: 0 0 10px #172caf;
-        }
+        		}
         else
         	{
         			$("#"+this.id).attr("trueli","0");
         			$("#"+this.id).css("box-shadow","0 0 0px #172caf");
-        }
-})
-	}
-}
+        	}}
+		}
+		else
+		{
+			if(test[number_question].answers[i].TrueLi == 1)
+			{
+				$("#answer"+ number_question + "_" + i).css("box-shadow","0 0 25px #00ff00");
+			}
+			else
+			{
+				$("#answer"+ number_question + "_" + i).css("box-shadow","0 0 25px #ff0000");
+			}
+		}
+	}}
 }
 function finish()
 {
