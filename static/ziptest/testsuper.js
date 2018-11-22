@@ -1,6 +1,8 @@
 var test = [];
 var number_question=0; var number_slide=0; var ball =0;//заполняется из данных пользователя скриптом, только текст и правильность
 var maxball=0;
+var timer = 0;
+var hour = 0; var min=15; var sec =0;
 function constructor_slide() //слайд теста
 {
 	this.question = "";
@@ -120,4 +122,31 @@ function makePB() {
 		document.getElementById("mainTr").innerHTML+="<td id='TD"+i+"'class='PBpassive TDmain'></td>";
 	}
 
+}
+function createtimer(){
+	setInterval(function(){
+		sec--;
+		if (sec<0) {sec=59; min--;}
+		if (min<0) {min=59; hour--;}
+		if (hour<0)
+		{
+			'mnumber_question = test.length;
+			finish();
+			return;
+		}
+
+
+	},1000)
+
+}
+function start()
+{
+	if(timer==0)
+	{
+		setquestion();
+	}
+	else
+	{
+		var startpage = "<button onclick = 'createtimer(); setquestion();'>Начать тест!</button>"
+	}
 }

@@ -94,7 +94,9 @@ function constructor_new_slide() //функция для создания нов
         this.answers.push(newanswer);
     }
 }
+var timer = 0;
 var getdata = "";
+var getdatacss = "";
 function createjs() //генерация js кода приложения
 {
     for (let i=0; i<test.length; i++)
@@ -108,7 +110,7 @@ function createjs() //генерация js кода приложения
         getdata += 'test.push(new constructor_slide);\n'+get_question + get_answers;
     }
 }
-var getdatacss = "";
+
 function createcss() //генерация css стилей приложения
 {   getdatacss = "";
     for (let i=0; i < test.length; i++)

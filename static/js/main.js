@@ -8,6 +8,7 @@ var x, y;
 var IQ = 0;
 var IA = 0;
 var divv;
+
 function max(a, b){
 	if (a >= b)
 		return a;
