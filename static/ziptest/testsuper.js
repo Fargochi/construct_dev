@@ -1,8 +1,7 @@
 var test = [];
 var number_question=0; var number_slide=0; var ball =0;//заполняется из данных пользователя скриптом, только текст и правильность
 var maxball=0;
-var timer = 0;
-var hour = 0; var min=15; var sec =0;
+var hour =0;
 function constructor_slide() //слайд теста
 {
 	this.question = "";
@@ -144,6 +143,10 @@ function makePB() {
 
 }
 function createtimer(){
+	while (min>60)
+	{
+		hour++; min -= 60;
+	}
 	setInterval(function(){
 
 		sec--;
@@ -162,7 +165,7 @@ function createtimer(){
 }
 function start()
 {
-	if(timer==0)
+	if(sec + min + hour==0)
 	{
 		setquestion();
 	}
