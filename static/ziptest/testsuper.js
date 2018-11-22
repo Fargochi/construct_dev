@@ -21,6 +21,18 @@ function constructor_slide() //слайд теста
 		this.answers.push(answer);
 	}
 }
+function count_maxxball()
+{
+	for (let i=0;i<test.length;i++)
+	{
+		let oneor =0;
+		for(let j=0;j<test[i].answers.length;j++)
+		{
+			if (test[i].answers[j].TrueLi==1) {oneor++;}
+		}
+		maxball+= 1 + Number(oneor>1);
+	}
+}
 
 function next()
 { 	
@@ -49,7 +61,6 @@ function chek()
 	}
 	if (type == 1) {ball+= Number(right>1); right = 2* Number(right>1);}
 	else {ball+=right;}
-	maxball+= 1 + Number(type>1);
 	if(right==2){$("#TD"+number_question).css("background-color", "green"); alert("Абсолютно верно!");}
 	else if(right==1){$("#TD"+number_question).css("background-color", "yellow");alert("Частично верно");}
 	else{$("#TD"+number_question).css("background-color", "red"); alert("Вы совершили ошибку!");}
@@ -115,6 +126,7 @@ $("#answer"+number_slide+"_"+i).fadeIn(1500);
 function finish()
 {
 	number_slide=test.length;
+	count_maxxball();
 	document.getElementById('next_b').classList.remove("visible");
 	document.getElementById('next_b').classList.add("hidden");
 	document.getElementById("question").innerHTML = " ";
