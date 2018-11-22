@@ -138,7 +138,7 @@ function createtimer(){
 		if (sec<0) {sec=59; min--;}
 		if (min<0) {min=59; hour--;}
 		if(hour>-1){document.getElementById("timeleft").innerHTML=hour+" ч "+min+"  мин. "+sec+" сек.";}
-		
+		else
 		{
 			number_question = test.length;
 			finish();
