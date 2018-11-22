@@ -130,7 +130,7 @@ function createtimer(){
 		if (min<0) {min=59; hour--;}
 		if (hour<0)
 		{
-			'mnumber_question = test.length;
+			number_question = test.length;
 			finish();
 			return;
 		}
