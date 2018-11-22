@@ -62,14 +62,14 @@ app.post('/loader', urlencodedParser,(request, response) => {
 	
 
     if(!request.body) return response.sendStatus(400);
-    console.log(request.body.someText);
+    /*console.log(request.body.someText);*/
   
 	var pathname = 'static/ziptest/';
 	var file = path.join(__dirname,'app.zip');
 	
 	zip.file('index.html', fs.readFileSync(path.join(__dirname, pathname +'index.html')));
-	zip.file('testsuper.css', fs.readFileSync(path.join(__dirname, pathname +'testsuper.css'))+"alert('request.body.someText')");
-	zip.file('testsuper.js', fs.readFileSync(path.join(__dirname, pathname +'testsuper.js'))+request.body.someText);
+	zip.file('testsuper.css', fs.readFileSync(path.join(__dirname, pathname +'testsuper.css'))+request.body.someCSS);
+	zip.file('testsuper.js', fs.readFileSync(path.join(__dirname, pathname +'testsuper.js'))+request.body.someJS);
 	zip.file('arrow.svg', fs.readFileSync(path.join(__dirname, pathname +'arrow.svg')));
 	var data = zip.generate({ base64:false, compression: 'DEFLATE' });
 	fs.writeFileSync('app.zip', data, 'binary');
