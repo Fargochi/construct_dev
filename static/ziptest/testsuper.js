@@ -126,10 +126,12 @@ function makePB() {
 }
 function createtimer(){
 	setInterval(function(){
+
 		sec--;
 		if (sec<0) {sec=59; min--;}
 		if (min<0) {min=59; hour--;}
-		if (hour<0)
+		if(hour>-1){document.getElementById("timeleft").innerHTML=hour+" ч "+min+"  мин. "+sec+" сек.";}
+		
 		{
 			number_question = test.length;
 			finish();
