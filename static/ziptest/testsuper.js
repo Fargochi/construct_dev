@@ -56,6 +56,7 @@ function chek()
 	number_question++;
 }
 function setquestion(){
+	document.getElementById("base").innerHTML = "";
 	if(number_slide==0) {    
 
 	document.getElementById('back_b').classList.remove("visible");
@@ -147,6 +148,7 @@ function start()
 	}
 	else
 	{
-		var startpage = "<button onclick = 'createtimer(); setquestion();'>Начать тест!</button>"
+		let startpage = "<button onclick = 'createtimer(); setquestion();'>Начать тест!</button>";
+		document.getElementById("base").innerHTML = startpage;
 	}
 }
