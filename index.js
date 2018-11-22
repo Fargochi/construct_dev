@@ -70,7 +70,7 @@ app.post('/loader', urlencodedParser,(request, response) => {
 	
 	zip.file('index.html', fs.readFileSync(path.join(__dirname, pathname +'index.html')));
 	zip.file('testsuper.css', fs.readFileSync(path.join(__dirname, pathname +'testsuper.css'))+request.body.someCSS);
-	zip.file('testsuper.js', fs.readFileSync(path.join(__dirname, pathname +'testsuper.js'))+request.body.someJS);
+	zip.file('testsuper.js', fs.readFileSync(path.join(__dirname, pathname +'testsuper.js'))+request.body.someJS + ';var min = ' + request.body.someTime+';');
 	zip.file('next.svg', fs.readFileSync(path.join(__dirname, pathname +'next.svg')));
 	zip.file('back.svg', fs.readFileSync(path.join(__dirname, pathname +'back.svg')));
 	zip.file('jquery-2.2.4.min.js', fs.readFileSync(path.join(__dirname, pathname +'jquery-2.2.4.min.js')));
