@@ -23,11 +23,15 @@ function constructor_slide() //слайд теста
 function next()
 { 	
 	if (number_slide==number_question) {chek();}
+	document.getElementById('back_b').classList.remove("hidden");
+	document.getElementById('back_b').classList.add("visible");
 	number_slide++;
 	setquestion();
 }
 function back()
-{
+{	document.getElementById("base").innerHTML = "";
+	document.getElementById('next_b').classList.remove("hidden");
+	document.getElementById('next_b').classList.add("visible");
 	number_slide--;
 	setquestion();
 }
@@ -50,6 +54,12 @@ function chek()
 	number_question++;
 }
 function setquestion(){
+	if(number_slide==0) {    
+
+	document.getElementById('back_b').classList.remove("visible");
+	document.getElementById('back_b').classList.add("hidden");
+
+	}
 	if (number_slide == test.length) {finish();}
 	else {
 	$("#mainfield").css("background-color", test[number_slide].backcolor);
@@ -94,6 +104,8 @@ function setquestion(){
 }
 function finish()
 {
+	document.getElementById('next_b').classList.remove("visible");
+	document.getElementById('next_b').classList.add("hidden");
 	document.getElementById("question").innerHTML = " ";
 	document.getElementById("answers").innerHTML = " ";
 	total = '<br><br><br><br><div><h1><b>Ваш результат: ' +  ball + ' из ' + maxball + '</b></h1></div>';
