@@ -143,7 +143,7 @@ function makePB() {
 
 }
 function createtimer(){
-	while (min>60)
+	while (min>=60)
 	{
 		hour++; min -= 60;
 	}
