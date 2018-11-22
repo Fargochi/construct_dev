@@ -20,8 +20,8 @@ function constructor_slide() //слайд теста
 		this.answers.push(answer);
 	}
 }
-function count_maxxball()
-{
+function count_maxxball(){
+    if(maxball==0){
 	for (let i=0;i<test.length;i++)
 	{
 		let oneor =0;
@@ -31,6 +31,7 @@ function count_maxxball()
 		}
 		maxball+= 1 + Number(oneor>1);
 	}
+}
 }
 
 function next()
@@ -66,6 +67,11 @@ function chek()
 	number_question++;
 }
 function setquestion(){
+
+	document.getElementById('back_b').classList.remove("hidden");
+	document.getElementById('back_b').classList.add("visible");
+	document.getElementById('next_b').classList.remove("hidden");
+	document.getElementById('next_b').classList.add("visible");
 	document.getElementById("base").innerHTML = "";
 	if(number_slide==0) {    
 
@@ -80,7 +86,7 @@ function setquestion(){
 	var newdivquestion = '<div id="question'+ number_slide + '">'+ test[number_slide].question +'</div>'
 	document.getElementById('question').innerHTML = newdivquestion;
 $("#question"+number_slide).fadeOut(0);
-$("#question"+number_slide).fadeIn(2000);
+$("#question"+number_slide).fadeIn(400);
 	//работа с div "answers"
 	document.getElementById('answers').innerHTML = " ";
 	var divanswers = document.getElementById("answers"); 
@@ -119,7 +125,7 @@ $("#question"+number_slide).fadeIn(2000);
 
 	for(let i=0; i<test[number_slide].answers.length; i++){
 $("#answer"+number_slide+"_"+i).fadeOut(0);
-$("#answer"+number_slide+"_"+i).fadeIn(1500);
+$("#answer"+number_slide+"_"+i).fadeIn(400);
 	}
 }
 function finish()
@@ -147,7 +153,7 @@ function createtimer(){
 	{
 		hour++; min -= 60;
 	}
-	setInterval(function(){
+	var mytimer = setInterval(function(){
 
 		sec--;
 		if (sec<0) {sec=59; min--;}
@@ -155,7 +161,9 @@ function createtimer(){
 		if(hour>-1){document.getElementById("timeleft").innerHTML=hour+" ч "+min+"  мин. "+sec+" сек.";}
 		if(hour==-1 && sec==59)
 		{
+			clearInterval(mytimer);
 			number_question = test.length;
+			number_slide = test.length;
 			finish();
 		}
 
@@ -165,13 +173,17 @@ function createtimer(){
 }
 function start()
 {
+
+	document.getElementById('next_b').classList.remove("visible");
+	document.getElementById('next_b').classList.add("hidden");
+	document.getElementById('back_b').classList.remove("visible");
+	document.getElementById('back_b').classList.add("hidden");
 	if(sec + min + hour==0)
 	{
 		setquestion();
 	}
 	else
 	{
-		let startpage = "<button onclick = 'createtimer(); setquestion();'>Начать тест!</button>";
+		let startpage = "<button onclick = 'createtimer(); setquestion();' class='submitter'>Начать тест!<br>На решение теста отведено количество минут, равное "+min+"</button>";
 		document.getElementById("base").innerHTML = startpage;
-	}
-}
+	}}

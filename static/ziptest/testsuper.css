@@ -25,7 +25,7 @@ top: 1%;
      height: 82%;
 }
 .PBactive{
-	position: absolute;
+    position: absolute;
 }
 .TDBorder{
     border: 3px green;
@@ -58,6 +58,18 @@ left: 2%;
 top: 37.5%;
 position: absolute;
 }
+.submitter{
+    width: 30%;
+    height: 70px;
+    background: #f5f5f5;
+    border-radius: 3%;
+    cursor: pointer;
+    border: 3px solid #808080;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 100%;
+    margin-top: 30%;
+}
 #mainfield {
      position: absolute;
      margin-top: 1%;
@@ -74,3 +86,4 @@ position: absolute;
 .hidden{
     display: none;
 }
+#question0{font: arial 25pt;color: #000000;background-color: #ffb173;left: 9.999999999999998%;top: 2.0000000000000004%;width: 79.99999999999998%;position:absolute;  border-radius: 10px; height: 17%;}#answer0_0{font: arial 25pt;color: #000000;background-color: #ff9773;left: 17.500000000000003%;top: 22%;width: 65%;position:absolute;   border-radius: 10px;height: 14.000000000000001%;}#answer0_1{font: arial 25pt;color: #000000;background-color: #ff9773;left: 17.500000000000003%;top: 39%;width: 65%;position:absolute;   border-radius: 10px;height: 14.000000000000001%;}#answer0_2{font: arial 25pt;color: #000000;background-color: #ff9773;left: 17.500000000000003%;top: 56.00000000000001%;width: 65%;position:absolute;   border-radius: 10px;height: 14.000000000000001%;}#answer0_3{font: arial 25pt;color: #000000;background-color: #ff9773;left: 17.500000000000003%;top: 73%;width: 65%;position:absolute;   border-radius: 10px;height: 14.000000000000001%;}#question1{font: arial 25pt;color: #000000;background-color: #ffb173;left: 9.999999999999998%;top: 2.0000000000000004%;width: 79.99999999999998%;position:absolute;  border-radius: 10px; height: 17%;}#answer1_0{font: arial 25pt;color: #000000;background-color: #ff9773;left: 17.500000000000003%;top: 22%;width: 65%;position:absolute;   border-radius: 10px;height: 14.000000000000001%;}#answer1_1{font: arial 25pt;color: #000000;background-color: #ff9773;left: 17.500000000000003%;top: 39%;width: 65%;position:absolute;   border-radius: 10px;height: 14.000000000000001%;}#answer1_2{font: arial 25pt;color: #000000;background-color: #ff9773;left: 17.500000000000003%;top: 56.00000000000001%;width: 65%;position:absolute;   border-radius: 10px;height: 14.000000000000001%;}#answer1_3{font: arial 25pt;color: #000000;background-color: #ff9773;left: 17.500000000000003%;top: 73%;width: 65%;position:absolute;   border-radius: 10px;height: 14.000000000000001%;}
