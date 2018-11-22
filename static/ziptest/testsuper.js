@@ -52,20 +52,20 @@ function chek()
 function setquestion(){
 	if (number_slide == test.length) {finish();}
 	else {
-	$("#mainfield").css("background-color", test[number_question].backcolor);
+	$("#mainfield").css("background-color", test[number_slide].backcolor);
 	//работа c div "question"
-	var newdivquestion = '<div id="question'+ number_question + '">'+ test[number_question].question +'</div>'
+	var newdivquestion = '<div id="question'+ number_slide + '">'+ test[number_slide].question +'</div>'
 	document.getElementById('question').innerHTML = newdivquestion;
 	//работа с div "answers"
 	document.getElementById('answers').innerHTML = " ";
 	var divanswers = document.getElementById("answers"); 
-	for (let i=0;i<test[number_question].answers.length ;i++)
+	for (let i=0;i<test[number_slide].answers.length ;i++)
 	{ 
-		new_answer = '<div class="answerClass" id = "answer'+ number_question + '_' + i + '">'+ test[number_question].answers[i].Text + '</div>'; //создания div конкретного вопроса. НАДО ДОБАВИТЬ ЧЕКЕР с id-номером
+		new_answer = '<div class="answerClass" id = "answer'+ number_slide + '_' + i + '">'+ test[number_slide].answers[i].Text + '</div>'; //создания div конкретного вопроса. НАДО ДОБАВИТЬ ЧЕКЕР с id-номером
 		divanswers.innerHTML += new_answer; //добавление этого div
 		if (number_slide==number_question)
 		{
-		$("#answer"+ number_question + "_" + i).attr("trueli","0");
+		$("#answer"+ number_slide + "_" + i).attr("trueli","0");
 		//document.getElementById("answer"+ number_question + "_" + i).setAttribute("trueli","0");
 		$(".answerClass").click(function(){
         if(document.getElementById(this.id).getAttribute("trueli")=="0"){
@@ -81,13 +81,13 @@ function setquestion(){
 		}
 		else
 		{
-			if(test[number_question].answers[i].TrueLi == 1)
+			if(test[number_slide].answers[i].TrueLi == 1)
 			{
-				$("#answer"+ number_question + "_" + i).css("box-shadow","0 0 25px #00ff00");
+				$("#answer"+ number_slide + "_" + i).css("box-shadow","0 0 25px #00ff00");
 			}
 			else
 			{
-				$("#answer"+ number_question + "_" + i).css("box-shadow","0 0 25px #ff0000");
+				$("#answer"+ number_slide + "_" + i).css("box-shadow","0 0 25px #ff0000");
 			}
 		}
 	}}
