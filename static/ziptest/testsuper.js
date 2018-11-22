@@ -69,6 +69,8 @@ function setquestion(){
 	//работа c div "question"
 	var newdivquestion = '<div id="question'+ number_slide + '">'+ test[number_slide].question +'</div>'
 	document.getElementById('question').innerHTML = newdivquestion;
+$("#question"+number_slide).fadeOut(0);
+$("#question"+number_slide).fadeIn(2000);
 	//работа с div "answers"
 	document.getElementById('answers').innerHTML = " ";
 	var divanswers = document.getElementById("answers"); 
@@ -104,6 +106,11 @@ function setquestion(){
 			}
 		}
 	}}
+
+	for(let i=0; i<test[number_slide].answers.length; i++){
+$("#answer"+number_slide+"_"+i).fadeOut(0);
+$("#answer"+number_slide+"_"+i).fadeIn(1500);
+	}
 }
 function finish()
 {
