@@ -1,6 +1,7 @@
 var test = [];
 var number_question=0; var ball =0;//заполняется из данных пользователя скриптом, только текст и правильность
 var maxball=0;
+var ActiveSlideNum = 0;
 function constructor_slide() //слайд теста
 {
 	this.question = "";
@@ -21,9 +22,55 @@ function constructor_slide() //слайд теста
 }
 
 function next()
-{ 
+{ 	
+	if(number_question == ActiveSlideNum){
+	ActiveSlideNum++;
 	chek();
 	setquestion();
+}
+else {
+	ActiveSlideNum++;
+$("#mainfield").css("background-color", test[ActiveSlideNum].backcolor);
+document.getElementById('mainfield').innerHTML="";
+	//работа c div "question"
+	var newdivquestion = '<div id="question'+ ActiveSlideNum + '">'+ test[ActiveSlideNum].question +'</div>'
+	document.getElementById('question').innerHTML = newdivquestion;
+	//работа с div "answers"
+	document.getElementById('answers').innerHTML = " ";
+	var divanswers = document.getElementById("answers"); 
+	for (let i=0;i<test[ActiveSlideNum].answers.length ;i++)
+	{ 
+		new_answer = '<div class="answerClass" id = "answer'+ ActiveSlideNum + '_' + i + '">'+ test[ActiveSlideNum].answers[i].Text + '</div>'; //создания div конкретного вопроса. НАДО ДОБАВИТЬ ЧЕКЕР с id-номером
+		divanswers.innerHTML += new_answer; //добавление этого div
+		if(test[ActiveSlideNum].answers[i].TrueLi == 1)
+		$("#answer"+ ActiveSlideNum + "_" + i).css("box-shadow","0 0 25px green");
+		if(test[ActiveSlideNum].answers[i].TrueLi == 0)
+		$("#answer"+ ActiveSlideNum + "_" + i).css("box-shadow","0 0 25px red");
+	}
+}
+}
+function back()
+{ 
+	if(ActiveSlideNum>0&&number_question != test.length){
+	ActiveSlideNum--;
+    $("#mainfield").css("background-color", test[ActiveSlideNum].backcolor);
+document.getElementById('mainfield').innerHTML="";
+	//работа c div "question"
+	var newdivquestion = '<div id="question'+ ActiveSlideNum + '">'+ test[ActiveSlideNum].question +'</div>'
+	document.getElementById('question').innerHTML = newdivquestion;
+	//работа с div "answers"
+	document.getElementById('answers').innerHTML = " ";
+	var divanswers = document.getElementById("answers"); 
+	for (let i=0;i<test[ActiveSlideNum].answers.length ;i++)
+	{ 
+		new_answer = '<div class="answerClass" id = "answer'+ ActiveSlideNum + '_' + i + '">'+ test[ActiveSlideNum].answers[i].Text + '</div>'; //создания div конкретного вопроса. НАДО ДОБАВИТЬ ЧЕКЕР с id-номером
+		divanswers.innerHTML += new_answer; //добавление этого div
+		if(test[ActiveSlideNum].answers[i].TrueLi == 1)
+		$("#answer"+ ActiveSlideNum + "_" + i).css("box-shadow","0 0 25px green");
+		if(test[ActiveSlideNum].answers[i].TrueLi == 0)
+		$("#answer"+ ActiveSlideNum + "_" + i).css("box-shadow","0 0 25px red");
+	}
+}
 }
 function chek()
 {
@@ -71,7 +118,8 @@ function setquestion(){
         			$("#"+this.id).css("box-shadow","0 0 0px #172caf");
         }
 })
-	}}
+	}
+}
 }
 function finish()
 {

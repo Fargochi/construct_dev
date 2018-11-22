@@ -33,8 +33,6 @@ function button_delete_question(idquestion)
 }
 function Tbutton_save_changes()
 {
-    createcss(); 
-    createjs();
     hideElements(['field', 'button_next', 'button_save', 'scroll', 'buttons', 'field' + IDtoField]);
     showElements(['Tend']);
     for (let i=0; i<test.length; i++)
@@ -51,6 +49,8 @@ function Tbutton_save_changes()
             test[i].answers[j].Height =  100*Number($("#answer"+i+"_"+j).css("height").slice(0, -2))/Number($("#field").css("height").slice(0, -2)) + "%";
         }
     }
+    createcss(); 
+    createjs();
 }
 function constructor_question_and_answers()
 {
@@ -160,7 +160,6 @@ function setQuestionSettings() {
     IDDIV = "#question" + IDtoField;
         newminidiv.id = "miniature" + IDtoField;
         IDMINIDIV = "#miniature" + IDtoField;
-        alert(IDMINIDIV);
     document.getElementById("question"+IDtoField).style.left = "0px";
     document.getElementById("question"+IDtoField).style.top = "0px";
     document.getElementById("miniature"+IDtoField).style.left = "0px";
