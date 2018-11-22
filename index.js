@@ -62,7 +62,8 @@ app.post('/loader', urlencodedParser,(request, response) => {
 	
 
     if(!request.body) return response.sendStatus(400);
-    /*console.log(request.body.someText);*/
+    console.log(request.body.someJS);
+	console.log(request.body.someCSS);
   
 	var pathname = 'static/ziptest/';
 	var file = path.join(__dirname,'app.zip');
@@ -70,7 +71,11 @@ app.post('/loader', urlencodedParser,(request, response) => {
 	zip.file('index.html', fs.readFileSync(path.join(__dirname, pathname +'index.html')));
 	zip.file('testsuper.css', fs.readFileSync(path.join(__dirname, pathname +'testsuper.css'))+request.body.someCSS);
 	zip.file('testsuper.js', fs.readFileSync(path.join(__dirname, pathname +'testsuper.js'))+request.body.someJS);
-	zip.file('arrow.svg', fs.readFileSync(path.join(__dirname, pathname +'arrow.svg')));
+	zip.file('next.svg', fs.readFileSync(path.join(__dirname, pathname +'next.svg')));
+	zip.file('back.svg', fs.readFileSync(path.join(__dirname, pathname +'back.svg')));
+	zip.file('jquery-2.2.4.min.js', fs.readFileSync(path.join(__dirname, pathname +'jquery-2.2.4.min.js')));
+	zip.file('jquery-ui.min.js', fs.readFileSync(path.join(__dirname, pathname +'jquery-ui.min.js')));
+	zip.file('jquery-ui.css', fs.readFileSync(path.join(__dirname, pathname +'jquery-ui.css')));
 	var data = zip.generate({ base64:false, compression: 'DEFLATE' });
 	fs.writeFileSync('app.zip', data, 'binary');
 	/*console.log("File saved: " + fileName);*/
