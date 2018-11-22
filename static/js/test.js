@@ -51,6 +51,8 @@ function Tbutton_save_changes()
     }
     createcss(); 
     createjs();
+    document.getElementById('toJS').value = getdata;
+    document.getElementById('toCSS').value = getdatacss;
 }
 function constructor_question_and_answers()
 {
