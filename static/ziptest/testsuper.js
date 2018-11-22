@@ -77,7 +77,7 @@ function setquestion(){
         	{
         			$("#"+this.id).attr("trueli","0");
         			$("#"+this.id).css("box-shadow","0 0 0px #172caf");
-        	}}
+        	}})
 		}
 		else
 		{
